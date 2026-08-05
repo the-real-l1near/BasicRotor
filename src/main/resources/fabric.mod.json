@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "basicrotor",
+  "version": "${version}",
+  "name": "BasicRotor",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.l1near.basicrotor.BasicRotor"
+    ],
+    "client": [
+      "com.l1near.basicrotor.client.BasicRotorClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
