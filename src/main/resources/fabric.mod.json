@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "basicrotor",
+  "id": "basicrotor-private",
   "version": "${version}",
   "name": "BasicRotor",
   "environment": "*",

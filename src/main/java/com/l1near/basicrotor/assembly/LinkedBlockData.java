@@ -1,5 +1,11 @@
 package com.l1near.basicrotor.assembly;
 
+/*
+---------------------------
+Imports
+---------------------------
+*/
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -7,7 +13,7 @@ public class LinkedBlockData {
 
     /*
     ---------------------------
-               Fields
+    Fields
     ---------------------------
     */
 
@@ -17,7 +23,7 @@ public class LinkedBlockData {
 
     /*
     ---------------------------
-            Constructor
+    Constructors
     ---------------------------
     */
 
@@ -31,10 +37,11 @@ public class LinkedBlockData {
 
     /*
     ---------------------------
-              Getters
+    Methods
     ---------------------------
     */
 
+    //Getters
     public BlockPos getRelativePos() {
         return relativePos;
     }
@@ -42,4 +49,5 @@ public class LinkedBlockData {
     public BlockState getBlockState() {
         return blockState;
     }
+
 }

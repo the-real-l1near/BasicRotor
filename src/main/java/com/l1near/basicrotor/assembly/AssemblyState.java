@@ -1,4 +1,27 @@
 package com.l1near.basicrotor.assembly;
 
-public class AssemblyState {
+/*
+---------------------------
+Imports
+---------------------------
+*/
+
+public enum AssemblyState {
+
+    /*
+    ---------------------------
+    Enum Values
+    ---------------------------
+    */
+
+    STOPPED,
+
+    STARTING,
+
+    RUNNING,
+
+    BRAKING,
+
+    RETURNING
+
 }
