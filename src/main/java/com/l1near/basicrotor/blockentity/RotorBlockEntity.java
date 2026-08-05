@@ -6,6 +6,8 @@ Imports
 ---------------------------
 */
 
+import com.l1near.basicrotor.movement.MovementData;
+import com.l1near.basicrotor.movement.MovementRuntime;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -19,14 +21,9 @@ public class RotorBlockEntity extends BlockEntity {
     Fields
     ---------------------------
     */
-    private float rotation;
-    private float lastRotation;
+    private final MovementData movementData;
 
-    private float speed = 0.0F;
-    private float acceleration = 0.2F;
-
-    private static final float MAX_SPEED = 30.0F;
-    private static final float FRICTION = 0.995F;
+    private final MovementRuntime movementRuntime;
 
     /*
     ---------------------------
@@ -36,6 +33,9 @@ public class RotorBlockEntity extends BlockEntity {
 
     public RotorBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.ROTOR, pos, state);
+
+        this.movementData = new MovementData();
+        this.movementRuntime = new MovementRuntime(movementData);
     }
 
     /*
@@ -58,19 +58,7 @@ public class RotorBlockEntity extends BlockEntity {
     }
     //clientTick
     private void clientTick() {
-        lastRotation = rotation;
-
-
-        speed += acceleration;
-
-
-        speed = Mth.clamp(speed, -MAX_SPEED, MAX_SPEED);
-
-
-        speed *= FRICTION;
-
-
-        rotation += speed;
+        movementRuntime.tick();
     }
 
     //serverTick
@@ -80,10 +68,14 @@ public class RotorBlockEntity extends BlockEntity {
 
     //Getter
     public float getRotation() {
-        return rotation;
+        return movementData.getRotation();
     }
 
     public float getRotation(float partialTick) {
-        return Mth.lerp(partialTick, lastRotation, rotation);
+        return Mth.lerp(
+                partialTick,
+                movementData.getLastRotation(),
+                movementData.getRotation()
+        );
     }
 }
