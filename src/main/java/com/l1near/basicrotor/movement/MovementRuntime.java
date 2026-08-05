@@ -18,24 +18,7 @@ public class MovementRuntime {
 
     private final MovementData movementData;
 
-    /*
-    ---------------------------
-    Constructors
-    ---------------------------
-    */
-
-    public MovementRuntime(MovementData movementData) {
-        this.movementData = movementData;
-    }
-
-    /*
-    ---------------------------
-    Methods
-    ---------------------------
-    */
-
-    //Tick
-    public void tick(MovementInput input) {
+    private void updateRunning(MovementInput input) {
 
         movementData.setLastRotation(
                 movementData.getRotation()
@@ -63,7 +46,53 @@ public class MovementRuntime {
                 movementData.getRotation()
                         + movementData.getSpeed()
         );
+    }
 
+    private void updateBraking(MovementInput input) {
+
+    }
+
+    private void updateReturning(MovementInput input) {
+
+    }
+
+    private void updateStopped(MovementInput input) {
+
+    }
+
+    /*
+    ---------------------------
+    Constructors
+    ---------------------------
+    */
+
+    public MovementRuntime(MovementData movementData) {
+        this.movementData = movementData;
+    }
+
+    /*
+    ---------------------------
+    Methods
+    ---------------------------
+    */
+
+    //Tick
+    public void tick(MovementInput input) {
+
+        switch (movementData.getState()) {
+
+            case RUNNING ->
+                    updateRunning(input);
+
+            case BRAKING ->
+                    updateBraking(input);
+
+            case RETURNING ->
+                    updateReturning(input);
+
+            case STOPPED ->
+                    updateStopped(input);
+        }
     }
 
 }
