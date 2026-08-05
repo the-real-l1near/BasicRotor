@@ -35,7 +35,7 @@ public class MovementRuntime {
     */
 
     //Tick
-    public void tick() {
+    public void tick(MovementInput input) {
 
         movementData.setLastRotation(
                 movementData.getRotation()

@@ -7,6 +7,7 @@ Imports
 */
 
 import com.l1near.basicrotor.movement.MovementData;
+import com.l1near.basicrotor.movement.MovementInput;
 import com.l1near.basicrotor.movement.MovementRuntime;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.Mth;
@@ -37,7 +38,6 @@ public class RotorBlockEntity extends BlockEntity {
         this.movementData = new MovementData();
         this.movementRuntime = new MovementRuntime(movementData);
     }
-
     /*
     ---------------------------
     Methods
@@ -58,7 +58,12 @@ public class RotorBlockEntity extends BlockEntity {
     }
     //clientTick
     private void clientTick() {
-        movementRuntime.tick();
+
+        MovementInput input = new MovementInput();
+
+        input.setPowered(true);
+
+        movementRuntime.tick(input);
     }
 
     //serverTick
