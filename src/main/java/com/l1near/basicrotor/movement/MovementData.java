@@ -25,6 +25,7 @@ public class MovementData {
     private float maxSpeed;
 
     private float friction;
+    private MovementState state;
 
     /*
     ---------------------------
@@ -33,6 +34,7 @@ public class MovementData {
     */
 
     public MovementData() {
+        this.state = MovementState.RUNNING;
         this.rotation = 0.0F;
         this.lastRotation = 0.0F;
 
@@ -50,6 +52,10 @@ public class MovementData {
     */
 
     //Getters
+    public MovementState getState() {
+        return state;
+    }
+
     public float getRotation() {
         return rotation;
     }
@@ -97,6 +103,11 @@ public class MovementData {
 
     public void setFriction(float friction) {
         this.friction = friction;
+    }
+
+    //Setters
+    public void setState(MovementState state) {
+        this.state = state;
     }
 
 }
