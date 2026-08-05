@@ -11,6 +11,10 @@ import net.minecraft.core.BlockPos;
 import java.util.Collection;
 import java.util.LinkedHashMap;
 
+import java.util.Collection;
+import java.util.Map;
+import java.util.Set;
+
 public class LinkedAssembly {
 
     /*
@@ -38,10 +42,10 @@ public class LinkedAssembly {
     }
 
     /*
-    ---------------------------
-    Methods
-    ---------------------------
-    */
+---------------------------
+Methods
+---------------------------
+*/
 
     //Add
     public void addBlock(
@@ -61,6 +65,16 @@ public class LinkedAssembly {
         return linkedBlocks.containsKey(relativePos);
     }
 
+    //Entries
+    public Set<Map.Entry<BlockPos, LinkedBlockData>> getEntries() {
+        return linkedBlocks.entrySet();
+    }
+
+    //Blocks
+    public Collection<LinkedBlockData> getBlocks() {
+        return linkedBlocks.values();
+    }
+
     //Getters
     public BlockPos getOriginPos() {
         return originPos;
@@ -69,6 +83,7 @@ public class LinkedAssembly {
     public LinkedHashMap<BlockPos, LinkedBlockData> getLinkedBlocks() {
         return linkedBlocks;
     }
+
     public AssemblyState getState() {
         return state;
     }
