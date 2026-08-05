@@ -6,7 +6,6 @@ Imports
 ---------------------------
 */
 
-import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class LinkedBlockData {
@@ -17,8 +16,6 @@ public class LinkedBlockData {
     ---------------------------
     */
 
-    private final BlockPos relativePos;
-
     private final BlockState blockState;
 
     /*
@@ -27,11 +24,7 @@ public class LinkedBlockData {
     ---------------------------
     */
 
-    public LinkedBlockData(
-            BlockPos relativePos,
-            BlockState blockState
-    ) {
-        this.relativePos = relativePos;
+    public LinkedBlockData(BlockState blockState) {
         this.blockState = blockState;
     }
 
@@ -42,10 +35,6 @@ public class LinkedBlockData {
     */
 
     //Getters
-    public BlockPos getRelativePos() {
-        return relativePos;
-    }
-
     public BlockState getBlockState() {
         return blockState;
     }
