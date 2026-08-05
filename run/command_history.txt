@@ -1,2 +1,3 @@
 /give @a basicrotor:rotor
 /time set minecraft:day
+/time set minecraft:night
