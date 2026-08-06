@@ -72,6 +72,12 @@ public class RotorBlockEntity extends BlockEntity {
         movementInput.setPowered(power > 0);
 
         movementRuntime.tick(movementInput);
+        System.out.println(
+                "State = "
+                        + movementData.getState()
+                        + " | Speed = "
+                        + movementData.getSpeed()
+        );
     }
 
     //Getter

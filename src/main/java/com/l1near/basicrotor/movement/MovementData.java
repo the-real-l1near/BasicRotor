@@ -88,6 +88,13 @@ public class MovementData {
 
     //Setters
     public void setRotation(float rotation) {
+
+        rotation %= 360.0F;
+
+        if (rotation < 0.0F) {
+            rotation += 360.0F;
+        }
+
         this.rotation = rotation;
     }
 

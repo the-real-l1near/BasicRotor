@@ -19,6 +19,7 @@ public class MovementRuntime {
     private static final float MAX_SPEED = 1.0F;
     private final MovementData movementData;
     private static final float BRAKING_FORCE = 0.5F;
+    private static final float RETURN_SPEED = 1.0F;
     //Starting
     private void updateStarting(MovementInput input) {
 
@@ -38,9 +39,7 @@ public class MovementRuntime {
         );
 
         movementData.setSpeed(speed);
-        System.out.println(
-                "STARTING speed = " + speed
-        );
+
         movementData.setRotation(
                 movementData.getRotation()
                         + speed
@@ -64,9 +63,6 @@ public class MovementRuntime {
         movementData.setRotation(
                 movementData.getRotation()
                         + movementData.getSpeed()
-        );
-        System.out.println(
-                "RUNNING speed = " + movementData.getSpeed()
         );
     }
 
@@ -97,9 +93,6 @@ public class MovementRuntime {
 
 
         movementData.setSpeed(speed);
-        System.out.println(
-                "BRAKING speed = " + speed
-        );
 
         movementData.setRotation(
                 movementData.getRotation()
@@ -109,6 +102,50 @@ public class MovementRuntime {
 
     private void updateReturning(MovementInput input) {
 
+        float rotation =
+                movementData.getRotation();
+
+        float homeRotation =
+                movementData.getHomeRotation();
+
+
+        float difference =
+                homeRotation - rotation;
+
+
+        if (Math.abs(difference) <= RETURN_SPEED) {
+
+            movementData.setRotation(
+                    homeRotation
+            );
+
+            movementData.setState(
+                    MovementState.STOPPED
+            );
+
+            return;
+        }
+
+
+        movementData.setLastRotation(
+                rotation
+        );
+
+
+        if (difference > 0) {
+
+            rotation += RETURN_SPEED;
+
+        } else {
+
+            rotation -= RETURN_SPEED;
+
+        }
+
+
+        movementData.setRotation(
+                rotation
+        );
     }
 
     private void updateStopped(MovementInput input) {
