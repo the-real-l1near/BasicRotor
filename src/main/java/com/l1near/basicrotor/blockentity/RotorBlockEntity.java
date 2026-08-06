@@ -6,6 +6,8 @@ Imports
 ---------------------------
 */
 
+import com.l1near.basicrotor.assembly.LinkedAssembly;
+import com.l1near.basicrotor.assembly.runtime.AssemblyRuntime;
 import com.l1near.basicrotor.movement.MovementData;
 import com.l1near.basicrotor.movement.MovementInput;
 import com.l1near.basicrotor.movement.MovementRuntime;
@@ -26,6 +28,10 @@ public class RotorBlockEntity extends BlockEntity {
 
     private final MovementRuntime movementRuntime;
 
+    private final AssemblyRuntime assemblyRuntime;
+
+    private final LinkedAssembly linkedAssembly;
+
     /*
     ---------------------------
     Constructors
@@ -37,6 +43,8 @@ public class RotorBlockEntity extends BlockEntity {
 
         this.movementData = new MovementData();
         this.movementRuntime = new MovementRuntime(movementData);
+        this.linkedAssembly = new LinkedAssembly(pos);
+        this.assemblyRuntime = new AssemblyRuntime();
     }
     /*
     ---------------------------
@@ -72,6 +80,12 @@ public class RotorBlockEntity extends BlockEntity {
         movementInput.setPowered(power > 0);
 
         movementRuntime.tick(movementInput);
+
+        assemblyRuntime.update(
+                linkedAssembly,
+                movementData
+        );
+
         System.out.println(
                 "State = "
                         + movementData.getState()
@@ -91,5 +105,9 @@ public class RotorBlockEntity extends BlockEntity {
                 movementData.getLastRotation(),
                 movementData.getRotation()
         );
+    }
+
+    public LinkedAssembly getLinkedAssembly() {
+        return linkedAssembly;
     }
 }

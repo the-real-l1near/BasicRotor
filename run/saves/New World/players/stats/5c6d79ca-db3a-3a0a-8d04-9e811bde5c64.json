@@ -1,0 +1,21 @@
+{
+  "stats": {
+    "minecraft:picked_up": {
+      "minecraft:lever": 1
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 681,
+      "minecraft:walk_one_cm": 280,
+      "minecraft:total_world_time": 744,
+      "minecraft:leave_game": 1,
+      "minecraft:play_time": 681,
+      "minecraft:time_since_death": 681
+    },
+    "minecraft:used": {
+      "minecraft:grass_block": 1,
+      "basicrotor:rotor": 1,
+      "minecraft:lever": 1
+    }
+  },
+  "DataVersion": 4903
+}
