@@ -15,31 +15,14 @@ public class MovementRuntime {
     Fields
     ---------------------------
     */
-
+    private static final float ACCELERATION = 0.05F;
+    private static final float MAX_SPEED = 1.0F;
     private final MovementData movementData;
 
     private void updateRunning(MovementInput input) {
 
         movementData.setLastRotation(
                 movementData.getRotation()
-        );
-
-        movementData.setSpeed(
-                movementData.getSpeed()
-                        + movementData.getAcceleration()
-        );
-
-        movementData.setSpeed(
-                Mth.clamp(
-                        movementData.getSpeed(),
-                        -movementData.getMaxSpeed(),
-                        movementData.getMaxSpeed()
-                )
-        );
-
-        movementData.setSpeed(
-                movementData.getSpeed()
-                        * movementData.getFriction()
         );
 
         movementData.setRotation(
@@ -91,10 +74,39 @@ public class MovementRuntime {
 
     }
 
+    //Starting
     private void updateStarting(MovementInput input) {
 
-    }
+        movementData.setLastRotation(
+                movementData.getRotation()
+        );
 
+        float speed =
+                movementData.getSpeed();
+
+        speed += movementData.getAcceleration();
+
+        speed = Mth.clamp(
+                speed,
+                0.0F,
+                movementData.getMaxSpeed()
+        );
+
+        movementData.setSpeed(speed);
+
+        movementData.setRotation(
+                movementData.getRotation()
+                        + speed
+        );
+
+
+        if (speed >= movementData.getMaxSpeed()) {
+
+            movementData.setState(
+                    MovementState.RUNNING
+            );
+        }
+    }
     /*
     ---------------------------
     Constructors
