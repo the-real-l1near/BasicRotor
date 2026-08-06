@@ -19,7 +19,7 @@ public class MovementData {
     private float lastRotation;
 
     private float speed;
-
+    private float homeRotation;
     private float acceleration;
 
     private float maxSpeed;
@@ -37,12 +37,14 @@ public class MovementData {
         this.state = MovementState.RUNNING;
         this.rotation = 0.0F;
         this.lastRotation = 0.0F;
+        this.homeRotation = 0.0F;
 
         this.speed = 0.0F;
         this.acceleration = 0.2F;
 
         this.maxSpeed = 30.0F;
         this.friction = 0.995F;
+
     }
 
     /*
@@ -80,6 +82,10 @@ public class MovementData {
         return friction;
     }
 
+    public float getHomeRotation() {
+        return homeRotation;
+    }
+
     //Setters
     public void setRotation(float rotation) {
         this.rotation = rotation;
@@ -103,6 +109,10 @@ public class MovementData {
 
     public void setFriction(float friction) {
         this.friction = friction;
+    }
+
+    public void setHomeRotation(float homeRotation) {
+        this.homeRotation = homeRotation;
     }
 
     //Setters
