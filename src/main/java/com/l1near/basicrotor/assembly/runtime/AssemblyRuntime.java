@@ -24,4 +24,24 @@ public class AssemblyRuntime {
     ---------------------------
     */
 
+    //Start
+    public void start() {
+
+    }
+
+    //Tick
+    public void tick() {
+
+    }
+
+    //Rotate
+    public void rotateBy(float angle) {
+
+    }
+
+    //Reset
+    public void reset() {
+
+    }
+
 }
