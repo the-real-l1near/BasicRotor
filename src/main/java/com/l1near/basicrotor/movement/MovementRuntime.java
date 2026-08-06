@@ -151,7 +151,7 @@ public class MovementRuntime {
 
         MovementState currentState =
                 movementData.getState();
-        
+
         if (input.isPowered()) {
 
             if (currentState == MovementState.STOPPED) {
