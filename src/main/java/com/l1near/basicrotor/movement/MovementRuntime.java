@@ -18,62 +18,7 @@ public class MovementRuntime {
     private static final float ACCELERATION = 0.05F;
     private static final float MAX_SPEED = 1.0F;
     private final MovementData movementData;
-
-    private void updateRunning(MovementInput input) {
-
-        movementData.setLastRotation(
-                movementData.getRotation()
-        );
-
-        movementData.setRotation(
-                movementData.getRotation()
-                        + movementData.getSpeed()
-        );
-    }
-
     private static final float BRAKING_FORCE = 0.5F;
-
-    private void updateBraking(MovementInput input) {
-
-        float speed =
-                movementData.getSpeed();
-
-
-        speed -= BRAKING_FORCE;
-
-
-        if (speed <= 0.0F) {
-
-            speed = 0.0F;
-
-            movementData.setState(
-                    MovementState.RETURNING
-            );
-        }
-
-
-        movementData.setSpeed(speed);
-
-
-        movementData.setLastRotation(
-                movementData.getRotation()
-        );
-
-
-        movementData.setRotation(
-                movementData.getRotation()
-                        + speed
-        );
-    }
-
-    private void updateReturning(MovementInput input) {
-
-    }
-
-    private void updateStopped(MovementInput input) {
-
-    }
-
     //Starting
     private void updateStarting(MovementInput input) {
 
@@ -93,7 +38,9 @@ public class MovementRuntime {
         );
 
         movementData.setSpeed(speed);
-
+        System.out.println(
+                "STARTING speed = " + speed
+        );
         movementData.setRotation(
                 movementData.getRotation()
                         + speed
@@ -107,6 +54,68 @@ public class MovementRuntime {
             );
         }
     }
+
+    private void updateRunning(MovementInput input) {
+
+        movementData.setLastRotation(
+                movementData.getRotation()
+        );
+
+        movementData.setRotation(
+                movementData.getRotation()
+                        + movementData.getSpeed()
+        );
+        System.out.println(
+                "RUNNING speed = " + movementData.getSpeed()
+        );
+    }
+
+
+
+    private void updateBraking(MovementInput input) {
+
+        movementData.setLastRotation(
+                movementData.getRotation()
+        );
+
+
+        float speed =
+                movementData.getSpeed();
+
+
+        speed -= movementData.getAcceleration();
+
+
+        if (speed <= 0.0F) {
+
+            speed = 0.0F;
+
+            movementData.setState(
+                    MovementState.RETURNING
+            );
+        }
+
+
+        movementData.setSpeed(speed);
+        System.out.println(
+                "BRAKING speed = " + speed
+        );
+
+        movementData.setRotation(
+                movementData.getRotation()
+                        + speed
+        );
+    }
+
+    private void updateReturning(MovementInput input) {
+
+    }
+
+    private void updateStopped(MovementInput input) {
+
+    }
+
+
     /*
     ---------------------------
     Constructors
