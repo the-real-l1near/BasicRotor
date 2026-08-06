@@ -86,6 +86,11 @@ public class RotorBlockEntity extends BlockEntity {
                 movementData
         );
 
+        assemblyRuntime.update(
+                linkedAssembly,
+                movementData
+        );
+
         System.out.println(
                 "State = "
                         + movementData.getState()
