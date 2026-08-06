@@ -78,22 +78,9 @@ public class MovementRuntime {
 
     //Tick
     public void tick(MovementInput input) {
-        if (input.isPowered()) {
 
-            movementData.setState(
-                    MovementState.RUNNING
-            );
+        updateState(input);
 
-        } else {
-
-            movementData.setState(
-                    MovementState.BRAKING
-            );
-        }
-        System.out.println(
-                "Movement state: "
-                        + movementData.getState()
-        );
         switch (movementData.getState()) {
 
             case RUNNING ->
@@ -107,6 +94,40 @@ public class MovementRuntime {
 
             case STOPPED ->
                     updateStopped(input);
+        }
+    }
+
+    private void updateState(MovementInput input) {
+
+        MovementState currentState =
+                movementData.getState();
+
+
+        if (input.isPowered()) {
+
+            if (currentState == MovementState.STOPPED) {
+
+                movementData.setHomeRotation(
+                        movementData.getRotation()
+                );
+            }
+
+            if (currentState != MovementState.RUNNING) {
+
+                movementData.setState(
+                        MovementState.RUNNING
+                );
+            }
+
+
+        } else {
+
+            if (currentState == MovementState.RUNNING) {
+
+                movementData.setState(
+                        MovementState.BRAKING
+                );
+            }
         }
     }
 
