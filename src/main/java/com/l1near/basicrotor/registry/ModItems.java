@@ -7,6 +7,7 @@ Imports
 */
 
 import com.l1near.basicrotor.BasicRotor;
+import com.l1near.basicrotor.item.AssemblyWrenchItem;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
@@ -37,6 +38,25 @@ public final class ModItems {
             )
     );
 
+    public static final Item ASSEMBLY_WRENCH = Registry.register(
+            BuiltInRegistries.ITEM,
+            Identifier.fromNamespaceAndPath(
+                    BasicRotor.MOD_ID,
+                    "assembly_wrench"
+            ),
+            new AssemblyWrenchItem(
+                    new Item.Properties()
+                            .setId(
+                                    ResourceKey.create(
+                                            Registries.ITEM,
+                                            Identifier.fromNamespaceAndPath(
+                                                    BasicRotor.MOD_ID,
+                                                    "assembly_wrench"
+                                            )
+                                    )
+                            )
+            )
+    );
     /*
     ---------------------------
     Methods

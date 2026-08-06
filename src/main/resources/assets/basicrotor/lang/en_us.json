@@ -1,3 +1,6 @@
+
 {
-  "block.basicrotor.rotor": "Rotor"
+  "block.basicrotor.rotor": "Rotor",
+  "item.basicrotor.assembly_wrench": "Assembly Wrench"
 }
+
