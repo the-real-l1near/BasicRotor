@@ -58,8 +58,6 @@ public class MovementRuntime {
 
     private void updateBraking(MovementInput input) {
 
-
-
         float speed =
                 movementData.getSpeed();
 
@@ -153,8 +151,7 @@ public class MovementRuntime {
 
         MovementState currentState =
                 movementData.getState();
-
-
+        
         if (input.isPowered()) {
 
             if (currentState == MovementState.STOPPED) {
