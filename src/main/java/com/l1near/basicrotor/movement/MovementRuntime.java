@@ -78,7 +78,22 @@ public class MovementRuntime {
 
     //Tick
     public void tick(MovementInput input) {
+        if (input.isPowered()) {
 
+            movementData.setState(
+                    MovementState.RUNNING
+            );
+
+        } else {
+
+            movementData.setState(
+                    MovementState.BRAKING
+            );
+        }
+        System.out.println(
+                "Movement state: "
+                        + movementData.getState()
+        );
         switch (movementData.getState()) {
 
             case RUNNING ->
