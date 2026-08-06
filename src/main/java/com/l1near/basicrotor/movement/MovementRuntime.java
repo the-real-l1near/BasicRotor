@@ -48,8 +48,39 @@ public class MovementRuntime {
         );
     }
 
+    private static final float BRAKING_FORCE = 0.5F;
+
     private void updateBraking(MovementInput input) {
 
+        float speed =
+                movementData.getSpeed();
+
+
+        speed -= BRAKING_FORCE;
+
+
+        if (speed <= 0.0F) {
+
+            speed = 0.0F;
+
+            movementData.setState(
+                    MovementState.RETURNING
+            );
+        }
+
+
+        movementData.setSpeed(speed);
+
+
+        movementData.setLastRotation(
+                movementData.getRotation()
+        );
+
+
+        movementData.setRotation(
+                movementData.getRotation()
+                        + speed
+        );
     }
 
     private void updateReturning(MovementInput input) {
