@@ -84,21 +84,16 @@ public class MovementRuntime {
 
     private void updateReturning(MovementInput input) {
 
-        float rotation =
-                movementData.getRotation();
+        float distance =
+                getForwardAngleDistance(
+                        movementData.getRotation(),
+                        movementData.getHomeRotation()
+                );
 
-        float homeRotation =
-                movementData.getHomeRotation();
-
-
-        float difference =
-                homeRotation - rotation;
-
-
-        if (Math.abs(difference) <= RETURN_SPEED) {
+        if (distance <= RETURN_SPEED) {
 
             movementData.setRotation(
-                    homeRotation
+                    movementData.getHomeRotation()
             );
 
             movementData.setState(
@@ -108,26 +103,7 @@ public class MovementRuntime {
             return;
         }
 
-
-        movementData.setLastRotation(
-                rotation
-        );
-
-
-        if (difference > 0) {
-
-            rotation += RETURN_SPEED;
-
-        } else {
-
-            rotation -= RETURN_SPEED;
-
-        }
-
-
-        movementData.setRotation(
-                rotation
-        );
+        rotateBy(RETURN_SPEED);
     }
 
     private void updateStopped(MovementInput input) {
@@ -222,6 +198,16 @@ public class MovementRuntime {
         );
     }
 
+    //Forward Angle Distance
+    private float getForwardAngleDistance(
+            float current,
+            float target
+    ) {
 
+        if (target >= current) {
+            return target - current;
+        }
 
+        return (360.0F - current) + target;
+    }
 }
