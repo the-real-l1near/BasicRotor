@@ -26,7 +26,6 @@ public class LinkedAssembly {
 
     private final LinkedHashMap<BlockPos, LinkedBlockData> linkedBlocks;
 
-    private AssemblyState state;
 
     /*
     ---------------------------
@@ -37,7 +36,6 @@ public class LinkedAssembly {
     public LinkedAssembly(BlockPos originPos) {
         this.originPos = originPos;
         this.linkedBlocks = new LinkedHashMap<>();
-        this.state = AssemblyState.STOPPED;
     }
 
     /*
@@ -83,9 +81,6 @@ Methods
         return linkedBlocks;
     }
 
-    public AssemblyState getState() {
-        return state;
-    }
 
     //Size
     public int size() {
@@ -97,9 +92,5 @@ Methods
         return linkedBlocks.isEmpty();
     }
 
-    //Setters
-    public void setState(AssemblyState state) {
-        this.state = state;
-    }
 
 }
