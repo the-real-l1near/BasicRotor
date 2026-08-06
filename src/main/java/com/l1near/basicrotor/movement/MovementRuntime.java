@@ -23,10 +23,6 @@ public class MovementRuntime {
     //Starting
     private void updateStarting(MovementInput input) {
 
-        movementData.setLastRotation(
-                movementData.getRotation()
-        );
-
         float speed =
                 movementData.getSpeed();
 
@@ -40,10 +36,7 @@ public class MovementRuntime {
 
         movementData.setSpeed(speed);
 
-        movementData.setRotation(
-                movementData.getRotation()
-                        + speed
-        );
+        rotateBy(speed);
 
 
         if (speed >= movementData.getMaxSpeed()) {
@@ -56,13 +49,8 @@ public class MovementRuntime {
 
     private void updateRunning(MovementInput input) {
 
-        movementData.setLastRotation(
-                movementData.getRotation()
-        );
-
-        movementData.setRotation(
-                movementData.getRotation()
-                        + movementData.getSpeed()
+        rotateBy(
+                movementData.getSpeed()
         );
     }
 
@@ -70,9 +58,6 @@ public class MovementRuntime {
 
     private void updateBraking(MovementInput input) {
 
-        movementData.setLastRotation(
-                movementData.getRotation()
-        );
 
 
         float speed =
@@ -94,10 +79,7 @@ public class MovementRuntime {
 
         movementData.setSpeed(speed);
 
-        movementData.setRotation(
-                movementData.getRotation()
-                        + speed
-        );
+        rotateBy(speed);
     }
 
     private void updateReturning(MovementInput input) {
@@ -220,5 +202,26 @@ public class MovementRuntime {
             }
         }
     }
+
+    /*
+    ---------------------------
+    Helpers
+    ---------------------------
+    */
+
+    //Rotation
+    private void rotateBy(float angle) {
+
+        movementData.setLastRotation(
+                movementData.getRotation()
+        );
+
+        movementData.setRotation(
+                movementData.getRotation()
+                        + angle
+        );
+    }
+
+
 
 }

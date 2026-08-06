@@ -1,7 +1,7 @@
-[17:44:52] [main/WARN] (FabricLoader/Knot) Class path entries reference missing files: D:\Modding\basicrotor\build\resources\client - the game may not load properly!
-[17:44:52] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 26.2 with Fabric Loader 0.19.3
-[17:44:52] [main/INFO] (FabricLoader/Mappings) Mappings not present!
-[17:44:52] [main/INFO] (FabricLoader) Loading 51 mods:
+[17:56:42] [main/WARN] (FabricLoader/Knot) Class path entries reference missing files: D:\Modding\basicrotor\build\resources\client - the game may not load properly!
+[17:56:42] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 26.2 with Fabric Loader 0.19.3
+[17:56:42] [main/INFO] (FabricLoader/Mappings) Mappings not present!
+[17:56:42] [main/INFO] (FabricLoader) Loading 51 mods:
 	- basicrotor-private 1.0.0
 	- fabric-api 0.156.0+26.2
 	- fabric-api-base 2.0.4+ece063239e
@@ -53,14 +53,14 @@
 	- java 25
 	- minecraft 26.2
 	- mixinextras 0.5.4
-[17:44:53] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/C:/Users/HELIOS%20300/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.17.3+mixin.0.8.7/41c4a3984a80f4679e759fb9f495587acc5cdac7/sponge-mixin-0.17.3+mixin.0.8.7.jar Service=Knot/Fabric Env=CLIENT
-[17:44:53] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_25
-[17:44:54] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.4).
-[17:44:54] [Datafixer Bootstrap #0/INFO] (Minecraft) 295 Datafixer optimizations took 255 milliseconds
-[17:45:01] [Render thread/INFO] (Minecraft) Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
-[17:45:01] [Render thread/INFO] (Minecraft) Setting user: Player870
-[17:45:01] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
-[17:45:02] [Download-2/ERROR] (Minecraft) Failed to fetch user properties
+[17:56:42] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/C:/Users/HELIOS%20300/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.17.3+mixin.0.8.7/41c4a3984a80f4679e759fb9f495587acc5cdac7/sponge-mixin-0.17.3+mixin.0.8.7.jar Service=Knot/Fabric Env=CLIENT
+[17:56:42] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_25
+[17:56:43] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.4).
+[17:56:44] [Datafixer Bootstrap #0/INFO] (Minecraft) 295 Datafixer optimizations took 293 milliseconds
+[17:56:50] [Render thread/INFO] (Minecraft) Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[17:56:50] [Render thread/INFO] (Minecraft) Setting user: Player242
+[17:56:51] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
+[17:56:51] [Download-2/ERROR] (Minecraft) Failed to fetch user properties
 com.mojang.authlib.exceptions.InvalidCredentialsException: Status: 401
 	at knot//com.mojang.authlib.exceptions.MinecraftClientHttpException.toAuthenticationException(MinecraftClientHttpException.java:70)
 	at knot//com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:173)
@@ -76,13 +76,13 @@ Caused by: MinecraftClientHttpException[type=HTTP_ERROR, status=401, response=Er
 	at knot//com.mojang.authlib.minecraft.client.MinecraftClient.get(MinecraftClient.java:65)
 	at knot//com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:123)
 	... 5 more
-[17:45:02] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.4.1-snapshot
-[17:45:02] [Render thread/INFO] (Minecraft) Using graphics backend OpenGL, using drivers: 3.3.0 NVIDIA 595.97
-[17:45:02] [Render thread/INFO] (Minecraft) Using graphics device: NVIDIA GeForce RTX 5060/PCIe/SSE2 (NVIDIA Corporation)
-[17:45:02] [Render thread/INFO] (Minecraft) Using graphics device extensions: GL_ARB_multi_draw_indirect, GL_ARB_buffer_storage, GL_ARB_shader_draw_parameters, GL_ARB_base_instance, GL_KHR_debug, GL_ARB_draw_indirect, GL_ARB_clip_control, GL_ARB_vertex_attrib_binding, GL_ARB_direct_state_access, GL_EXT_texture_filter_anisotropic
-[17:45:03] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, basicrotor-private, fabric-api, fabric-api-base, fabric-api-lookup-api-v1, fabric-biome-api-v1, fabric-block-api-v1, fabric-block-getter-api-v2, fabric-client-gametest-api-v1, fabric-command-api-v2, fabric-content-registries-v0, fabric-convention-tags-v2, fabric-crash-report-info-v1, fabric-creative-tab-api-v1, fabric-data-attachment-api-v1, fabric-data-generation-api-v1, fabric-debug-api-v1, fabric-dimensions-v1, fabric-entity-events-v1, fabric-events-interaction-v0, fabric-game-rule-api-v1, fabric-gametest-api-v1, fabric-item-api-v1, fabric-key-mapping-api-v1, fabric-lifecycle-events-v1, fabric-loot-api-v3, fabric-menu-api-v1, fabric-message-api-v1, fabric-model-loading-api-v1, fabric-networking-api-v1, fabric-object-builder-api-v1, fabric-particles-v1, fabric-permission-api-v1, fabric-recipe-api-v1, fabric-registry-sync-v0, fabric-renderer-api-v1, fabric-renderer-indigo, fabric-rendering-fluids-v1, fabric-rendering-v1, fabric-resource-conditions-api-v1, fabric-resource-loader-v0, fabric-resource-loader-v1, fabric-screen-api-v1, fabric-serialization-api-v1, fabric-sound-api-v1, fabric-tag-api-v1, fabric-transfer-api-v1, fabric-transitive-access-wideners-v1, fabricloader
-[17:45:03] [Download-2/INFO] (Minecraft) Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC
-[17:45:03] [Download-2/ERROR] (Minecraft) Failed to fetch Realms feature flags
+[17:56:51] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.4.1-snapshot
+[17:56:51] [Render thread/INFO] (Minecraft) Using graphics backend OpenGL, using drivers: 3.3.0 NVIDIA 595.97
+[17:56:51] [Render thread/INFO] (Minecraft) Using graphics device: NVIDIA GeForce RTX 5060/PCIe/SSE2 (NVIDIA Corporation)
+[17:56:51] [Render thread/INFO] (Minecraft) Using graphics device extensions: GL_ARB_multi_draw_indirect, GL_ARB_buffer_storage, GL_ARB_shader_draw_parameters, GL_ARB_base_instance, GL_KHR_debug, GL_ARB_draw_indirect, GL_ARB_clip_control, GL_ARB_vertex_attrib_binding, GL_ARB_direct_state_access, GL_EXT_texture_filter_anisotropic
+[17:56:52] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, basicrotor-private, fabric-api, fabric-api-base, fabric-api-lookup-api-v1, fabric-biome-api-v1, fabric-block-api-v1, fabric-block-getter-api-v2, fabric-client-gametest-api-v1, fabric-command-api-v2, fabric-content-registries-v0, fabric-convention-tags-v2, fabric-crash-report-info-v1, fabric-creative-tab-api-v1, fabric-data-attachment-api-v1, fabric-data-generation-api-v1, fabric-debug-api-v1, fabric-dimensions-v1, fabric-entity-events-v1, fabric-events-interaction-v0, fabric-game-rule-api-v1, fabric-gametest-api-v1, fabric-item-api-v1, fabric-key-mapping-api-v1, fabric-lifecycle-events-v1, fabric-loot-api-v3, fabric-menu-api-v1, fabric-message-api-v1, fabric-model-loading-api-v1, fabric-networking-api-v1, fabric-object-builder-api-v1, fabric-particles-v1, fabric-permission-api-v1, fabric-recipe-api-v1, fabric-registry-sync-v0, fabric-renderer-api-v1, fabric-renderer-indigo, fabric-rendering-fluids-v1, fabric-rendering-v1, fabric-resource-conditions-api-v1, fabric-resource-loader-v0, fabric-resource-loader-v1, fabric-screen-api-v1, fabric-serialization-api-v1, fabric-sound-api-v1, fabric-tag-api-v1, fabric-transfer-api-v1, fabric-transitive-access-wideners-v1, fabricloader
+[17:56:52] [Download-2/INFO] (Minecraft) Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC
+[17:56:52] [Download-2/ERROR] (Minecraft) Failed to fetch Realms feature flags
 com.mojang.realmsclient.exception.RealmsServiceException: Realms authentication error with message 'java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC'
 	at knot//com.mojang.realmsclient.client.RealmsClient.execute(RealmsClient.java:528)
 	at knot//com.mojang.realmsclient.client.RealmsClient.fetchFeatureFlags(RealmsClient.java:187)
@@ -90,26 +90,26 @@ com.mojang.realmsclient.exception.RealmsServiceException: Realms authentication 
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
 	at java.base/java.lang.Thread.run(Thread.java:1474)
-[17:45:04] [Worker-Main-7/INFO] (Minecraft) Found unifont_pua-17.0.01.hex, loading
-[17:45:04] [Worker-Main-8/INFO] (Minecraft) Found unifont_all_no_pua-17.0.01.hex, loading
-[17:45:04] [Worker-Main-4/INFO] (Minecraft) Found unifont_jp_patch-17.0.01.hex, loading
-[17:45:08] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on Edifier MR4 (Realtek High Definition Audio)
-[17:45:08] [Render thread/INFO] (Minecraft) Sound engine started
-[17:45:08] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
-[17:45:08] [Render thread/INFO] (Minecraft) Created: 128x128x0 minecraft:textures/atlas/decorated_pot.png-atlas
-[17:45:08] [Render thread/INFO] (Minecraft) Created: 2048x1024x0 minecraft:textures/atlas/armor_trims.png-atlas
-[17:45:08] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
-[17:45:08] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/shield_patterns.png-atlas
-[17:45:08] [Render thread/INFO] (Minecraft) Created: 2048x2048x4 minecraft:textures/atlas/blocks.png-atlas
-[17:45:08] [Render thread/INFO] (Minecraft) Created: 512x512x0 minecraft:textures/atlas/chest.png-atlas
-[17:45:08] [Render thread/INFO] (Minecraft) Created: 256x128x0 minecraft:textures/atlas/celestials.png-atlas
-[17:45:08] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/banner_patterns.png-atlas
-[17:45:08] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/items.png-atlas
-[17:45:08] [Render thread/INFO] (Minecraft) Created: 1024x1024x0 minecraft:textures/atlas/gui.png-atlas
-[17:45:08] [Render thread/INFO] (Minecraft) Created: 128x64x0 minecraft:textures/atlas/map_decorations.png-atlas
-[17:45:08] [Render thread/INFO] (Minecraft) Created: 512x512x0 minecraft:textures/atlas/shulker_boxes.png-atlas
-[17:45:08] [Download-2/INFO] (Minecraft) Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC
-[17:45:08] [Download-2/ERROR] (Minecraft) Couldn't connect to realms
+[17:56:53] [Worker-Main-3/INFO] (Minecraft) Found unifont_pua-17.0.01.hex, loading
+[17:56:53] [Worker-Main-12/INFO] (Minecraft) Found unifont_all_no_pua-17.0.01.hex, loading
+[17:56:53] [Worker-Main-5/INFO] (Minecraft) Found unifont_jp_patch-17.0.01.hex, loading
+[17:56:57] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on Edifier MR4 (Realtek High Definition Audio)
+[17:56:57] [Render thread/INFO] (Minecraft) Sound engine started
+[17:56:57] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
+[17:56:57] [Render thread/INFO] (Minecraft) Created: 128x128x0 minecraft:textures/atlas/decorated_pot.png-atlas
+[17:56:57] [Render thread/INFO] (Minecraft) Created: 2048x1024x0 minecraft:textures/atlas/armor_trims.png-atlas
+[17:56:57] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
+[17:56:57] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/shield_patterns.png-atlas
+[17:56:57] [Render thread/INFO] (Minecraft) Created: 2048x2048x4 minecraft:textures/atlas/blocks.png-atlas
+[17:56:57] [Render thread/INFO] (Minecraft) Created: 512x512x0 minecraft:textures/atlas/chest.png-atlas
+[17:56:57] [Render thread/INFO] (Minecraft) Created: 256x128x0 minecraft:textures/atlas/celestials.png-atlas
+[17:56:57] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/banner_patterns.png-atlas
+[17:56:57] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/items.png-atlas
+[17:56:57] [Render thread/INFO] (Minecraft) Created: 1024x1024x0 minecraft:textures/atlas/gui.png-atlas
+[17:56:57] [Render thread/INFO] (Minecraft) Created: 128x64x0 minecraft:textures/atlas/map_decorations.png-atlas
+[17:56:57] [Render thread/INFO] (Minecraft) Created: 512x512x0 minecraft:textures/atlas/shulker_boxes.png-atlas
+[17:56:57] [Download-2/INFO] (Minecraft) Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC
+[17:56:57] [Download-2/ERROR] (Minecraft) Couldn't connect to realms
 com.mojang.realmsclient.exception.RealmsServiceException: Realms authentication error with message 'java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC'
 	at knot//com.mojang.realmsclient.client.RealmsClient.execute(RealmsClient.java:528)
 	at knot//com.mojang.realmsclient.client.RealmsClient.clientCompatible(RealmsClient.java:308)
@@ -118,42 +118,43 @@ com.mojang.realmsclient.exception.RealmsServiceException: Realms authentication 
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
 	at java.base/java.lang.Thread.run(Thread.java:1474)
-[17:45:13] [Render thread/INFO] (Minecraft) Loaded 1585 recipes
-[17:45:13] [Render thread/INFO] (Minecraft) Loaded 1688 advancements
-[17:45:13] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 66 new biomes in 984.1 μs
-[17:45:13] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 26.2
-[17:45:13] [Server thread/INFO] (Minecraft) Generating keypair
-[17:45:13] [Server thread/INFO] (Minecraft) Loading 0 persistent chunks...
-[17:45:13] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[17:45:13] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[17:45:13] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[17:45:13] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (world): All chunks are saved
-[17:45:13] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[17:45:13] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[17:45:13] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
-[17:45:14] [Server thread/INFO] (Minecraft) Loading 49 chunks for player spawn...
-[17:45:14] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
-[17:45:14] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
-[17:45:14] [Server thread/INFO] (Minecraft) Time elapsed: 703 ms
-[17:45:14] [Server thread/INFO] (Minecraft) Player870[local:E:53ee5738] logged in with entity id 24 at (21.740831927387564, -60.0, 1.2593364223815118)
-[17:45:14] [Server thread/INFO] (Minecraft) Player870 joined the game
-[17:45:14] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:14] [Server thread/INFO] (Minecraft) Changing view distance to 16, from 10
-[17:45:14] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
-[17:45:14] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:14] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:14] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:14] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:14] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 2 reached during a single frame. New capacity will be 4.
-[17:45:14] [Render thread/INFO] (Minecraft) Loaded 5 advancements
-[17:45:14] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:14] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 4 reached during a single frame. New capacity will be 8.
-[17:45:14] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:14] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 8 reached during a single frame. New capacity will be 16.
-[17:45:14] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:14] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:15] [Download-2/ERROR] (Minecraft) Failed to retrieve profile key pair
+[17:57:01] [Render thread/INFO] (Minecraft) Loaded 1585 recipes
+[17:57:01] [Render thread/INFO] (Minecraft) Loaded 1688 advancements
+[17:57:02] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 66 new biomes in 920.8 μs
+[17:57:02] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 26.2
+[17:57:02] [Server thread/INFO] (Minecraft) Generating keypair
+[17:57:02] [Server thread/INFO] (Minecraft) Loading 0 persistent chunks...
+[17:57:02] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[17:57:02] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[17:57:02] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[17:57:02] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (world): All chunks are saved
+[17:57:02] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[17:57:02] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[17:57:02] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
+[17:57:02] [Server thread/INFO] (Minecraft) Loading 49 chunks for player spawn...
+[17:57:02] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
+[17:57:02] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
+[17:57:02] [Server thread/INFO] (Minecraft) Time elapsed: 656 ms
+[17:57:03] [Server thread/INFO] (Minecraft) Player242[local:E:43da514b] logged in with entity id 21 at (21.740831927387564, -60.0, 1.2593364223815118)
+[17:57:03] [Server thread/INFO] (Minecraft) Player242 joined the game
+[17:57:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:03] [Server thread/INFO] (Minecraft) Changing view distance to 16, from 10
+[17:57:03] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
+[17:57:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:03] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 2 reached during a single frame. New capacity will be 4.
+[17:57:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:03] [Render thread/INFO] (Minecraft) Loaded 5 advancements
+[17:57:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:03] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 4 reached during a single frame. New capacity will be 8.
+[17:57:03] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 8 reached during a single frame. New capacity will be 16.
+[17:57:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:03] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 2 reached during a single frame. New capacity will be 8.
+[17:57:03] [Download-2/ERROR] (Minecraft) Failed to retrieve profile key pair
 MinecraftClientHttpException[type=HTTP_ERROR, status=401, response=ErrorResponse[path=/player/certificates, error=null, errorMessage=null, details=null]]
 	at knot//com.mojang.authlib.minecraft.client.MinecraftClient.buildHttpException(MinecraftClient.java:170)
 	at knot//com.mojang.authlib.minecraft.client.MinecraftClient.readServiceResponse(MinecraftClient.java:147)
@@ -165,1065 +166,413 @@ MinecraftClientHttpException[type=HTTP_ERROR, status=401, response=ErrorResponse
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
 	at java.base/java.lang.Thread.run(Thread.java:1474)
-[17:45:15] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 2 reached during a single frame. New capacity will be 4.
-[17:45:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:15] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 4 reached during a single frame. New capacity will be 8.
-[17:45:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:15] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 8 reached during a single frame. New capacity will be 16.
-[17:45:15] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 16 reached during a single frame. New capacity will be 32.
-[17:45:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:15] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 32 reached during a single frame. New capacity will be 64.
-[17:45:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:15] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 64 reached during a single frame. New capacity will be 128.
-[17:45:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:15] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 128 reached during a single frame. New capacity will be 256.
-[17:45:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:16] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 256 reached during a single frame. New capacity will be 512.
-[17:45:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:22] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:22] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:22] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:22] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:22] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:22] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:22] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:22] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:22] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:22] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:22] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:22] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:22] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:22] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:22] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:22] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:22] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:22] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:22] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:22] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:23] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:23] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:23] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:23] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:23] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:23] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:23] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:23] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:23] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:23] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:23] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:23] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:23] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:23] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:23] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:23] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:23] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:23] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:23] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:23] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:24] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:24] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:24] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:24] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:24] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:24] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:24] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:24] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:24] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:24] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:24] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:24] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:24] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:24] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:24] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:24] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:24] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:24] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:24] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:24] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:25] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:25] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:25] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:25] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:25] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:25] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:25] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:25] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:25] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:25] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:25] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:25] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:25] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:25] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:25] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:25] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:25] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:25] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:25] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:25] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:26] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:26] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:26] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:26] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:26] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:26] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:26] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:26] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:26] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:26] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:26] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:26] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:26] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:26] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:26] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:26] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:26] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:26] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:26] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:26] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:27] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:27] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:27] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:27] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:27] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:27] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:27] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:27] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:27] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:27] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:27] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:27] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:27] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:27] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:27] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:27] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:27] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:27] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:27] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:27] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:28] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:28] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:28] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:28] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:28] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:28] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:28] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:28] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:28] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:28] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:28] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:28] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:28] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:28] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:28] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:28] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:28] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:28] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:28] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:28] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:29] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:29] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:29] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:29] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:29] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:29] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:29] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:29] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:29] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:29] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:29] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:29] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:29] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:29] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:29] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:29] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:29] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:29] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:29] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:29] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:30] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:30] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:30] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:30] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:30] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:30] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:30] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:30] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:30] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:30] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:30] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:30] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:30] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:30] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:30] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:30] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:30] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:30] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:30] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:30] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:31] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:31] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:31] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:31] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:31] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:31] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:31] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:31] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:31] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:31] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:31] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:31] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:31] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:31] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:31] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:31] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:31] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:31] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:31] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:31] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:32] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:32] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:32] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:32] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:32] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:32] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:32] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:32] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:32] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:32] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:32] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:32] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:32] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:32] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:32] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:32] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:32] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:32] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:32] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:32] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:33] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:33] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:33] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:33] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:33] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:33] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:33] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:33] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:33] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:33] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:33] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:33] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:33] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:33] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:33] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:33] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:33] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:33] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:33] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
-[17:45:33] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 0.2
-[17:45:34] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 0.4
-[17:45:34] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 0.6
-[17:45:34] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 0.8
-[17:45:34] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 1.0
-[17:45:34] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 1.2
-[17:45:34] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 1.4000001
-[17:45:34] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 1.6000001
-[17:45:34] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 1.8000002
-[17:45:34] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 2.0000002
-[17:45:34] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 2.2000003
-[17:45:34] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 2.4000003
-[17:45:34] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 2.6000004
-[17:45:34] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 2.8000004
-[17:45:34] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 3.0000005
-[17:45:34] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 3.2000005
-[17:45:34] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 3.4000006
-[17:45:34] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 3.6000006
-[17:45:34] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 3.8000007
-[17:45:34] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 4.0000005
-[17:45:34] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 4.2000003
-[17:45:35] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 4.4
-[17:45:35] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 4.6
-[17:45:35] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 4.7999997
-[17:45:35] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 4.9999995
-[17:45:35] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 5.1999993
-[17:45:35] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 5.399999
-[17:45:35] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 5.599999
-[17:45:35] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 5.7999988
-[17:45:35] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 5.9999986
-[17:45:35] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 6.1999984
-[17:45:35] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 6.399998
-[17:45:35] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 6.599998
-[17:45:35] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 6.799998
-[17:45:35] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 6.9999976
-[17:45:35] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 7.1999974
-[17:45:35] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 7.399997
-[17:45:35] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 7.599997
-[17:45:35] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 7.799997
-[17:45:35] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 7.9999967
-[17:45:35] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 8.199997
-[17:45:36] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 8.399997
-[17:45:36] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 8.599997
-[17:45:36] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 8.799996
-[17:45:36] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 8.999996
-[17:45:36] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 9.199996
-[17:45:36] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 9.399996
-[17:45:36] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 9.599996
-[17:45:36] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 9.799995
-[17:45:36] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 9.999995
-[17:45:36] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 10.199995
-[17:45:36] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 10.399995
-[17:45:36] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 10.599995
-[17:45:36] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 10.799994
-[17:45:36] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 10.999994
-[17:45:36] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 11.199994
-[17:45:36] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 11.399994
-[17:45:36] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 11.599994
-[17:45:36] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 11.7999935
-[17:45:36] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 11.999993
-[17:45:36] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 12.199993
-[17:45:37] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 12.399993
-[17:45:37] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 12.599993
-[17:45:37] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 12.799993
-[17:45:37] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 12.999992
-[17:45:37] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 13.199992
-[17:45:37] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 13.399992
-[17:45:37] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 13.599992
-[17:45:37] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 13.799992
-[17:45:37] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 13.999991
-[17:45:37] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 14.199991
-[17:45:37] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 14.399991
-[17:45:37] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 14.599991
-[17:45:37] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 14.799991
-[17:45:37] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 14.99999
-[17:45:37] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 15.19999
-[17:45:37] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 15.39999
-[17:45:37] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 15.59999
-[17:45:37] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 15.79999
-[17:45:37] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 15.9999895
-[17:45:37] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 16.19999
-[17:45:38] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 16.39999
-[17:45:38] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 16.59999
-[17:45:38] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 16.799992
-[17:45:38] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 16.999992
-[17:45:38] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 17.199993
-[17:45:38] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 17.399994
-[17:45:38] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 17.599995
-[17:45:38] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 17.799995
-[17:45:38] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 17.999996
-[17:45:38] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 18.199997
-[17:45:38] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 18.399998
-[17:45:38] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 18.599998
-[17:45:38] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 18.8
-[17:45:38] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 19.0
-[17:45:38] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 19.2
-[17:45:38] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 19.400002
-[17:45:38] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 19.600002
-[17:45:38] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 19.800003
-[17:45:38] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 20.000004
-[17:45:38] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 20.200005
-[17:45:39] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 20.400005
-[17:45:39] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 20.600006
-[17:45:39] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 20.800007
-[17:45:39] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 21.000008
-[17:45:39] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 21.200008
-[17:45:39] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 21.40001
-[17:45:39] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 21.60001
-[17:45:39] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 21.80001
-[17:45:39] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 22.000011
-[17:45:39] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 22.200012
-[17:45:39] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 22.400013
-[17:45:39] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 22.600014
-[17:45:39] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 22.800014
-[17:45:39] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 23.000015
-[17:45:39] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 23.200016
-[17:45:39] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 23.400017
-[17:45:39] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 23.600018
-[17:45:39] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 23.800018
-[17:45:39] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 24.00002
-[17:45:39] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 24.20002
-[17:45:40] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 24.40002
-[17:45:40] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 24.600021
-[17:45:40] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 24.800022
-[17:45:40] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 25.000023
-[17:45:40] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 25.200024
-[17:45:40] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 25.400024
-[17:45:40] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 25.600025
-[17:45:40] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 25.800026
-[17:45:40] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 26.000027
-[17:45:40] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 26.200027
-[17:45:40] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 26.400028
-[17:45:40] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 26.600029
-[17:45:40] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 26.80003
-[17:45:40] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 27.00003
-[17:45:40] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 27.200031
-[17:45:40] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 27.400032
-[17:45:40] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 27.600033
-[17:45:40] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 27.800034
-[17:45:40] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 28.000034
-[17:45:40] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 28.200035
-[17:45:41] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 28.400036
-[17:45:41] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 28.600037
-[17:45:41] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 28.800037
-[17:45:41] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 29.000038
-[17:45:41] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 29.200039
-[17:45:41] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 29.40004
-[17:45:41] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 29.60004
-[17:45:41] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 29.800041
-[17:45:41] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:41] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:41] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:41] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:41] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:41] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:41] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:41] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:41] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:41] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:41] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:41] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:42] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:42] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:42] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:42] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:42] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:42] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:42] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:42] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:42] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:42] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:42] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:42] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:42] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:42] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:42] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:42] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:42] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:42] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:42] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:42] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:43] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:43] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:43] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:43] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:43] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:43] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:43] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:43] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:43] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:43] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:43] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:43] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:43] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:43] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:43] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:43] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:43] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:43] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:43] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:43] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:44] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:44] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:44] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:44] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:44] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:44] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:44] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:44] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:44] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:44] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:44] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:44] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:44] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:44] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:44] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:44] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:44] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:44] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:44] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:44] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:45] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:45] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:45] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:45] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:45] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:45] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:45] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:45] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:45] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:45] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:45] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:45] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:45] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:45] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:45] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:45] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:45] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:45] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:45] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:45] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:46] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:46] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:46] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:46] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:46] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:46] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:46] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:46] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:46] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:46] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:46] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:46] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:46] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:46] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:46] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:46] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:46] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:46] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:46] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:46] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:47] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:47] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:47] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:47] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:47] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:47] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:47] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:47] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:47] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:47] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:47] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:47] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:47] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:47] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:47] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:47] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:47] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:47] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:47] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:47] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:48] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:48] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:48] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:48] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:48] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:48] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:48] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:48] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:48] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:48] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:48] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:48] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:48] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:48] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:48] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:48] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:48] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:48] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:48] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:48] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:49] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:49] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:49] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:49] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:49] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:49] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:49] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:49] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:49] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:49] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:49] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:49] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:49] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:49] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:49] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:49] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:49] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:49] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:49] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:49] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:50] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:50] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:50] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:50] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:50] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:50] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:50] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:50] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:50] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:50] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:50] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:50] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:50] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:50] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:50] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:50] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:50] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:50] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:50] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:50] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:51] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:51] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:51] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:51] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:51] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:51] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:51] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:51] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:51] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:51] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:51] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:51] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:51] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:51] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:51] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:51] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:51] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:51] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
-[17:45:51] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 29.8
-[17:45:51] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 29.599998
-[17:45:52] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 29.399998
-[17:45:52] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 29.199997
-[17:45:52] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 28.999996
-[17:45:52] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 28.799995
-[17:45:52] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 28.599995
-[17:45:52] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 28.399994
-[17:45:52] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 28.199993
-[17:45:52] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 27.999992
-[17:45:52] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 27.799992
-[17:45:52] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 27.59999
-[17:45:52] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 27.39999
-[17:45:52] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 27.19999
-[17:45:52] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 26.999989
-[17:45:52] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 26.799988
-[17:45:52] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 26.599987
-[17:45:52] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 26.399986
-[17:45:52] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 26.199986
-[17:45:52] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 25.999985
-[17:45:52] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 25.799984
-[17:45:52] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 25.599983
-[17:45:53] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 25.399982
-[17:45:53] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 25.199982
-[17:45:53] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 24.99998
-[17:45:53] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 24.79998
-[17:45:53] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 24.59998
-[17:45:53] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 24.399979
-[17:45:53] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 24.199978
-[17:45:53] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 23.999977
-[17:45:53] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 23.799976
-[17:45:53] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 23.599976
-[17:45:53] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 23.399975
-[17:45:53] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 23.199974
-[17:45:53] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 22.999973
-[17:45:53] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 22.799973
-[17:45:53] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 22.599972
-[17:45:53] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 22.399971
-[17:45:53] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 22.19997
-[17:45:53] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 21.99997
-[17:45:53] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 21.799969
-[17:45:53] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 21.599968
-[17:45:54] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 21.399967
-[17:45:54] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 21.199966
-[17:45:54] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 20.999966
-[17:45:54] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 20.799965
-[17:45:54] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 20.599964
-[17:45:54] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 20.399963
-[17:45:54] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 20.199963
-[17:45:54] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 19.999962
-[17:45:54] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 19.799961
-[17:45:54] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 19.59996
-[17:45:54] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 19.39996
-[17:45:54] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 19.199959
-[17:45:54] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 18.999958
-[17:45:54] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 18.799957
-[17:45:54] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 18.599957
-[17:45:54] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 18.399956
-[17:45:54] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 18.199955
-[17:45:54] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 17.999954
-[17:45:54] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 17.799953
-[17:45:54] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 17.599953
-[17:45:55] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 17.399952
-[17:45:55] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 17.199951
-[17:45:55] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 16.99995
-[17:45:55] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 16.79995
-[17:45:55] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 16.599949
-[17:45:55] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 16.399948
-[17:45:55] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 16.199947
-[17:45:55] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 15.999948
-[17:45:55] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 15.799948
-[17:45:55] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 15.599948
-[17:45:55] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 15.399948
-[17:45:55] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 15.199948
-[17:45:55] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 14.9999485
-[17:45:55] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 14.799949
-[17:45:55] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 14.599949
-[17:45:55] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 14.399949
-[17:45:55] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 14.199949
-[17:45:55] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 13.999949
-[17:45:55] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 13.79995
-[17:45:55] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 13.59995
-[17:45:56] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 13.39995
-[17:45:56] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 13.19995
-[17:45:56] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 12.99995
-[17:45:56] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 12.799951
-[17:45:56] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 12.599951
-[17:45:56] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 12.399951
-[17:45:56] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 12.199951
-[17:45:56] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 11.999951
-[17:45:56] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 11.799952
-[17:45:56] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 11.599952
-[17:45:56] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 11.399952
-[17:45:56] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 11.199952
-[17:45:56] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 10.999952
-[17:45:56] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 10.7999525
-[17:45:56] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 10.599953
-[17:45:56] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 10.399953
-[17:45:56] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 10.199953
-[17:45:56] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 9.999953
-[17:45:56] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 9.799953
-[17:45:56] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 9.599954
-[17:45:57] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 9.399954
-[17:45:57] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 9.199954
-[17:45:57] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 8.999954
-[17:45:57] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 8.799954
-[17:45:57] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 8.599955
-[17:45:57] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 8.399955
-[17:45:57] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 8.199955
-[17:45:57] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 7.999955
-[17:45:57] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 7.7999554
-[17:45:57] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 7.5999556
-[17:45:57] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 7.3999557
-[17:45:57] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 7.199956
-[17:45:57] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 6.999956
-[17:45:57] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 6.7999563
-[17:45:57] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 6.5999565
-[17:45:57] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 6.3999567
-[17:45:57] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 6.199957
-[17:45:57] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 5.999957
-[17:45:57] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 5.7999573
-[17:45:57] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 5.5999575
-[17:45:58] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 5.3999577
-[17:45:58] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 5.199958
-[17:45:58] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 4.999958
-[17:45:58] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 4.799958
-[17:45:58] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 4.5999584
-[17:45:58] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 4.3999586
-[17:45:58] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 4.199959
-[17:45:58] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 3.9999588
-[17:45:58] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 3.7999587
-[17:45:58] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 3.5999587
-[17:45:58] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 3.3999586
-[17:45:58] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 3.1999586
-[17:45:58] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 2.9999585
-[17:45:58] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 2.7999585
-[17:45:58] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 2.5999584
-[17:45:58] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 2.3999584
-[17:45:58] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 2.1999583
-[17:45:58] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 1.9999583
-[17:45:58] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 1.7999582
-[17:45:58] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 1.5999582
-[17:45:59] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 1.3999581
-[17:45:59] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 1.1999581
-[17:45:59] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 0.9999581
-[17:45:59] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 0.7999581
-[17:45:59] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 0.5999581
-[17:45:59] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 0.39995813
-[17:45:59] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 0.19995813
-[17:45:59] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:45:59] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:45:59] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:45:59] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:45:59] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:45:59] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:45:59] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:45:59] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:45:59] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:45:59] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:45:59] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:45:59] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:45:59] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:00] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:00] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:00] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:00] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:00] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:00] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:00] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:00] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:00] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:00] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:00] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:00] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:00] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:00] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:00] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:00] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:00] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:00] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:00] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:00] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:01] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:01] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:01] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:01] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:01] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:01] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:01] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:01] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:01] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:01] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:01] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:01] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:01] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:01] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:01] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:01] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:01] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:01] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:01] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:01] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:02] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:02] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:02] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:02] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:02] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:02] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:02] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:02] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:02] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:02] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:02] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:02] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:02] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:02] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:02] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:02] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:02] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:02] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:02] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:02] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
-[17:46:06] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[17:46:06] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[17:46:06] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[17:46:06] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[17:46:09] [Render thread/INFO] (Minecraft) Stopping!
-[17:46:09] [Server thread/INFO] (Minecraft) Stopping server
-[17:46:09] [Server thread/INFO] (Minecraft) Saving players
-[17:46:09] [Server thread/INFO] (Minecraft) Player870 lost connection: Disconnected
-[17:46:09] [Server thread/INFO] (Minecraft) Player870 left the game
-[17:46:09] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
-[17:46:09] [Server thread/INFO] (Minecraft) Saving worlds
-[17:46:09] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[17:46:09] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[17:46:09] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[17:46:09] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (world): All chunks are saved
-[17:46:09] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[17:46:09] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[17:46:09] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
+[17:57:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:03] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 8 reached during a single frame. New capacity will be 16.
+[17:57:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:03] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 16 reached during a single frame. New capacity will be 32.
+[17:57:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:03] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:04] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 32 reached during a single frame. New capacity will be 64.
+[17:57:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:04] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 64 reached during a single frame. New capacity will be 128.
+[17:57:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:04] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 128 reached during a single frame. New capacity will be 256.
+[17:57:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:04] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 256 reached during a single frame. New capacity will be 512.
+[17:57:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:04] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = STOPPED | Speed = 0.0
+[17:57:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 0.2
+[17:57:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 0.4
+[17:57:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 0.6
+[17:57:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 0.8
+[17:57:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 1.0
+[17:57:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 1.2
+[17:57:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 1.4000001
+[17:57:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 1.6000001
+[17:57:05] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 1.8000002
+[17:57:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 2.0000002
+[17:57:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 2.2000003
+[17:57:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 2.4000003
+[17:57:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 2.6000004
+[17:57:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 2.8000004
+[17:57:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 3.0000005
+[17:57:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 3.2000005
+[17:57:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 3.4000006
+[17:57:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 3.6000006
+[17:57:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 3.8000007
+[17:57:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 4.0000005
+[17:57:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 4.2000003
+[17:57:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 4.4
+[17:57:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 4.6
+[17:57:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 4.7999997
+[17:57:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 4.9999995
+[17:57:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 5.1999993
+[17:57:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 5.399999
+[17:57:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 5.599999
+[17:57:06] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 5.7999988
+[17:57:07] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 5.9999986
+[17:57:07] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 6.1999984
+[17:57:07] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 6.399998
+[17:57:07] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 6.599998
+[17:57:07] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 6.799998
+[17:57:07] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 6.9999976
+[17:57:07] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 7.1999974
+[17:57:07] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 7.399997
+[17:57:07] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 7.599997
+[17:57:07] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 7.799997
+[17:57:07] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 7.9999967
+[17:57:07] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 8.199997
+[17:57:07] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 8.399997
+[17:57:07] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 8.599997
+[17:57:07] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 8.799996
+[17:57:07] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 8.999996
+[17:57:07] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 9.199996
+[17:57:07] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 9.399996
+[17:57:07] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 9.599996
+[17:57:07] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 9.799995
+[17:57:08] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 9.999995
+[17:57:08] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 10.199995
+[17:57:08] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 10.399995
+[17:57:08] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 10.599995
+[17:57:08] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 10.799994
+[17:57:08] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 10.999994
+[17:57:08] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 11.199994
+[17:57:08] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 11.399994
+[17:57:08] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 11.599994
+[17:57:08] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 11.7999935
+[17:57:08] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 11.999993
+[17:57:08] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 12.199993
+[17:57:08] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 12.399993
+[17:57:08] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 12.599993
+[17:57:08] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 12.799993
+[17:57:08] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 12.999992
+[17:57:08] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 13.199992
+[17:57:08] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 13.399992
+[17:57:08] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 13.599992
+[17:57:08] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 13.799992
+[17:57:09] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 13.999991
+[17:57:09] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 14.199991
+[17:57:09] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 14.399991
+[17:57:09] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 14.599991
+[17:57:09] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 14.799991
+[17:57:09] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 14.99999
+[17:57:09] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 15.19999
+[17:57:09] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 15.39999
+[17:57:09] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 15.59999
+[17:57:09] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 15.79999
+[17:57:09] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 15.9999895
+[17:57:09] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 16.19999
+[17:57:09] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 16.39999
+[17:57:09] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 16.59999
+[17:57:09] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 16.799992
+[17:57:09] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 16.999992
+[17:57:09] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 17.199993
+[17:57:09] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 17.399994
+[17:57:09] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 17.599995
+[17:57:09] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 17.799995
+[17:57:10] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 17.999996
+[17:57:10] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 18.199997
+[17:57:10] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 18.399998
+[17:57:10] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 18.599998
+[17:57:10] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 18.8
+[17:57:10] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 19.0
+[17:57:10] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 19.2
+[17:57:10] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 19.400002
+[17:57:10] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 19.600002
+[17:57:10] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 19.800003
+[17:57:10] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 20.000004
+[17:57:10] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 20.200005
+[17:57:10] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 20.400005
+[17:57:10] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 20.600006
+[17:57:10] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 20.800007
+[17:57:10] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 21.000008
+[17:57:10] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 21.200008
+[17:57:10] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 21.40001
+[17:57:10] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 21.60001
+[17:57:10] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 21.80001
+[17:57:11] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 22.000011
+[17:57:11] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 22.200012
+[17:57:11] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 22.400013
+[17:57:11] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 22.600014
+[17:57:11] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 22.800014
+[17:57:11] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 23.000015
+[17:57:11] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 23.200016
+[17:57:11] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 23.400017
+[17:57:11] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 23.600018
+[17:57:11] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 23.800018
+[17:57:11] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 24.00002
+[17:57:11] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 24.20002
+[17:57:11] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 24.40002
+[17:57:11] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 24.600021
+[17:57:11] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 24.800022
+[17:57:11] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 25.000023
+[17:57:11] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 25.200024
+[17:57:11] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 25.400024
+[17:57:11] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 25.600025
+[17:57:11] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 25.800026
+[17:57:12] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 26.000027
+[17:57:12] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 26.200027
+[17:57:12] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 26.400028
+[17:57:12] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 26.600029
+[17:57:12] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 26.80003
+[17:57:12] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 27.00003
+[17:57:12] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 27.200031
+[17:57:12] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 27.400032
+[17:57:12] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 27.600033
+[17:57:12] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 27.800034
+[17:57:12] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 28.000034
+[17:57:12] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 28.200035
+[17:57:12] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 28.400036
+[17:57:12] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 28.600037
+[17:57:12] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 28.800037
+[17:57:12] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 29.000038
+[17:57:12] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 29.200039
+[17:57:12] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 29.40004
+[17:57:12] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 29.60004
+[17:57:12] [Server thread/INFO] (Minecraft) [STDOUT]: State = STARTING | Speed = 29.800041
+[17:57:13] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
+[17:57:13] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
+[17:57:13] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
+[17:57:13] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
+[17:57:13] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
+[17:57:13] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
+[17:57:13] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
+[17:57:13] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
+[17:57:13] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
+[17:57:13] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
+[17:57:13] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
+[17:57:13] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
+[17:57:13] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
+[17:57:13] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
+[17:57:13] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
+[17:57:13] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
+[17:57:13] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
+[17:57:13] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
+[17:57:13] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
+[17:57:13] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
+[17:57:14] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
+[17:57:14] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
+[17:57:14] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
+[17:57:14] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
+[17:57:14] [Server thread/INFO] (Minecraft) [STDOUT]: State = RUNNING | Speed = 30.0
+[17:57:14] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 29.8
+[17:57:14] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 29.599998
+[17:57:14] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 29.399998
+[17:57:14] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 29.199997
+[17:57:14] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 28.999996
+[17:57:14] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 28.799995
+[17:57:14] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 28.599995
+[17:57:14] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 28.399994
+[17:57:14] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 28.199993
+[17:57:14] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 27.999992
+[17:57:14] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 27.799992
+[17:57:14] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 27.59999
+[17:57:14] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 27.39999
+[17:57:14] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 27.19999
+[17:57:14] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 26.999989
+[17:57:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 26.799988
+[17:57:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 26.599987
+[17:57:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 26.399986
+[17:57:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 26.199986
+[17:57:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 25.999985
+[17:57:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 25.799984
+[17:57:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 25.599983
+[17:57:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 25.399982
+[17:57:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 25.199982
+[17:57:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 24.99998
+[17:57:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 24.79998
+[17:57:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 24.59998
+[17:57:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 24.399979
+[17:57:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 24.199978
+[17:57:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 23.999977
+[17:57:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 23.799976
+[17:57:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 23.599976
+[17:57:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 23.399975
+[17:57:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 23.199974
+[17:57:15] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 22.999973
+[17:57:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 22.799973
+[17:57:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 22.599972
+[17:57:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 22.399971
+[17:57:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 22.19997
+[17:57:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 21.99997
+[17:57:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 21.799969
+[17:57:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 21.599968
+[17:57:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 21.399967
+[17:57:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 21.199966
+[17:57:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 20.999966
+[17:57:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 20.799965
+[17:57:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 20.599964
+[17:57:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 20.399963
+[17:57:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 20.199963
+[17:57:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 19.999962
+[17:57:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 19.799961
+[17:57:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 19.59996
+[17:57:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 19.39996
+[17:57:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 19.199959
+[17:57:16] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 18.999958
+[17:57:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 18.799957
+[17:57:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 18.599957
+[17:57:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 18.399956
+[17:57:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 18.199955
+[17:57:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 17.999954
+[17:57:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 17.799953
+[17:57:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 17.599953
+[17:57:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 17.399952
+[17:57:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 17.199951
+[17:57:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 16.99995
+[17:57:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 16.79995
+[17:57:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 16.599949
+[17:57:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 16.399948
+[17:57:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 16.199947
+[17:57:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 15.999948
+[17:57:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 15.799948
+[17:57:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 15.599948
+[17:57:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 15.399948
+[17:57:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 15.199948
+[17:57:17] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 14.9999485
+[17:57:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 14.799949
+[17:57:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 14.599949
+[17:57:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 14.399949
+[17:57:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 14.199949
+[17:57:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 13.999949
+[17:57:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 13.79995
+[17:57:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 13.59995
+[17:57:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 13.39995
+[17:57:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 13.19995
+[17:57:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 12.99995
+[17:57:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 12.799951
+[17:57:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 12.599951
+[17:57:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 12.399951
+[17:57:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 12.199951
+[17:57:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 11.999951
+[17:57:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 11.799952
+[17:57:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 11.599952
+[17:57:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 11.399952
+[17:57:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 11.199952
+[17:57:18] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 10.999952
+[17:57:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 10.7999525
+[17:57:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 10.599953
+[17:57:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 10.399953
+[17:57:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 10.199953
+[17:57:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 9.999953
+[17:57:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 9.799953
+[17:57:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 9.599954
+[17:57:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 9.399954
+[17:57:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 9.199954
+[17:57:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 8.999954
+[17:57:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 8.799954
+[17:57:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 8.599955
+[17:57:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 8.399955
+[17:57:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 8.199955
+[17:57:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 7.999955
+[17:57:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 7.7999554
+[17:57:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 7.5999556
+[17:57:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 7.3999557
+[17:57:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 7.199956
+[17:57:19] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 6.999956
+[17:57:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 6.7999563
+[17:57:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 6.5999565
+[17:57:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 6.3999567
+[17:57:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 6.199957
+[17:57:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 5.999957
+[17:57:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 5.7999573
+[17:57:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 5.5999575
+[17:57:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 5.3999577
+[17:57:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 5.199958
+[17:57:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 4.999958
+[17:57:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 4.799958
+[17:57:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 4.5999584
+[17:57:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 4.3999586
+[17:57:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 4.199959
+[17:57:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 3.9999588
+[17:57:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 3.7999587
+[17:57:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 3.5999587
+[17:57:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 3.3999586
+[17:57:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 3.1999586
+[17:57:20] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 2.9999585
+[17:57:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 2.7999585
+[17:57:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 2.5999584
+[17:57:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 2.3999584
+[17:57:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 2.1999583
+[17:57:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 1.9999583
+[17:57:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 1.7999582
+[17:57:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 1.5999582
+[17:57:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 1.3999581
+[17:57:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 1.1999581
+[17:57:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 0.9999581
+[17:57:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 0.7999581
+[17:57:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 0.5999581
+[17:57:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 0.39995813
+[17:57:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = BRAKING | Speed = 0.19995813
+[17:57:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
+[17:57:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
+[17:57:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
+[17:57:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
+[17:57:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
+[17:57:21] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
+[17:57:22] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
+[17:57:22] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
+[17:57:22] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
+[17:57:22] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
+[17:57:22] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
+[17:57:22] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
+[17:57:22] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
+[17:57:22] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
+[17:57:22] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
+[17:57:22] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
+[17:57:22] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
+[17:57:22] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
+[17:57:22] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
+[17:57:22] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
+[17:57:22] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
+[17:57:22] [Server thread/INFO] (Minecraft) [STDOUT]: State = RETURNING | Speed = 0.0
+[17:57:22] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[17:57:22] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[17:57:22] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[17:57:22] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[17:57:23] [Render thread/INFO] (Minecraft) Stopping!
+[17:57:23] [Server thread/INFO] (Minecraft) Stopping server
+[17:57:23] [Server thread/INFO] (Minecraft) Saving players
+[17:57:23] [Server thread/INFO] (Minecraft) Player242 lost connection: Disconnected
+[17:57:23] [Server thread/INFO] (Minecraft) Player242 left the game
+[17:57:23] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
+[17:57:23] [Server thread/INFO] (Minecraft) Saving worlds
+[17:57:23] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[17:57:23] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[17:57:23] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[17:57:23] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (world): All chunks are saved
+[17:57:23] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[17:57:23] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[17:57:23] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
