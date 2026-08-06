@@ -6,17 +6,10 @@ Imports
 ---------------------------
 */
 
+import com.l1near.basicrotor.assembly.LinkedAssembly;
+import com.l1near.basicrotor.movement.MovementData;
+
 public class AssemblyRuntime {
-
-    /*
-    ---------------------------
-    Constructors
-    ---------------------------
-    */
-
-    public AssemblyRuntime() {
-
-    }
 
     /*
     ---------------------------
@@ -24,23 +17,13 @@ public class AssemblyRuntime {
     ---------------------------
     */
 
-    //Start
-    public void start() {
+        //Update
+        public void update(
+                LinkedAssembly assembly,
+                MovementData movementData
+        ) {
 
-    }
-
-    //Tick
-    public void tick() {
-
-    }
-
-    //Rotate
-    public void rotateBy(float angle) {
-
-    }
-
-    //Reset
-    public void reset() {
+        }
 
     }
 
