@@ -11,7 +11,6 @@ import net.minecraft.core.BlockPos;
 import java.util.Collection;
 import java.util.LinkedHashMap;
 
-import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
 
@@ -86,6 +85,16 @@ Methods
 
     public AssemblyState getState() {
         return state;
+    }
+
+    //Size
+    public int size() {
+        return linkedBlocks.size();
+    }
+
+    //Is Empty
+    public boolean isEmpty() {
+        return linkedBlocks.isEmpty();
     }
 
     //Setters
