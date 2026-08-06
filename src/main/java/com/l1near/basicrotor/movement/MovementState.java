@@ -15,6 +15,7 @@ public enum MovementState {
     */
 
     STOPPED,
+    STARTING,
     RUNNING,
     BRAKING,
     RETURNING

@@ -91,6 +91,10 @@ public class MovementRuntime {
 
     }
 
+    private void updateStarting(MovementInput input) {
+
+    }
+
     /*
     ---------------------------
     Constructors
@@ -113,7 +117,8 @@ public class MovementRuntime {
         updateState(input);
 
         switch (movementData.getState()) {
-
+            case STARTING ->
+                    updateStarting(input);
             case RUNNING ->
                     updateRunning(input);
 
@@ -141,15 +146,11 @@ public class MovementRuntime {
                 movementData.setHomeRotation(
                         movementData.getRotation()
                 );
-            }
-
-            if (currentState != MovementState.RUNNING) {
 
                 movementData.setState(
-                        MovementState.RUNNING
+                        MovementState.STARTING
                 );
             }
-
 
         } else {
 

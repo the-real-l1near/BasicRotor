@@ -34,7 +34,7 @@ public class MovementData {
     */
 
     public MovementData() {
-        this.state = MovementState.RUNNING;
+        this.state = MovementState.STOPPED;
         this.rotation = 0.0F;
         this.lastRotation = 0.0F;
         this.homeRotation = 0.0F;
