@@ -59,16 +59,19 @@ public class RotorBlockEntity extends BlockEntity {
     //clientTick
     private void clientTick() {
 
-        MovementInput input = new MovementInput();
-
-        input.setPowered(true);
-
-        movementRuntime.tick(input);
     }
 
     //serverTick
     private void serverTick() {
 
+        MovementInput movementInput = new MovementInput();
+
+        int power =
+                level.getBestNeighborSignal(worldPosition);
+
+        movementInput.setPowered(power > 0);
+
+        movementRuntime.tick(movementInput);
     }
 
     //Getter
