@@ -6,17 +6,19 @@ Imports
 ---------------------------
 */
 
+import com.l1near.basicrotor.BasicRotor;
 import com.l1near.basicrotor.assembly.LinkedAssembly;
 import com.l1near.basicrotor.assembly.factory.AssemblyFactory;
 import com.l1near.basicrotor.assembly.manager.AssemblyManager;
 import com.l1near.basicrotor.assembly.manager.LinkSessionManager;
 import com.l1near.basicrotor.assembly.session.LinkSession;
 import com.l1near.basicrotor.blockentity.RotorBlockEntity;
+import com.l1near.basicrotor.network.AssemblySync;
 import com.l1near.basicrotor.registry.ModBlocks;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.InteractionHand;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -127,10 +129,20 @@ public class AssemblyWrenchItem extends Item {
 
             rotorBlockEntity.setLinkedAssembly(assembly);
 
-            ASSEMBLY_MANAGER.register(
-                    session.getSelectedRotorPos(),
-                    assembly
-            );
+            BasicRotor
+                    .getAssemblyManager()
+                    .register(
+                            session.getSelectedRotorPos(),
+                            assembly
+                    );
+
+            if (player instanceof ServerPlayer serverPlayer) {
+
+                AssemblySync.sendSnapshot(
+                        serverPlayer,
+                        assembly
+                );
+            }
 
             LINK_SESSION_MANAGER.clearSession(player);
 

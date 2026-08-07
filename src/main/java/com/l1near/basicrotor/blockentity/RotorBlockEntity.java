@@ -12,10 +12,15 @@ import com.l1near.basicrotor.movement.MovementData;
 import com.l1near.basicrotor.movement.MovementInput;
 import com.l1near.basicrotor.movement.MovementRuntime;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import com.l1near.basicrotor.registry.ModBlockEntities;
+import com.l1near.basicrotor.network.payload.RotorMovementPayload;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+import net.minecraft.server.level.ServerPlayer;
+import net.fabricmc.fabric.api.networking.v1.PlayerLookup;
 
 public class RotorBlockEntity extends BlockEntity {
 
@@ -82,21 +87,44 @@ public class RotorBlockEntity extends BlockEntity {
         movementRuntime.tick(movementInput);
 
         assemblyRuntime.update(
+                level,
                 linkedAssembly,
                 movementData
         );
 
-        assemblyRuntime.update(
-                linkedAssembly,
-                movementData
-        );
+        if (!level.isClientSide()) {
+            float rotationStep = 0.0F;
 
-        System.out.println(
-                "State = "
-                        + movementData.getState()
-                        + " | Speed = "
-                        + movementData.getSpeed()
-        );
+            if (assemblyRuntime.isVirtualized()) {
+
+                rotationStep =
+                        movementData.getRotation()
+                                - movementData.getLastRotation();
+
+                if (rotationStep < 0.0F) {
+                    rotationStep += 360.0F;
+                }
+            }
+            RotorMovementPayload payload =
+                    new RotorMovementPayload(
+                            worldPosition,
+                            movementData.getRotation(),
+                            rotationStep,
+                            assemblyRuntime.isVirtualized()
+                    );
+
+            for (ServerPlayer player
+                    : PlayerLookup.tracking(
+                    (ServerLevel) level,
+                    worldPosition
+            )) {
+
+                ServerPlayNetworking.send(
+                        player,
+                        payload
+                );
+            }
+        }
     }
 
     //Getter

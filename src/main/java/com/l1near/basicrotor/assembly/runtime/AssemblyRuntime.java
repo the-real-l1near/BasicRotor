@@ -7,9 +7,36 @@ Imports
 */
 
 import com.l1near.basicrotor.assembly.LinkedAssembly;
+import com.l1near.basicrotor.assembly.LinkedBlockData;
 import com.l1near.basicrotor.movement.MovementData;
 
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
+
+import java.util.Map;
+
 public class AssemblyRuntime {
+    /*
+    ---------------------------
+    Fields
+    ---------------------------
+    */
+
+    private boolean virtualized;
+    private boolean lastVirtualized;
+
+
+    /*
+    ---------------------------
+    Constructors
+    ---------------------------
+    */
+
+    public AssemblyRuntime() {
+        this.virtualized = false;
+        this.lastVirtualized = false;
+    }
 
     /*
     ---------------------------
@@ -19,72 +46,128 @@ public class AssemblyRuntime {
 
     //Update
     public void update(
+            Level level,
             LinkedAssembly assembly,
             MovementData movementData
     ) {
+        boolean wasVirtualized = virtualized;
 
         switch (movementData.getState()) {
 
-            case STOPPED -> updateStopped(assembly);
+            case STOPPED ->
+                    updateStopped();
 
-            case STARTING -> updateStarting(
-                    assembly,
-                    movementData
-            );
+            case STARTING ->
+                    updateStarting();
 
-            case RUNNING -> updateRunning(
-                    assembly,
-                    movementData
-            );
+            case RUNNING ->
+                    updateRunning();
 
-            case BRAKING -> updateBraking(
-                    assembly,
-                    movementData
-            );
+            case BRAKING ->
+                    updateBraking();
 
-            case RETURNING -> updateReturning(
-                    assembly,
-                    movementData
+            case RETURNING ->
+                    updateReturning();
+        }
+
+        if (!wasVirtualized && virtualized) {
+            virtualizeBlocks(
+                    level,
+                    assembly
             );
         }
+
+        if (wasVirtualized && !virtualized) {
+            restoreBlocks(
+                    level,
+                    assembly
+            );
+        }
+
+        if (virtualized != lastVirtualized) {
+            lastVirtualized = virtualized;
+        }
     }
-    //Stopped
-    private void updateStopped(
+
+
+    private void updateStopped() {
+        virtualized = false;
+    }
+
+    private void updateStarting() {
+        virtualized = true;
+    }
+
+    private void updateRunning() {
+        virtualized = true;
+    }
+
+    private void updateBraking() {
+        virtualized = true;
+    }
+
+    private void updateReturning() {
+        virtualized = true;
+    }
+
+    //Virtualize
+    private void virtualizeBlocks(
+            Level level,
             LinkedAssembly assembly
     ) {
 
+        BlockPos originPos =
+                assembly.getOriginPos();
+
+        for (Map.Entry<BlockPos, LinkedBlockData> entry
+                : assembly.getEntries()) {
+
+            BlockPos relativePos =
+                    entry.getKey();
+
+            BlockPos worldPos =
+                    originPos.offset(relativePos);
+
+            level.setBlock(
+                    worldPos,
+                    Blocks.AIR.defaultBlockState(),
+                    3
+            );
+        }
     }
 
-    //Starting
-    private void updateStarting(
-            LinkedAssembly assembly,
-            MovementData movementData
+    //Restore
+    private void restoreBlocks(
+            Level level,
+            LinkedAssembly assembly
     ) {
 
+        BlockPos originPos =
+                assembly.getOriginPos();
+
+        for (Map.Entry<BlockPos, LinkedBlockData> entry
+                : assembly.getEntries()) {
+
+            BlockPos relativePos =
+                    entry.getKey();
+
+            LinkedBlockData blockData =
+                    entry.getValue();
+
+            BlockPos worldPos =
+                    originPos.offset(relativePos);
+
+            level.setBlock(
+                    worldPos,
+                    blockData.getBlockState(),
+                    3
+            );
+        }
     }
 
-    //Running
-    private void updateRunning(
-            LinkedAssembly assembly,
-            MovementData movementData
-    ) {
-
-    }
-
-    //Braking
-    private void updateBraking(
-            LinkedAssembly assembly,
-            MovementData movementData
-    ) {
-
-    }
-
-    //Returning
-    private void updateReturning(
-            LinkedAssembly assembly,
-            MovementData movementData
-    ) {
-
+    //Getters
+    public boolean isVirtualized() {
+        return virtualized;
     }
 
 }

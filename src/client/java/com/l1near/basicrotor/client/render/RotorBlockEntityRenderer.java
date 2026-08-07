@@ -20,6 +20,8 @@ import net.minecraft.client.renderer.feature.ModelFeatureRenderer;
 import net.minecraft.core.Direction;
 import net.minecraft.util.LightCoordsUtil;
 import net.minecraft.world.phys.Vec3;
+import net.minecraft.util.Mth;
+import com.l1near.basicrotor.client.BasicRotorClient;
 
 public class RotorBlockEntityRenderer implements BlockEntityRenderer<RotorBlockEntity, RotorBlockEntityRenderState> {
 
@@ -71,10 +73,59 @@ public class RotorBlockEntityRenderer implements BlockEntityRenderer<RotorBlockE
                 blockEntity.getLevel(),
                 blockEntity.getBlockPos()
         );
-        state.rotation = blockEntity.getRotation(partialTicks);
+
         state.facing = blockEntity
                 .getBlockState()
                 .getValue(RotorBlock.FACING);
+
+        state.virtualAssembly =
+                BasicRotorClient
+                        .getAssemblyManager()
+                        .get(blockEntity.getBlockPos());
+
+        if (state.virtualAssembly != null) {
+
+            state.rotation =
+                    interpolateRotation(
+                            state.virtualAssembly.getPreviousRenderRotation(),
+                            state.virtualAssembly.getRenderRotation(),
+                            partialTicks
+                    );
+
+        } else {
+
+            state.rotation =
+                    blockEntity.getRotation(partialTicks);
+        }
+
+        state.virtualBlocks.clear();
+
+
+
+        if (state.virtualAssembly != null) {
+
+            for (var entry
+                    : state.virtualAssembly.getLinkedBlocks().entrySet()) {
+
+                VirtualBlockRenderState virtualBlock =
+                        new VirtualBlockRenderState(
+                                entry.getKey()
+                        );
+
+                blockModelResolver.update(
+                        virtualBlock.modelState,
+                        entry.getValue().getBlockState(),
+                        BlockDisplayContext.create()
+                );
+
+                virtualBlock.modelState.blockLightCoords =
+                        state.lightCoords;
+
+                state.virtualBlocks.add(
+                        virtualBlock
+                );
+            }
+        }
 
         blockModelResolver.update(
                 state.modelState,
@@ -95,14 +146,12 @@ public class RotorBlockEntityRenderer implements BlockEntityRenderer<RotorBlockE
 
         poseStack.translate(0.5, 0.5, 0.5);
 
-// spin trước
         applySpinRotation(
                 state.facing,
                 state.rotation,
                 poseStack
         );
 
-// xoay hướng block sau
         applyFacingRotation(
                 state.facing,
                 poseStack
@@ -117,8 +166,55 @@ public class RotorBlockEntityRenderer implements BlockEntityRenderer<RotorBlockE
                 OverlayTexture.NO_OVERLAY,
                 -1
         );
-
         poseStack.popPose();
+
+        if (state.virtualAssembly != null
+                && state.virtualAssembly.isVirtualized()) {
+
+            poseStack.pushPose();
+
+            poseStack.translate(
+                    0.5,
+                    0.5,
+                    0.5
+            );
+
+            applySpinRotation(
+                    state.facing,
+                    state.rotation,
+                    poseStack
+            );
+
+            poseStack.translate(
+                    -0.5,
+                    -0.5,
+                    -0.5
+            );
+
+            for (VirtualBlockRenderState virtualBlock
+                    : state.virtualBlocks) {
+
+                poseStack.pushPose();
+
+                poseStack.translate(
+                        virtualBlock.relativePos.getX(),
+                        virtualBlock.relativePos.getY(),
+                        virtualBlock.relativePos.getZ()
+                );
+
+                virtualBlock.modelState.submit(
+                        poseStack,
+                        submitNodeCollector,
+                        state.lightCoords,
+                        OverlayTexture.NO_OVERLAY,
+                        -1
+                );
+
+                poseStack.popPose();
+            }
+
+            poseStack.popPose();
+        }
     }
     private void applyFacingRotation(
             Direction facing,
@@ -163,43 +259,50 @@ public class RotorBlockEntityRenderer implements BlockEntityRenderer<RotorBlockE
     ) {
         switch (facing) {
 
-            // Nhìn từ NORTH vào block
             case NORTH ->
                     poseStack.mulPose(
                             Axis.ZP.rotationDegrees(-rotation)
                     );
 
-            // Nhìn từ SOUTH vào block
             case SOUTH ->
                     poseStack.mulPose(
                             Axis.ZP.rotationDegrees(rotation)
                     );
 
-
-            // Nhìn từ WEST vào block
             case WEST ->
                     poseStack.mulPose(
                             Axis.XP.rotationDegrees(-rotation)
                     );
 
-            // Nhìn từ EAST vào block
             case EAST ->
                     poseStack.mulPose(
                             Axis.XP.rotationDegrees(rotation)
                     );
 
-
-            // Nhìn từ trên xuống
             case UP ->
                     poseStack.mulPose(
                             Axis.YP.rotationDegrees(rotation)
                     );
 
-            // Nhìn từ dưới lên
+
             case DOWN ->
                     poseStack.mulPose(
                             Axis.YP.rotationDegrees(-rotation)
                     );
         }
+    }
+
+    //Helpers
+    private float interpolateRotation(
+            float lastRotation,
+            float rotation,
+            float partialTicks
+    ) {
+
+        return Mth.rotLerp(
+                partialTicks,
+                lastRotation,
+                rotation
+        );
     }
 }
