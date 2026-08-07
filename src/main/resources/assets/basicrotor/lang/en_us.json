@@ -1,6 +1,18 @@
 
 {
   "block.basicrotor.rotor": "Rotor",
-  "item.basicrotor.assembly_wrench": "Assembly Wrench"
+  "item.basicrotor.assembly_wrench": "Assembly Wrench",
+
+  "message.basicrotor.rotor_selected": "Rotor selected.",
+  "message.basicrotor.rotor_changed": "Rotor changed.",
+  "message.basicrotor.rotor_already_selected": "Rotor already selected!",
+  "message.basicrotor.select_rotor_first": "Select a rotor first!",
+  "message.basicrotor.block_added": "Block added.",
+  "message.basicrotor.block_already_added": "Block already added!",
+  "message.basicrotor.finish_mode": "Finish mode.",
+  "message.basicrotor.finish_only_rotor": "Finish only works on a rotor!",
+  "message.basicrotor.no_rotor_selected": "No rotor selected!",
+  "message.basicrotor.no_blocks_selected": "No blocks selected!",
+  "message.basicrotor.block_selected": "%s selected."
 }
 

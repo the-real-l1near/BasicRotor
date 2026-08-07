@@ -1,0 +1,23 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "basicrotor:rotor": 2,
+      "basicrotor:assembly_wrench": 25,
+      "minecraft:oak_log": 1
+    },
+    "minecraft:custom": {
+      "minecraft:sprint_one_cm": 1420,
+      "minecraft:time_since_rest": 1480,
+      "minecraft:walk_one_cm": 3998,
+      "minecraft:total_world_time": 1713,
+      "minecraft:leave_game": 1,
+      "minecraft:fly_one_cm": 1723,
+      "minecraft:crouch_one_cm": 3,
+      "minecraft:sneak_time": 224,
+      "minecraft:play_time": 1480,
+      "minecraft:jump": 3,
+      "minecraft:time_since_death": 1480
+    }
+  },
+  "DataVersion": 4903
+}
