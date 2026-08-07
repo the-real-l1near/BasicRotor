@@ -6,6 +6,8 @@ Imports
 ---------------------------
 */
 
+import com.l1near.basicrotor.assembly.manager.LinkSessionManager;
+import com.l1near.basicrotor.assembly.session.LinkSession;
 import com.l1near.basicrotor.registry.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -18,6 +20,15 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class AssemblyWrenchItem extends Item {
+
+    /*
+    ---------------------------
+    Fields
+    ---------------------------
+    */
+
+    private static final LinkSessionManager LINK_SESSION_MANAGER =
+            new LinkSessionManager();
 
     /*
     ---------------------------
@@ -50,7 +61,7 @@ public class AssemblyWrenchItem extends Item {
                 level.getBlockState(blockPos);
         if (blockState.getBlock() == ModBlocks.ROTOR) {
             player.sendSystemMessage(
-                    Component.literal("Rotor detected.")
+                    Component.literal("Rotor selected.")
             );
         }
         else {
@@ -59,6 +70,10 @@ public class AssemblyWrenchItem extends Item {
             );
         }
 
+        LinkSession session =
+                LINK_SESSION_MANAGER.getSession(player);
+
+        session.setSelectedRotorPos(blockPos);
 
 
         return InteractionResult.SUCCESS;

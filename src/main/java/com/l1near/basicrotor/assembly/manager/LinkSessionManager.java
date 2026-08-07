@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-public final class LinkSessionManager {
+public class LinkSessionManager {
 
     /*
     ---------------------------
@@ -21,8 +21,7 @@ public final class LinkSessionManager {
     ---------------------------
     */
 
-    private static final Map<UUID, LinkSession> sessions =
-            new HashMap<>();
+    private final Map<UUID, LinkSession> sessions;
 
     /*
     ---------------------------
@@ -30,8 +29,8 @@ public final class LinkSessionManager {
     ---------------------------
     */
 
-    private LinkSessionManager() {
-
+    public LinkSessionManager() {
+        this.sessions = new HashMap<>();
     }
 
     /*
@@ -41,7 +40,7 @@ public final class LinkSessionManager {
     */
 
     //Get Session
-    public static LinkSession getSession(Player player) {
+    public LinkSession getSession(Player player) {
         return sessions.computeIfAbsent(
                 player.getUUID(),
                 uuid -> new LinkSession()
@@ -49,7 +48,7 @@ public final class LinkSessionManager {
     }
 
     //Clear Session
-    public static void clearSession(Player player) {
+    public void clearSession(Player player) {
         sessions.remove(player.getUUID());
     }
 
