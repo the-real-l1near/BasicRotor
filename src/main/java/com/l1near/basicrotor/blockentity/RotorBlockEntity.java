@@ -30,7 +30,7 @@ public class RotorBlockEntity extends BlockEntity {
 
     private final AssemblyRuntime assemblyRuntime;
 
-    private final LinkedAssembly linkedAssembly;
+    private LinkedAssembly linkedAssembly;
 
     /*
     ---------------------------
@@ -114,5 +114,10 @@ public class RotorBlockEntity extends BlockEntity {
 
     public LinkedAssembly getLinkedAssembly() {
         return linkedAssembly;
+    }
+
+    //Setters
+    public void setLinkedAssembly(LinkedAssembly linkedAssembly) {
+        this.linkedAssembly = linkedAssembly;
     }
 }

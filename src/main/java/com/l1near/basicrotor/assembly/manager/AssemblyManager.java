@@ -12,6 +12,8 @@ import net.minecraft.core.BlockPos;
 import java.util.Collection;
 import java.util.LinkedHashMap;
 
+import com.l1near.basicrotor.assembly.manager.AssemblyManager;
+
 public class AssemblyManager {
 
     /*

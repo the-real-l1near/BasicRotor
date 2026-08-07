@@ -7,7 +7,10 @@ Imports
 */
 
 import com.l1near.basicrotor.assembly.LinkedAssembly;
+import com.l1near.basicrotor.assembly.LinkedBlockData;
+import com.l1near.basicrotor.assembly.session.LinkSession;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.Level;
 
 public class AssemblyFactory {
 
@@ -18,8 +21,31 @@ public class AssemblyFactory {
     */
 
     //Create
-    public LinkedAssembly create(BlockPos originPos) {
-        return new LinkedAssembly(originPos);
+    public LinkedAssembly create(
+            Level level,
+            LinkSession session
+    ) {
+        BlockPos originPos =
+                session.getSelectedRotorPos();
+
+        LinkedAssembly assembly =
+                new LinkedAssembly(originPos);
+        for (BlockPos blockPos : session.getSelectedBlocks()) {
+
+            BlockPos relativePos =
+                    blockPos.subtract(originPos);
+
+            LinkedBlockData blockData =
+                    new LinkedBlockData(
+                            level.getBlockState(blockPos)
+                    );
+
+            assembly.addBlock(
+                    relativePos,
+                    blockData
+            );
+        }
+        return assembly;
     }
 
 }

@@ -12,5 +12,6 @@
   "message.basicrotor.finish_only_rotor": "Chỉ có thể hoàn tất trên rotor!",
   "message.basicrotor.no_rotor_selected": "Chưa chọn rotor!",
   "message.basicrotor.no_blocks_selected": "Chưa chọn block nào!",
-  "message.basicrotor.block_selected": "Đã chọn %s."
+  "message.basicrotor.block_selected": "Đã chọn %s.",
+  "message.basicrotor.assembly_created": "Đã tạo assembly."
 }

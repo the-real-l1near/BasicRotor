@@ -1,0 +1,20 @@
+{
+  "stats": {
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 585,
+      "minecraft:walk_one_cm": 2005,
+      "minecraft:total_world_time": 601,
+      "minecraft:leave_game": 1,
+      "minecraft:sneak_time": 17,
+      "minecraft:play_time": 585,
+      "minecraft:time_since_death": 585
+    },
+    "minecraft:used": {
+      "minecraft:grass_block": 2,
+      "basicrotor:rotor": 1,
+      "minecraft:brown_wool": 1,
+      "basicrotor:assembly_wrench": 7
+    }
+  },
+  "DataVersion": 4903
+}

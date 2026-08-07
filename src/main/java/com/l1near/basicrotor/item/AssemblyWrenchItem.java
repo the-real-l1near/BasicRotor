@@ -6,8 +6,12 @@ Imports
 ---------------------------
 */
 
+import com.l1near.basicrotor.assembly.LinkedAssembly;
+import com.l1near.basicrotor.assembly.factory.AssemblyFactory;
+import com.l1near.basicrotor.assembly.manager.AssemblyManager;
 import com.l1near.basicrotor.assembly.manager.LinkSessionManager;
 import com.l1near.basicrotor.assembly.session.LinkSession;
+import com.l1near.basicrotor.blockentity.RotorBlockEntity;
 import com.l1near.basicrotor.registry.ModBlocks;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -18,6 +22,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class AssemblyWrenchItem extends Item {
@@ -30,6 +35,8 @@ public class AssemblyWrenchItem extends Item {
 
     private static final LinkSessionManager LINK_SESSION_MANAGER =
             new LinkSessionManager();
+    private static final AssemblyManager ASSEMBLY_MANAGER =
+            new AssemblyManager();
 
     /*
     ---------------------------
@@ -100,8 +107,42 @@ public class AssemblyWrenchItem extends Item {
                 return InteractionResult.SUCCESS;
             }
 
+            AssemblyFactory factory =
+                    new AssemblyFactory();
+
+            LinkedAssembly assembly =
+                    factory.create(
+                            level,
+                            session
+                    );
+
+            BlockEntity blockEntity =
+                    level.getBlockEntity(
+                            session.getSelectedRotorPos()
+                    );
+
+            if (!(blockEntity instanceof RotorBlockEntity rotorBlockEntity)) {
+                return InteractionResult.SUCCESS;
+            }
+
+            rotorBlockEntity.setLinkedAssembly(assembly);
+
+            ASSEMBLY_MANAGER.register(
+                    session.getSelectedRotorPos(),
+                    assembly
+            );
+
+            LINK_SESSION_MANAGER.clearSession(player);
+
+            LinkedAssembly registeredAssembly =
+                    ASSEMBLY_MANAGER.get(
+                            session.getSelectedRotorPos()
+                    );
+
             player.sendSystemMessage(
-                    Component.translatable("message.basicrotor.finish_mode")
+                    Component.translatable(
+                                    "message.basicrotor.assembly_created"
+                            )
                             .withStyle(ChatFormatting.GREEN)
             );
 
