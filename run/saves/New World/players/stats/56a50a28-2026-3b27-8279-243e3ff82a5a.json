@@ -1,0 +1,16 @@
+{
+  "stats": {
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 330,
+      "minecraft:walk_one_cm": 64,
+      "minecraft:total_world_time": 352,
+      "minecraft:leave_game": 1,
+      "minecraft:play_time": 330,
+      "minecraft:time_since_death": 330
+    },
+    "minecraft:used": {
+      "basicrotor:assembly_wrench": 36
+    }
+  },
+  "DataVersion": 4903
+}

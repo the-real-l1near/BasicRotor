@@ -18,7 +18,7 @@ public class LinkSession {
     ---------------------------
     */
 
-    private final BlockPos originPos;
+    private BlockPos selectedRotorPos;
 
     private final LinkedHashSet<BlockPos> selectedBlocks;
 
@@ -28,8 +28,7 @@ public class LinkSession {
     ---------------------------
     */
 
-    public LinkSession(BlockPos originPos) {
-        this.originPos = originPos;
+    public LinkSession() {
         this.selectedBlocks = new LinkedHashSet<>();
     }
 
@@ -60,12 +59,17 @@ public class LinkSession {
     }
 
     //Getters
-    public BlockPos getOriginPos() {
-        return originPos;
+    public BlockPos getSelectedRotorPos() {
+        return selectedRotorPos;
     }
 
     public LinkedHashSet<BlockPos> getSelectedBlocks() {
         return selectedBlocks;
+    }
+
+    //Setters
+    public void setSelectedRotorPos(BlockPos selectedRotorPos) {
+        this.selectedRotorPos = selectedRotorPos;
     }
 
 }
