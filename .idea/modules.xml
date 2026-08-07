@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BasicRotor.client.iml" filepath="$PROJECT_DIR$/.idea/modules/BasicRotor.client.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BasicRotor.main.iml" filepath="$PROJECT_DIR$/.idea/modules/BasicRotor.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BasicRotor.test.iml" filepath="$PROJECT_DIR$/.idea/modules/BasicRotor.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/basicrotor.client.iml" filepath="$PROJECT_DIR$/.idea/modules/basicrotor.client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/basicrotor.main.iml" filepath="$PROJECT_DIR$/.idea/modules/basicrotor.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/basicrotor.test.iml" filepath="$PROJECT_DIR$/.idea/modules/basicrotor.test.iml" />
     </modules>
   </component>
 </project>

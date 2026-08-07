@@ -60,6 +60,26 @@ public class AssemblyWrenchItem extends Item {
         BlockState blockState =
                 level.getBlockState(blockPos);
         if (blockState.getBlock() == ModBlocks.ROTOR) {
+
+            LinkSession session =
+                    LINK_SESSION_MANAGER.getSession(player);
+
+            BlockPos currentRotorPos =
+                    session.getSelectedRotorPos();
+
+            if (currentRotorPos == null) {
+
+                session.setSelectedRotorPos(blockPos);
+
+                player.sendSystemMessage(
+                        Component.literal("Rotor selected.")
+                );
+
+                return InteractionResult.SUCCESS;
+            }
+
+            session.setSelectedRotorPos(blockPos);
+
             player.sendSystemMessage(
                     Component.literal("Rotor selected.")
             );
