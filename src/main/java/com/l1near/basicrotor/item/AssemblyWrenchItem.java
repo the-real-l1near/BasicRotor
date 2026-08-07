@@ -65,8 +65,30 @@ public class AssemblyWrenchItem extends Item {
             );
         }
         else {
+
+            LinkSession session =
+                    LINK_SESSION_MANAGER.getSession(player);
+
+            if (session.getSelectedRotorPos() == null) {
+
+                player.sendSystemMessage(
+                        Component.literal("Select a rotor first.")
+                );
+
+                return InteractionResult.SUCCESS;
+            }
+            if (session.contains(blockPos)) {
+
+                player.sendSystemMessage(
+                        Component.literal("Block already added.")
+                );
+
+                return InteractionResult.SUCCESS;
+            }
+            session.addBlock(blockPos);
+
             player.sendSystemMessage(
-                    Component.literal("Not a rotor.")
+                    Component.literal("Block added.")
             );
         }
 
