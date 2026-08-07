@@ -78,11 +78,24 @@ public class AssemblyWrenchItem extends Item {
                 return InteractionResult.SUCCESS;
             }
 
+            if (currentRotorPos.equals(blockPos)) {
+
+                player.sendSystemMessage(
+                        Component.literal("Rotor already selected.")
+                );
+
+                return InteractionResult.SUCCESS;
+            }
+
+            session.clear();
+
             session.setSelectedRotorPos(blockPos);
 
             player.sendSystemMessage(
-                    Component.literal("Rotor selected.")
+                    Component.literal("Rotor changed.")
             );
+
+            return InteractionResult.SUCCESS;
         }
         else {
 
@@ -111,11 +124,6 @@ public class AssemblyWrenchItem extends Item {
                     Component.literal("Block added.")
             );
         }
-
-        LinkSession session =
-                LINK_SESSION_MANAGER.getSession(player);
-
-        session.setSelectedRotorPos(blockPos);
 
 
         return InteractionResult.SUCCESS;
