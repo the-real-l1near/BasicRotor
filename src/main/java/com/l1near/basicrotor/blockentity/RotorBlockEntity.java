@@ -93,6 +93,7 @@ public class RotorBlockEntity extends BlockEntity {
         );
 
         if (!level.isClientSide()) {
+
             float rotationStep = 0.0F;
 
             if (assemblyRuntime.isVirtualized()) {
@@ -105,24 +106,29 @@ public class RotorBlockEntity extends BlockEntity {
                     rotationStep += 360.0F;
                 }
             }
-            RotorMovementPayload payload =
-                    new RotorMovementPayload(
-                            worldPosition,
-                            movementData.getRotation(),
-                            rotationStep,
-                            assemblyRuntime.isVirtualized()
+
+            if (level instanceof ServerLevel serverLevel
+                    && !linkedAssembly.isEmpty()) {
+
+                RotorMovementPayload payload =
+                        new RotorMovementPayload(
+                                worldPosition,
+                                movementData.getRotation(),
+                                rotationStep,
+                                assemblyRuntime.isVirtualized()
+                        );
+
+                for (ServerPlayer player
+                        : PlayerLookup.tracking(
+                        serverLevel,
+                        worldPosition
+                )) {
+
+                    ServerPlayNetworking.send(
+                            player,
+                            payload
                     );
-
-            for (ServerPlayer player
-                    : PlayerLookup.tracking(
-                    (ServerLevel) level,
-                    worldPosition
-            )) {
-
-                ServerPlayNetworking.send(
-                        player,
-                        payload
-                );
+                }
             }
         }
     }
@@ -142,6 +148,10 @@ public class RotorBlockEntity extends BlockEntity {
 
     public LinkedAssembly getLinkedAssembly() {
         return linkedAssembly;
+    }
+
+    public AssemblyRuntime getAssemblyRuntime() {
+        return assemblyRuntime;
     }
 
     //Setters

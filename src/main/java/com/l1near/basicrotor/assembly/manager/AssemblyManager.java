@@ -52,6 +52,24 @@ public class AssemblyManager {
         assemblies.put(rotorPos, assembly);
     }
 
+    //Find Assembly By Block
+    public LinkedAssembly findByBlockPos(BlockPos blockPos) {
+
+        for (LinkedAssembly assembly : assemblies.values()) {
+
+            BlockPos relativePos =
+                    blockPos.subtract(
+                            assembly.getOriginPos()
+                    );
+
+            if (assembly.contains(relativePos)) {
+                return assembly;
+            }
+        }
+
+        return null;
+    }
+
     //Remove
     public void remove(BlockPos rotorPos) {
         assemblies.remove(rotorPos);

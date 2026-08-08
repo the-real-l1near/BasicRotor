@@ -2,3 +2,4 @@
 /time set minecraft:day
 /time set minecraft:night
 /give @p basicrotor:assembly_wrench
+/time set minecraft:day

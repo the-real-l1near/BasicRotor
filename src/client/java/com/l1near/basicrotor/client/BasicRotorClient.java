@@ -19,6 +19,7 @@ import com.l1near.basicrotor.assembly.LinkedBlockData;
 import com.l1near.basicrotor.network.payload.RotorMovementPayload;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import com.l1near.basicrotor.network.payload.AssemblyRequestPayload;
+import com.l1near.basicrotor.network.payload.AssemblyRemovePayload;
 
 public class BasicRotorClient implements ClientModInitializer {
 
@@ -126,6 +127,24 @@ public class BasicRotorClient implements ClientModInitializer {
                     });
                 }
         );
+
+        ClientPlayNetworking.registerGlobalReceiver(
+                AssemblyRemovePayload.TYPE,
+                (payload, context) -> {
+
+                    context.client().execute(() -> {
+
+                        ASSEMBLY_MANAGER.remove(
+                                payload.rotorPos()
+                        );
+
+                        ASSEMBLY_MANAGER.clearPending(
+                                payload.rotorPos()
+                        );
+                    });
+                }
+        );
+
         ClientTickEvents.END_CLIENT_TICK.register(
                 client -> {
 

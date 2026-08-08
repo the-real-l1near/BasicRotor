@@ -1,15 +1,20 @@
 {
   "stats": {
-    "minecraft:used": {
-      "minecraft:lever": 1,
-      "basicrotor:assembly_wrench": 4
-    },
     "minecraft:custom": {
-      "minecraft:time_since_rest": 238,
-      "minecraft:total_world_time": 263,
-      "minecraft:leave_game": 1,
-      "minecraft:play_time": 238,
-      "minecraft:time_since_death": 238
+      "minecraft:time_since_rest": 605,
+      "minecraft:walk_one_cm": 809,
+      "minecraft:total_world_time": 820,
+      "minecraft:leave_game": 2,
+      "minecraft:crouch_one_cm": 2,
+      "minecraft:sneak_time": 7,
+      "minecraft:play_time": 605,
+      "minecraft:time_since_death": 605
+    },
+    "minecraft:used": {
+      "minecraft:grass_block": 2,
+      "basicrotor:rotor": 2,
+      "minecraft:lever": 1,
+      "basicrotor:assembly_wrench": 9
     }
   },
   "DataVersion": 4903
