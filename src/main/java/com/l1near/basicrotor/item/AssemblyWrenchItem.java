@@ -9,7 +9,6 @@ Imports
 import com.l1near.basicrotor.BasicRotor;
 import com.l1near.basicrotor.assembly.LinkedAssembly;
 import com.l1near.basicrotor.assembly.factory.AssemblyFactory;
-import com.l1near.basicrotor.assembly.manager.AssemblyManager;
 import com.l1near.basicrotor.assembly.manager.LinkSessionManager;
 import com.l1near.basicrotor.assembly.session.LinkSession;
 import com.l1near.basicrotor.blockentity.RotorBlockEntity;
@@ -18,6 +17,7 @@ import com.l1near.basicrotor.registry.ModBlocks;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -37,8 +37,6 @@ public class AssemblyWrenchItem extends Item {
 
     private static final LinkSessionManager LINK_SESSION_MANAGER =
             new LinkSessionManager();
-    private static final AssemblyManager ASSEMBLY_MANAGER =
-            new AssemblyManager();
 
     /*
     ---------------------------
@@ -129,12 +127,20 @@ public class AssemblyWrenchItem extends Item {
 
             rotorBlockEntity.setLinkedAssembly(assembly);
 
-            BasicRotor
-                    .getAssemblyManager()
-                    .register(
-                            session.getSelectedRotorPos(),
-                            assembly
-                    );
+            if (level instanceof ServerLevel serverLevel) {
+
+                BasicRotor
+                        .getAssemblyManager(
+                                serverLevel
+                        )
+                        .register(
+                                session.getSelectedRotorPos(),
+                                assembly
+                        );
+                BasicRotor.saveAssemblyManager(
+                        serverLevel
+                );
+            }
 
             if (player instanceof ServerPlayer serverPlayer) {
 
@@ -145,11 +151,6 @@ public class AssemblyWrenchItem extends Item {
             }
 
             LINK_SESSION_MANAGER.clearSession(player);
-
-            LinkedAssembly registeredAssembly =
-                    ASSEMBLY_MANAGER.get(
-                            session.getSelectedRotorPos()
-                    );
 
             player.sendSystemMessage(
                     Component.translatable(

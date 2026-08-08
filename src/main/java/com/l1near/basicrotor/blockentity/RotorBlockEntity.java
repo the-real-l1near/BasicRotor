@@ -21,6 +21,7 @@ import com.l1near.basicrotor.network.payload.RotorMovementPayload;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.server.level.ServerPlayer;
 import net.fabricmc.fabric.api.networking.v1.PlayerLookup;
+import com.l1near.basicrotor.BasicRotor;
 
 public class RotorBlockEntity extends BlockEntity {
 
@@ -76,6 +77,25 @@ public class RotorBlockEntity extends BlockEntity {
 
     //serverTick
     private void serverTick() {
+
+        if (level instanceof ServerLevel serverLevel
+                && linkedAssembly.isEmpty()) {
+
+            LinkedAssembly savedAssembly =
+                    BasicRotor
+                            .getAssemblyManager(
+                                    serverLevel
+                            )
+                            .get(
+                                    worldPosition
+                            );
+
+            if (savedAssembly != null) {
+
+                linkedAssembly =
+                        savedAssembly;
+            }
+        }
 
         MovementInput movementInput = new MovementInput();
 

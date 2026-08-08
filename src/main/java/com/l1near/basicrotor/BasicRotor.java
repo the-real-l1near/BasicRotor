@@ -7,6 +7,7 @@ Imports
 */
 
 import com.l1near.basicrotor.assembly.LinkedAssembly;
+import com.l1near.basicrotor.assembly.persistence.AssemblySavedData;
 import com.l1near.basicrotor.blockentity.RotorBlockEntity;
 import com.l1near.basicrotor.registry.ModBlockEntities;
 import com.l1near.basicrotor.registry.ModBlocks;
@@ -27,6 +28,10 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import com.l1near.basicrotor.network.payload.AssemblyRemovePayload;
 
+import java.util.HashMap;
+import java.util.Map;
+
+
 public class BasicRotor implements ModInitializer {
 
     /*
@@ -36,8 +41,8 @@ public class BasicRotor implements ModInitializer {
     */
 
     public static final String MOD_ID = "basicrotor";
-    private static final AssemblyManager ASSEMBLY_MANAGER =
-            new AssemblyManager();
+    private static final Map<ServerLevel, AssemblyManager> ASSEMBLY_MANAGERS =
+            new HashMap<>();
 
     /*
     ---------------------------
@@ -69,11 +74,22 @@ public class BasicRotor implements ModInitializer {
         ServerPlayConnectionEvents.JOIN.register(
                 (handler, sender, server) -> {
 
-                    for (var assembly
-                            : ASSEMBLY_MANAGER.getAssemblies()) {
+                    ServerPlayer player =
+                            handler.player;
+
+                    ServerLevel serverLevel =
+                            (ServerLevel) player.level();
+
+                    AssemblyManager assemblyManager =
+                            getAssemblyManager(
+                                    serverLevel
+                            );
+
+                    for (LinkedAssembly assembly
+                            : assemblyManager.getAssemblies()) {
 
                         AssemblySync.sendSnapshot(
-                                handler.player,
+                                player,
                                 assembly
                         );
                     }
@@ -85,8 +101,16 @@ public class BasicRotor implements ModInitializer {
 
                     context.server().execute(() -> {
 
+                        ServerPlayer player =
+                                context.player();
+
+                        ServerLevel serverLevel =
+                                (ServerLevel) player.level();
+
                         LinkedAssembly assembly =
-                                ASSEMBLY_MANAGER.get(
+                                getAssemblyManager(
+                                        serverLevel
+                                ).get(
                                         payload.rotorPos()
                                 );
 
@@ -95,7 +119,7 @@ public class BasicRotor implements ModInitializer {
                         }
 
                         AssemblySync.sendSnapshot(
-                                context.player(),
+                                player,
                                 assembly
                         );
                     });
@@ -103,8 +127,18 @@ public class BasicRotor implements ModInitializer {
         );
         PlayerBlockBreakEvents.AFTER.register(
                 (level, player, blockPos, blockState, blockEntity) -> {
+
+                    if (!(level instanceof ServerLevel serverLevel)) {
+                        return;
+                    }
+
+                    AssemblyManager assemblyManager =
+                            getAssemblyManager(
+                                    serverLevel
+                            );
+
                     LinkedAssembly rotorAssembly =
-                            ASSEMBLY_MANAGER.get(
+                            assemblyManager.get(
                                     blockPos
                             );
 
@@ -133,22 +167,24 @@ public class BasicRotor implements ModInitializer {
                             }
                         }
 
-                        ASSEMBLY_MANAGER.remove(
+                        assemblyManager.remove(
                                 blockPos
                         );
 
-                        if (level instanceof ServerLevel serverLevel) {
+                        saveAssemblyManager(
+                                serverLevel
+                        );
 
-                            AssemblySync.sendRemove(
-                                    serverLevel,
-                                    blockPos
-                            );
-                        }
+                        AssemblySync.sendRemove(
+                                serverLevel,
+                                blockPos
+                        );
 
                         return;
                     }
+
                     LinkedAssembly assembly =
-                            ASSEMBLY_MANAGER.findByBlockPos(
+                            assemblyManager.findByBlockPos(
                                     blockPos
                             );
 
@@ -164,32 +200,32 @@ public class BasicRotor implements ModInitializer {
                     assembly.removeBlock(
                             relativePos
                     );
+
                     if (assembly.isEmpty()) {
 
-                        ASSEMBLY_MANAGER.remove(
+                        assemblyManager.remove(
                                 assembly.getOriginPos()
                         );
 
-                        if (level instanceof ServerLevel serverLevel) {
+                        saveAssemblyManager(
+                                serverLevel
+                        );
 
-                            AssemblySync.sendRemove(
-                                    serverLevel,
-                                    assembly.getOriginPos()
-                            );
-                        }
+                        AssemblySync.sendRemove(
+                                serverLevel,
+                                assembly.getOriginPos()
+                        );
 
                         return;
                     }
-                    if (level instanceof ServerLevel serverLevel) {
 
-                        AssemblySync.sendSnapshotToTracking(
-                                serverLevel,
-                                assembly
-                        );
-                    }
-                    System.out.println(
-                            "[BasicRotor] Linked block removed. Remaining blocks: "
-                                    + assembly.size()
+                    saveAssemblyManager(
+                            serverLevel
+                    );
+
+                    AssemblySync.sendSnapshotToTracking(
+                            serverLevel,
+                            assembly
                     );
                 }
         );
@@ -203,7 +239,41 @@ public class BasicRotor implements ModInitializer {
     */
 
     //Getters
-    public static AssemblyManager getAssemblyManager() {
-        return ASSEMBLY_MANAGER;
+    public static AssemblyManager getAssemblyManager(
+            ServerLevel level
+    ) {
+        return ASSEMBLY_MANAGERS.computeIfAbsent(
+                level,
+                key -> {
+
+                    AssemblyManager assemblyManager =
+                            new AssemblyManager();
+
+                    AssemblySavedData
+                            .get(level)
+                            .loadIntoManager(
+                                    assemblyManager
+                            );
+
+                    return assemblyManager;
+                }
+        );
+    }
+
+    //Save Assembly Manager
+    public static void saveAssemblyManager(
+            ServerLevel level
+    ) {
+
+        AssemblyManager assemblyManager =
+                getAssemblyManager(
+                        level
+                );
+
+        AssemblySavedData
+                .get(level)
+                .updateFromManager(
+                        assemblyManager
+                );
     }
 }
