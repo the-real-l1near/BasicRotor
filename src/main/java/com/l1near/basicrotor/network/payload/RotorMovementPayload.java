@@ -18,6 +18,7 @@ public record RotorMovementPayload(
         BlockPos rotorPos,
         float rotation,
         float rotationStep,
+        boolean moving,
         boolean virtualized
 ) implements CustomPacketPayload {
 
@@ -52,6 +53,9 @@ public record RotorMovementPayload(
 
                     ByteBufCodecs.FLOAT,
                     RotorMovementPayload::rotationStep,
+
+                    ByteBufCodecs.BOOL,
+                    RotorMovementPayload::moving,
 
                     ByteBufCodecs.BOOL,
                     RotorMovementPayload::virtualized,

@@ -8,11 +8,18 @@ Fields
 
 public class ClientRotorMovementData {
 
+    /*
+    ---------------------------
+    Fields
+    ---------------------------
+    */
+
     private float rotation;
     private float rotationStep;
 
     private float renderRotation;
     private float previousRenderRotation;
+    private boolean moving;
 
     /*
     ---------------------------
@@ -27,6 +34,7 @@ public class ClientRotorMovementData {
 
         this.renderRotation = 0.0F;
         this.previousRenderRotation = 0.0F;
+        this.moving = false;
     }
 
     /*
@@ -36,10 +44,20 @@ public class ClientRotorMovementData {
     */
 
     //Tick
+    //Tick
+    //Tick
     public void tickRenderRotation() {
 
         previousRenderRotation =
                 renderRotation;
+
+        if (!moving) {
+
+            renderRotation =
+                    rotation;
+
+            return;
+        }
 
         renderRotation +=
                 rotationStep;
@@ -75,5 +93,8 @@ public class ClientRotorMovementData {
 
     public void setRotationStep(float rotationStep) {
         this.rotationStep = rotationStep;
+    }
+    public void setMoving(boolean moving) {
+        this.moving = moving;
     }
 }

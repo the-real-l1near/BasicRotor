@@ -79,17 +79,31 @@ public class RotorBlockEntityRenderer implements BlockEntityRenderer<RotorBlockE
                 .getBlockState()
                 .getValue(RotorBlock.FACING);
 
-        state.virtualAssembly =
-                BasicRotorClient
-                        .getAssemblyManager()
-                        .get(blockEntity.getBlockPos());
+        state.virtualAssembly = null;
 
-        ClientRotorMovementData rotorMovement =
-                BasicRotorClient
-                        .getRotorMovementManager()
-                        .get(
-                                blockEntity.getBlockPos()
-                        );
+        if (blockEntity.getLevel() != null) {
+
+            state.virtualAssembly =
+                    BasicRotorClient
+                            .getAssemblyManager()
+                            .get(
+                                    blockEntity.getLevel().dimension(),
+                                    blockEntity.getBlockPos()
+                            );
+        }
+
+        ClientRotorMovementData rotorMovement = null;
+
+        if (blockEntity.getLevel() != null) {
+
+            rotorMovement =
+                    BasicRotorClient
+                            .getRotorMovementManager()
+                            .get(
+                                    blockEntity.getLevel().dimension(),
+                                    blockEntity.getBlockPos()
+                            );
+        }
 
         if (rotorMovement != null) {
 

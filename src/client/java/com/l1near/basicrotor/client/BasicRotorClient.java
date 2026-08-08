@@ -63,6 +63,10 @@ public class BasicRotorClient implements ClientModInitializer {
                 AssemblySnapshotPayload.TYPE,
                 (payload, context) -> {
 
+                    if (context.client().level == null) {
+                        return;
+                    }
+
                     context.client().execute(() -> {
                         VirtualAssemblyData assembly =
                                 new VirtualAssemblyData(
@@ -83,10 +87,13 @@ public class BasicRotorClient implements ClientModInitializer {
                         }
 
                         ASSEMBLY_MANAGER.register(
+                                context.client().level.dimension(),
                                 payload.rotorPos(),
                                 assembly
                         );
+
                         ASSEMBLY_MANAGER.clearPending(
+                                context.client().level.dimension(),
                                 payload.rotorPos()
                         );
                     });
@@ -99,8 +106,13 @@ public class BasicRotorClient implements ClientModInitializer {
 
                     context.client().execute(() -> {
 
+                        if (context.client().level == null) {
+                            return;
+                        }
+
                         ClientRotorMovementData rotorMovement =
                                 ROTOR_MOVEMENT_MANAGER.getOrCreate(
+                                        context.client().level.dimension(),
                                         payload.rotorPos()
                                 );
 
@@ -112,14 +124,20 @@ public class BasicRotorClient implements ClientModInitializer {
                                 payload.rotationStep()
                         );
 
+                        rotorMovement.setMoving(
+                                payload.moving()
+                        );
+
                         VirtualAssemblyData assembly =
                                 ASSEMBLY_MANAGER.get(
+                                        context.client().level.dimension(),
                                         payload.rotorPos()
                                 );
 
                         if (assembly == null) {
 
                             if (ASSEMBLY_MANAGER.markPending(
+                                    context.client().level.dimension(),
                                     payload.rotorPos()
                             )) {
 
@@ -154,11 +172,17 @@ public class BasicRotorClient implements ClientModInitializer {
 
                     context.client().execute(() -> {
 
+                        if (context.client().level == null) {
+                            return;
+                        }
+
                         ASSEMBLY_MANAGER.remove(
+                                context.client().level.dimension(),
                                 payload.rotorPos()
                         );
 
                         ASSEMBLY_MANAGER.clearPending(
+                                context.client().level.dimension(),
                                 payload.rotorPos()
                         );
                     });
@@ -171,7 +195,12 @@ public class BasicRotorClient implements ClientModInitializer {
 
                     context.client().execute(() -> {
 
+                        if (context.client().level == null) {
+                            return;
+                        }
+
                         ROTOR_MOVEMENT_MANAGER.remove(
+                                context.client().level.dimension(),
                                 payload.rotorPos()
                         );
                     });

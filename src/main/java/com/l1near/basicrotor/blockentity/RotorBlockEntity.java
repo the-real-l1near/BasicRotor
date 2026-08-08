@@ -11,6 +11,7 @@ import com.l1near.basicrotor.assembly.runtime.AssemblyRuntime;
 import com.l1near.basicrotor.movement.MovementData;
 import com.l1near.basicrotor.movement.MovementInput;
 import com.l1near.basicrotor.movement.MovementRuntime;
+import com.l1near.basicrotor.movement.MovementState;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
@@ -128,6 +129,7 @@ public class RotorBlockEntity extends BlockEntity {
                                 worldPosition,
                                 movementData.getRotation(),
                                 rotationStep,
+                                movementData.getState() != MovementState.STOPPED,
                                 assemblyRuntime.isVirtualized()
                         );
 

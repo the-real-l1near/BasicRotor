@@ -6,7 +6,10 @@ Imports
 ---------------------------
 */
 
+import com.l1near.basicrotor.client.data.ClientRotorKey;
 import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.Level;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -21,8 +24,10 @@ public class ClientAssemblyManager {
     ---------------------------
     */
 
-    private final LinkedHashMap<BlockPos, VirtualAssemblyData> assemblies;
-    private final Set<BlockPos> pendingRequests;
+    private final LinkedHashMap<ClientRotorKey, VirtualAssemblyData> assemblies;
+
+    private final Set<ClientRotorKey> pendingRequests;
+
     /*
     ---------------------------
     Constructors
@@ -42,38 +47,93 @@ public class ClientAssemblyManager {
 
     //Register
     public void register(
+            ResourceKey<Level> dimension,
             BlockPos rotorPos,
             VirtualAssemblyData assembly
     ) {
-        assemblies.put(rotorPos, assembly);
+
+        assemblies.put(
+                new ClientRotorKey(
+                        dimension,
+                        rotorPos
+                ),
+                assembly
+        );
     }
 
     //Remove
-    public void remove(BlockPos rotorPos) {
-        assemblies.remove(rotorPos);
+    public void remove(
+            ResourceKey<Level> dimension,
+            BlockPos rotorPos
+    ) {
+
+        assemblies.remove(
+                new ClientRotorKey(
+                        dimension,
+                        rotorPos
+                )
+        );
     }
 
     //Contains
-    public boolean contains(BlockPos rotorPos) {
-        return assemblies.containsKey(rotorPos);
+    public boolean contains(
+            ResourceKey<Level> dimension,
+            BlockPos rotorPos
+    ) {
+
+        return assemblies.containsKey(
+                new ClientRotorKey(
+                        dimension,
+                        rotorPos
+                )
+        );
     }
 
-    public boolean markPending(BlockPos rotorPos) {
-        return pendingRequests.add(rotorPos);
+    //Requests
+    public boolean markPending(
+            ResourceKey<Level> dimension,
+            BlockPos rotorPos
+    ) {
+
+        return pendingRequests.add(
+                new ClientRotorKey(
+                        dimension,
+                        rotorPos
+                )
+        );
     }
 
-    public void clearPending(BlockPos rotorPos) {
-        pendingRequests.remove(rotorPos);
+    public void clearPending(
+            ResourceKey<Level> dimension,
+            BlockPos rotorPos
+    ) {
+
+        pendingRequests.remove(
+                new ClientRotorKey(
+                        dimension,
+                        rotorPos
+                )
+        );
     }
 
     //Get
-    public VirtualAssemblyData get(BlockPos rotorPos) {
-        return assemblies.get(rotorPos);
+    public VirtualAssemblyData get(
+            ResourceKey<Level> dimension,
+            BlockPos rotorPos
+    ) {
+
+        return assemblies.get(
+                new ClientRotorKey(
+                        dimension,
+                        rotorPos
+                )
+        );
     }
 
     //Clear
     public void clear() {
         assemblies.clear();
+        pendingRequests.clear();
     }
 
     //Assemblies
