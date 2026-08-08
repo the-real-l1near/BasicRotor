@@ -200,10 +200,23 @@ public class AssemblyWrenchItem extends Item {
 
             if (currentRotorPos == null) {
 
-                session.setSelectedRotorPos(blockPos);
+                session.setSelectedRotorPos(
+                        blockPos
+                );
+
+                if (level instanceof ServerLevel serverLevel) {
+
+                    preloadAssembly(
+                            serverLevel,
+                            blockPos,
+                            session
+                    );
+                }
 
                 player.sendSystemMessage(
-                        Component.translatable("message.basicrotor.rotor_selected")
+                        Component.translatable(
+                                        "message.basicrotor.rotor_selected"
+                                )
                                 .withStyle(ChatFormatting.GREEN)
                 );
 
@@ -222,10 +235,23 @@ public class AssemblyWrenchItem extends Item {
 
             session.clear();
 
-            session.setSelectedRotorPos(blockPos);
+            session.setSelectedRotorPos(
+                    blockPos
+            );
+
+            if (level instanceof ServerLevel serverLevel) {
+
+                preloadAssembly(
+                        serverLevel,
+                        blockPos,
+                        session
+                );
+            }
 
             player.sendSystemMessage(
-                    Component.translatable("message.basicrotor.rotor_changed")
+                    Component.translatable(
+                                    "message.basicrotor.rotor_changed"
+                            )
                             .withStyle(ChatFormatting.GREEN)
             );
 
@@ -302,5 +328,39 @@ public class AssemblyWrenchItem extends Item {
 
 
         return InteractionResult.SUCCESS;
+    }
+
+    //Preload Assembly
+    private void preloadAssembly(
+            ServerLevel level,
+            BlockPos rotorPos,
+            LinkSession session
+    ) {
+
+        LinkedAssembly existingAssembly =
+                BasicRotor
+                        .getAssemblyManager(
+                                level
+                        )
+                        .get(
+                                rotorPos
+                        );
+
+        if (existingAssembly == null) {
+            return;
+        }
+
+        for (var entry
+                : existingAssembly.getEntries()) {
+
+            BlockPos worldPos =
+                    rotorPos.offset(
+                            entry.getKey()
+                    );
+
+            session.addBlock(
+                    worldPos
+            );
+        }
     }
 }

@@ -30,6 +30,7 @@ import com.l1near.basicrotor.network.payload.AssemblyRemovePayload;
 import java.util.HashMap;
 import java.util.Map;
 import com.l1near.basicrotor.network.payload.RotorRemovePayload;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 
 
 public class BasicRotor implements ModInitializer {
@@ -234,6 +235,12 @@ public class BasicRotor implements ModInitializer {
                             serverLevel,
                             assembly
                     );
+                }
+        );
+        ServerLifecycleEvents.SERVER_STOPPED.register(
+                server -> {
+
+                    ASSEMBLY_MANAGERS.clear();
                 }
         );
         PayloadTypeRegistry.clientboundPlay().register(
