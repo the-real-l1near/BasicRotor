@@ -20,6 +20,8 @@ public class VirtualBlockRenderState {
     public final BlockPos relativePos;
     public final BlockModelRenderState modelState;
 
+    public int lightCoords;
+
     /*
     ---------------------------
     Constructors

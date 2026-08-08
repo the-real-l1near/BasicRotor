@@ -18,6 +18,7 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.feature.ModelFeatureRenderer;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.LightCoordsUtil;
 import net.minecraft.world.phys.Vec3;
@@ -142,9 +143,21 @@ public class RotorBlockEntityRenderer implements BlockEntityRenderer<RotorBlockE
                         BlockDisplayContext.create()
                 );
 
-                virtualBlock.modelState.blockLightCoords =
-                        state.lightCoords;
+                BlockPos virtualBlockPos =
+                        blockEntity
+                                .getBlockPos()
+                                .offset(
+                                        entry.getKey()
+                                );
 
+                virtualBlock.lightCoords =
+                        LightCoordsUtil.getLightCoords(
+                                blockEntity.getLevel(),
+                                virtualBlockPos
+                        );
+
+                virtualBlock.modelState.blockLightCoords =
+                        virtualBlock.lightCoords;
                 state.virtualBlocks.add(
                         virtualBlock
                 );
@@ -229,7 +242,7 @@ public class RotorBlockEntityRenderer implements BlockEntityRenderer<RotorBlockE
                 virtualBlock.modelState.submit(
                         poseStack,
                         submitNodeCollector,
-                        state.lightCoords,
+                        virtualBlock.lightCoords,
                         OverlayTexture.NO_OVERLAY,
                         -1
                 );
