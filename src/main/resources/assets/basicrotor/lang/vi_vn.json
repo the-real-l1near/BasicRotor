@@ -15,5 +15,6 @@
   "message.basicrotor.block_selected": "Đã chọn %s.",
   "message.basicrotor.assembly_created": "Đã tạo assembly.",
   "message.basicrotor.rotor_must_be_stopped": "Hãy tắt Đá Đỏ và đợi rotor dừng hẳn trước khi bắt đầu liên kết!",
-  "message.basicrotor.block_already_linked": "%s đã được liên kết với một rotor khác."
+  "message.basicrotor.block_already_linked": "%s đã được liên kết với một rotor khác.",
+  "message.basicrotor.finish_selected_rotor": "Hãy hoàn tất cụm trên rotor đã chọn!"
 }

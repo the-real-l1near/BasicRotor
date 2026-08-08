@@ -98,6 +98,20 @@ public class AssemblyWrenchItem extends Item {
                 return InteractionResult.SUCCESS;
             }
 
+            if (!session
+                    .getSelectedRotorPos()
+                    .equals(blockPos)) {
+
+                player.sendSystemMessage(
+                        Component.translatable(
+                                        "message.basicrotor.finish_selected_rotor"
+                                )
+                                .withStyle(ChatFormatting.RED)
+                );
+
+                return InteractionResult.SUCCESS;
+            }
+
             if (session.getSelectedBlocks().isEmpty()) {
 
                 player.sendSystemMessage(
@@ -123,6 +137,27 @@ public class AssemblyWrenchItem extends Item {
                     );
 
             if (!(blockEntity instanceof RotorBlockEntity rotorBlockEntity)) {
+                return InteractionResult.SUCCESS;
+            }
+
+            boolean powered =
+                    level.getBestNeighborSignal(
+                            session.getSelectedRotorPos()
+                    ) > 0;
+
+            if (rotorBlockEntity
+                    .getMovementData()
+                    .getState()
+                    != MovementState.STOPPED
+                    || powered) {
+
+                player.sendSystemMessage(
+                        Component.translatable(
+                                        "message.basicrotor.rotor_must_be_stopped"
+                                )
+                                .withStyle(ChatFormatting.RED)
+                );
+
                 return InteractionResult.SUCCESS;
             }
 
@@ -309,11 +344,6 @@ public class AssemblyWrenchItem extends Item {
                 return InteractionResult.SUCCESS;
             }
             session.addBlock(blockPos);
-
-            String blockName =
-                    blockState.getBlock()
-                            .getName()
-                            .getString();
 
             player.sendSystemMessage(
                     Component.translatable(

@@ -8,12 +8,8 @@ Imports
 
 import com.l1near.basicrotor.assembly.LinkedAssembly;
 import net.minecraft.core.BlockPos;
-
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.LinkedHashMap;
-import java.util.Set;
-
 
 public class AssemblyManager {
 
@@ -24,7 +20,6 @@ public class AssemblyManager {
     */
 
     private final LinkedHashMap<BlockPos, LinkedAssembly> assemblies;
-    private final Set<BlockPos> pendingRequests;
 
     /*
     ---------------------------
@@ -35,7 +30,6 @@ public class AssemblyManager {
     public AssemblyManager() {
 
         this.assemblies = new LinkedHashMap<>();
-        this.pendingRequests = new HashSet<>();
     }
 
     /*
@@ -93,14 +87,5 @@ public class AssemblyManager {
     //Assemblies
     public Collection<LinkedAssembly> getAssemblies() {
         return assemblies.values();
-    }
-
-    //Requests
-    public boolean markPending(BlockPos rotorPos) {
-        return pendingRequests.add(rotorPos);
-    }
-
-    public void clearPending(BlockPos rotorPos) {
-        pendingRequests.remove(rotorPos);
     }
 }

@@ -6,3 +6,4 @@
 /give @a basicrotor:assembly_wrench
 /give @a basicrotor:rotor
 /give @a minecraft:lever
+/time set minecraft:day

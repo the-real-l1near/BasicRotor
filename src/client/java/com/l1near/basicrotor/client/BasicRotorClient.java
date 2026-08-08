@@ -219,15 +219,37 @@ public class BasicRotorClient implements ClientModInitializer {
         ClientTickEvents.END_CLIENT_TICK.register(
                 client -> {
 
-                    for (VirtualAssemblyData assembly
-                            : ASSEMBLY_MANAGER.getAssemblies()) {
-
-                        assembly.tickRenderRotation();
+                    if (client.level == null) {
+                        return;
                     }
+
+                    var dimension =
+                            client.level.dimension();
+
+                    for (var entry
+                            : ASSEMBLY_MANAGER.getEntries()) {
+
+                        if (!entry.getKey()
+                                .dimension()
+                                .equals(dimension)) {
+                            continue;
+                        }
+
+                        entry.getValue()
+                                .tickRenderRotation();
+                    }
+
                     for (var entry
                             : ROTOR_MOVEMENT_MANAGER.getEntries()) {
 
-                        entry.getValue().tickRenderRotation();
+                        if (!entry.getKey()
+                                .dimension()
+                                .equals(dimension)) {
+                            continue;
+                        }
+
+                        entry.getValue()
+                                .tickRenderRotation();
                     }
                 }
         );

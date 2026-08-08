@@ -79,7 +79,8 @@ public class RotorBlockEntity extends BlockEntity {
     //serverTick
     private void serverTick() {
 
-        if (level instanceof ServerLevel serverLevel) {
+        if (level instanceof ServerLevel serverLevel
+                && linkedAssembly.isEmpty()) {
 
             LinkedAssembly savedAssembly =
                     BasicRotor

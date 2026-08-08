@@ -24,7 +24,6 @@ public class AssemblyRuntime {
     */
 
     private boolean virtualized;
-    private boolean lastVirtualized;
 
 
     /*
@@ -35,7 +34,6 @@ public class AssemblyRuntime {
 
     public AssemblyRuntime() {
         this.virtualized = false;
-        this.lastVirtualized = false;
     }
 
     /*
@@ -82,10 +80,6 @@ public class AssemblyRuntime {
                     level,
                     assembly
             );
-        }
-
-        if (virtualized != lastVirtualized) {
-            lastVirtualized = virtualized;
         }
     }
 

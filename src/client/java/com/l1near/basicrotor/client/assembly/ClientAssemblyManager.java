@@ -10,11 +10,11 @@ import com.l1near.basicrotor.client.data.ClientRotorKey;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.Level;
-
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.Set;
+import java.util.Map;
 
 public class ClientAssemblyManager {
 
@@ -114,6 +114,11 @@ public class ClientAssemblyManager {
                         rotorPos
                 )
         );
+    }
+
+    //Entries
+    public Iterable<Map.Entry<ClientRotorKey, VirtualAssemblyData>> getEntries() {
+        return assemblies.entrySet();
     }
 
     //Get
