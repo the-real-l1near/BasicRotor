@@ -12,6 +12,7 @@ import com.l1near.basicrotor.movement.MovementData;
 import com.l1near.basicrotor.movement.MovementInput;
 import com.l1near.basicrotor.movement.MovementRuntime;
 import com.l1near.basicrotor.movement.MovementState;
+import com.l1near.basicrotor.network.AssemblySync;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
@@ -95,6 +96,24 @@ public class RotorBlockEntity extends BlockEntity {
 
                 linkedAssembly =
                         savedAssembly;
+
+                BlockPos originPos =
+                        savedAssembly.getOriginPos();
+
+                for (var entry
+                        : savedAssembly.getEntries()) {
+
+                    BlockPos worldPos =
+                            originPos.offset(
+                                    entry.getKey()
+                            );
+
+                    level.setBlock(
+                            worldPos,
+                            entry.getValue().getBlockState(),
+                            3
+                    );
+                }
             }
         }
 
@@ -107,11 +126,25 @@ public class RotorBlockEntity extends BlockEntity {
 
         movementRuntime.tick(movementInput);
 
-        assemblyRuntime.update(
-                level,
-                linkedAssembly,
-                movementData
-        );
+        boolean startedVirtualizing =
+                assemblyRuntime.update(
+                        level,
+                        linkedAssembly,
+                        movementData
+                );
+
+        if (startedVirtualizing
+                && level instanceof ServerLevel serverLevel) {
+
+            AssemblySync.sendSnapshotToTracking(
+                    serverLevel,
+                    linkedAssembly
+            );
+
+            BasicRotor.saveAssemblyManager(
+                    serverLevel
+            );
+        }
 
         if (!level.isClientSide()) {
 

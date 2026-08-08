@@ -16,7 +16,7 @@ public class LinkedBlockData {
     ---------------------------
     */
 
-    private final BlockState blockState;
+    private BlockState blockState;
 
     /*
     ---------------------------
@@ -39,4 +39,10 @@ public class LinkedBlockData {
         return blockState;
     }
 
+    //Setters
+    public void setBlockState(
+            BlockState blockState
+    ) {
+        this.blockState = blockState;
+    }
 }

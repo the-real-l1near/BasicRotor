@@ -1,0 +1,22 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "minecraft:redstone_lamp": 2,
+      "basicrotor:rotor": 1,
+      "basicrotor:assembly_wrench": 5,
+      "minecraft:oak_log": 2
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 806,
+      "minecraft:walk_one_cm": 3476,
+      "minecraft:total_world_time": 972,
+      "minecraft:leave_game": 1,
+      "minecraft:crouch_one_cm": 1,
+      "minecraft:sneak_time": 7,
+      "minecraft:play_time": 806,
+      "minecraft:jump": 5,
+      "minecraft:time_since_death": 806
+    }
+  },
+  "DataVersion": 4903
+}

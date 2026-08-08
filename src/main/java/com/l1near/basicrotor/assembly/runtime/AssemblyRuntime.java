@@ -43,7 +43,7 @@ public class AssemblyRuntime {
     */
 
     //Update
-    public void update(
+    public boolean update(
             Level level,
             LinkedAssembly assembly,
             MovementData movementData
@@ -52,23 +52,28 @@ public class AssemblyRuntime {
 
         switch (movementData.getState()) {
 
-            case STOPPED ->
-                    updateStopped();
+            case STOPPED -> updateStopped();
 
-            case STARTING ->
-                    updateStarting();
+            case STARTING -> updateStarting();
 
-            case RUNNING ->
-                    updateRunning();
+            case RUNNING -> updateRunning();
 
-            case BRAKING ->
-                    updateBraking();
+            case BRAKING -> updateBraking();
 
-            case RETURNING ->
-                    updateReturning();
+            case RETURNING -> updateReturning();
         }
 
+        boolean startedVirtualizing =
+                !wasVirtualized
+                        && virtualized;
+
         if (!wasVirtualized && virtualized) {
+
+            refreshBlockStates(
+                    level,
+                    assembly
+            );
+
             virtualizeBlocks(
                     level,
                     assembly
@@ -81,7 +86,9 @@ public class AssemblyRuntime {
                     assembly
             );
         }
+        return startedVirtualizing;
     }
+
 
 
     private void updateStopped() {
@@ -127,6 +134,32 @@ public class AssemblyRuntime {
                     Blocks.AIR.defaultBlockState(),
                     3
             );
+        }
+    }
+
+    //Refresh Block States
+    private void refreshBlockStates(
+            Level level,
+            LinkedAssembly assembly
+    ) {
+
+        BlockPos originPos =
+                assembly.getOriginPos();
+
+        for (Map.Entry<BlockPos, LinkedBlockData> entry
+                : assembly.getEntries()) {
+
+            BlockPos worldPos =
+                    originPos.offset(
+                            entry.getKey()
+                    );
+
+            entry.getValue()
+                    .setBlockState(
+                            level.getBlockState(
+                                    worldPos
+                            )
+                    );
         }
     }
 
