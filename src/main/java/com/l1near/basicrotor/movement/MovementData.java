@@ -42,7 +42,7 @@ public class MovementData {
         this.speed = 0.0F;
         this.acceleration = 0.2F;
 
-        this.maxSpeed = 30.0F;
+        this.maxSpeed = 5.0F;
         this.friction = 0.995F;
 
     }

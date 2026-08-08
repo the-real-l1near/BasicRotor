@@ -144,11 +144,12 @@ public class RotorBlockEntityRenderer implements BlockEntityRenderer<RotorBlockE
                 );
 
                 BlockPos virtualBlockPos =
-                        blockEntity
-                                .getBlockPos()
-                                .offset(
-                                        entry.getKey()
-                                );
+                        getRotatedBlockPos(
+                                blockEntity.getBlockPos(),
+                                entry.getKey(),
+                                state.facing,
+                                state.rotation
+                        );
 
                 virtualBlock.lightCoords =
                         LightCoordsUtil.getLightCoords(
@@ -340,6 +341,119 @@ public class RotorBlockEntityRenderer implements BlockEntityRenderer<RotorBlockE
                 partialTicks,
                 lastRotation,
                 rotation
+        );
+    }
+
+    //Rotate Light Position
+    private BlockPos getRotatedBlockPos(
+            BlockPos originPos,
+            BlockPos relativePos,
+            Direction facing,
+            float rotation
+    ) {
+
+        float radians =
+                rotation
+                        * ((float) Math.PI / 180.0F);
+
+        double x =
+                relativePos.getX();
+
+        double y =
+                relativePos.getY();
+
+        double z =
+                relativePos.getZ();
+
+        double cos =
+                Math.cos(radians);
+
+        double sin =
+                Math.sin(radians);
+
+        double rotatedX = x;
+        double rotatedY = y;
+        double rotatedZ = z;
+
+        switch (facing) {
+
+            case NORTH -> {
+
+                rotatedX =
+                        x * cos
+                                + y * sin;
+
+                rotatedY =
+                        -x * sin
+                                + y * cos;
+            }
+
+            case SOUTH -> {
+
+                rotatedX =
+                        x * cos
+                                - y * sin;
+
+                rotatedY =
+                        x * sin
+                                + y * cos;
+            }
+
+            case WEST -> {
+
+                rotatedY =
+                        y * cos
+                                + z * sin;
+
+                rotatedZ =
+                        -y * sin
+                                + z * cos;
+            }
+
+            case EAST -> {
+
+                rotatedY =
+                        y * cos
+                                - z * sin;
+
+                rotatedZ =
+                        y * sin
+                                + z * cos;
+            }
+
+            case UP -> {
+
+                rotatedX =
+                        x * cos
+                                + z * sin;
+
+                rotatedZ =
+                        -x * sin
+                                + z * cos;
+            }
+
+            case DOWN -> {
+
+                rotatedX =
+                        x * cos
+                                - z * sin;
+
+                rotatedZ =
+                        x * sin
+                                + z * cos;
+            }
+        }
+
+        return BlockPos.containing(
+                originPos.getX()
+                        + 0.5
+                        + rotatedX,
+                originPos.getY()
+                        + 0.5
+                        + rotatedY,
+                originPos.getZ()
+                        + 0.5
+                        + rotatedZ
         );
     }
 }
