@@ -27,6 +27,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import com.l1near.basicrotor.movement.MovementState;
+import com.l1near.basicrotor.assembly.validation.AssemblyValidator;
 
 public class AssemblyWrenchItem extends Item {
 
@@ -120,6 +121,25 @@ public class AssemblyWrenchItem extends Item {
                 );
 
                 return InteractionResult.SUCCESS;
+            }
+
+            for (BlockPos selectedBlockPos
+                    : session.getSelectedBlocks()) {
+
+                if (!AssemblyValidator.canLinkBlock(
+                        level,
+                        selectedBlockPos
+                )) {
+
+                    player.sendSystemMessage(
+                            Component.translatable(
+                                            "message.basicrotor.block_not_linkable"
+                                    )
+                                    .withStyle(ChatFormatting.RED)
+                    );
+
+                    return InteractionResult.SUCCESS;
+                }
             }
 
             AssemblyFactory factory =
@@ -301,6 +321,21 @@ public class AssemblyWrenchItem extends Item {
 
                 player.sendSystemMessage(
                         Component.translatable("message.basicrotor.select_rotor_first")
+                                .withStyle(ChatFormatting.RED)
+                );
+
+                return InteractionResult.SUCCESS;
+            }
+
+            if (!AssemblyValidator.canLinkBlock(
+                    level,
+                    blockPos
+            )) {
+
+                player.sendSystemMessage(
+                        Component.translatable(
+                                        "message.basicrotor.block_not_linkable"
+                                )
                                 .withStyle(ChatFormatting.RED)
                 );
 

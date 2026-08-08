@@ -7,3 +7,6 @@
 /give @a basicrotor:rotor
 /give @a minecraft:lever
 /time set minecraft:day
+/setblock 14 -60 -22 minecraft:bedrock
+/setblock 14 -60 -23 minecraft:bedrock
+/time set minecraft:day
