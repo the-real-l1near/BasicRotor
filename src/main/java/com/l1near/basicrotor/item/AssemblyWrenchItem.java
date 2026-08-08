@@ -26,6 +26,7 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import com.l1near.basicrotor.movement.MovementState;
 
 public class AssemblyWrenchItem extends Item {
 
@@ -163,6 +164,35 @@ public class AssemblyWrenchItem extends Item {
         }
 
         if (blockState.getBlock() == ModBlocks.ROTOR) {
+
+            BlockEntity blockEntity =
+                    level.getBlockEntity(
+                            blockPos
+                    );
+
+            if (blockEntity instanceof RotorBlockEntity rotorBlockEntity) {
+
+                boolean powered =
+                        level.getBestNeighborSignal(
+                                blockPos
+                        ) > 0;
+
+                if (rotorBlockEntity
+                        .getMovementData()
+                        .getState()
+                        != MovementState.STOPPED
+                        || powered) {
+
+                    player.sendSystemMessage(
+                            Component.translatable(
+                                            "message.basicrotor.rotor_must_be_stopped"
+                                    )
+                                    .withStyle(ChatFormatting.RED)
+                    );
+
+                    return InteractionResult.SUCCESS;
+                }
+            }
 
             LinkSession session =
                     LINK_SESSION_MANAGER.getSession(player);

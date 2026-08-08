@@ -174,6 +174,10 @@ public class RotorBlockEntity extends BlockEntity {
         return assemblyRuntime;
     }
 
+    public MovementData getMovementData() {
+        return movementData;
+    }
+
     //Setters
     public void setLinkedAssembly(LinkedAssembly linkedAssembly) {
         this.linkedAssembly = linkedAssembly;
