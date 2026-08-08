@@ -6,6 +6,7 @@ Imports
 ---------------------------
 */
 
+import com.l1near.basicrotor.client.movement.ClientRotorMovementData;
 import com.l1near.basicrotor.client.render.RotorBlockEntityRenderer;
 import com.l1near.basicrotor.registry.ModBlockEntities;
 import net.fabricmc.api.ClientModInitializer;
@@ -20,6 +21,8 @@ import com.l1near.basicrotor.network.payload.RotorMovementPayload;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import com.l1near.basicrotor.network.payload.AssemblyRequestPayload;
 import com.l1near.basicrotor.network.payload.AssemblyRemovePayload;
+import com.l1near.basicrotor.client.movement.ClientRotorMovementManager;
+import com.l1near.basicrotor.network.payload.RotorRemovePayload;
 
 public class BasicRotorClient implements ClientModInitializer {
 
@@ -31,6 +34,9 @@ public class BasicRotorClient implements ClientModInitializer {
 
     private static final ClientAssemblyManager ASSEMBLY_MANAGER =
             new ClientAssemblyManager();
+
+    private static final ClientRotorMovementManager ROTOR_MOVEMENT_MANAGER =
+            new ClientRotorMovementManager();
 
     /*
     ---------------------------
@@ -92,6 +98,19 @@ public class BasicRotorClient implements ClientModInitializer {
 
                     context.client().execute(() -> {
 
+                        ClientRotorMovementData rotorMovement =
+                                ROTOR_MOVEMENT_MANAGER.getOrCreate(
+                                        payload.rotorPos()
+                                );
+
+                        rotorMovement.setRotation(
+                                payload.rotation()
+                        );
+
+                        rotorMovement.setRotationStep(
+                                payload.rotationStep()
+                        );
+
                         VirtualAssemblyData assembly =
                                 ASSEMBLY_MANAGER.get(
                                         payload.rotorPos()
@@ -145,6 +164,19 @@ public class BasicRotorClient implements ClientModInitializer {
                 }
         );
 
+        ClientPlayNetworking.registerGlobalReceiver(
+                RotorRemovePayload.TYPE,
+                (payload, context) -> {
+
+                    context.client().execute(() -> {
+
+                        ROTOR_MOVEMENT_MANAGER.remove(
+                                payload.rotorPos()
+                        );
+                    });
+                }
+        );
+
         ClientTickEvents.END_CLIENT_TICK.register(
                 client -> {
 
@@ -153,8 +185,17 @@ public class BasicRotorClient implements ClientModInitializer {
 
                         assembly.tickRenderRotation();
                     }
+                    for (var entry
+                            : ROTOR_MOVEMENT_MANAGER.getEntries()) {
+
+                        entry.getValue().tickRenderRotation();
+                    }
                 }
         );
 
+    }
+    //Geters
+    public static ClientRotorMovementManager getRotorMovementManager() {
+        return ROTOR_MOVEMENT_MANAGER;
     }
 }

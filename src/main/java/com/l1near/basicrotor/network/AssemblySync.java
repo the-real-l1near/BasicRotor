@@ -18,6 +18,7 @@ import java.util.List;
 import com.l1near.basicrotor.network.payload.AssemblyRemovePayload;
 import net.fabricmc.fabric.api.networking.v1.PlayerLookup;
 import net.minecraft.server.level.ServerLevel;
+import com.l1near.basicrotor.network.payload.RotorRemovePayload;
 
 public class AssemblySync {
 
@@ -68,6 +69,30 @@ public class AssemblySync {
 
         AssemblyRemovePayload payload =
                 new AssemblyRemovePayload(
+                        rotorPos
+                );
+
+        for (ServerPlayer player
+                : PlayerLookup.tracking(
+                level,
+                rotorPos
+        )) {
+
+            ServerPlayNetworking.send(
+                    player,
+                    payload
+            );
+        }
+    }
+
+    //Rotor Remove
+    public static void sendRotorRemove(
+            ServerLevel level,
+            BlockPos rotorPos
+    ) {
+
+        RotorRemovePayload payload =
+                new RotorRemovePayload(
                         rotorPos
                 );
 

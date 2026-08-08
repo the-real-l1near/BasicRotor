@@ -27,9 +27,9 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import com.l1near.basicrotor.network.payload.AssemblyRemovePayload;
-
 import java.util.HashMap;
 import java.util.Map;
+import com.l1near.basicrotor.network.payload.RotorRemovePayload;
 
 
 public class BasicRotor implements ModInitializer {
@@ -136,6 +136,13 @@ public class BasicRotor implements ModInitializer {
                             getAssemblyManager(
                                     serverLevel
                             );
+                    if (blockEntity instanceof RotorBlockEntity) {
+
+                        AssemblySync.sendRotorRemove(
+                                serverLevel,
+                                blockPos
+                        );
+                    }
 
                     LinkedAssembly rotorAssembly =
                             assemblyManager.get(
@@ -228,6 +235,10 @@ public class BasicRotor implements ModInitializer {
                             assembly
                     );
                 }
+        );
+        PayloadTypeRegistry.clientboundPlay().register(
+                RotorRemovePayload.TYPE,
+                RotorRemovePayload.CODEC
         );
     }
 

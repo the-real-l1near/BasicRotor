@@ -78,8 +78,7 @@ public class RotorBlockEntity extends BlockEntity {
     //serverTick
     private void serverTick() {
 
-        if (level instanceof ServerLevel serverLevel
-                && linkedAssembly.isEmpty()) {
+        if (level instanceof ServerLevel serverLevel) {
 
             LinkedAssembly savedAssembly =
                     BasicRotor
@@ -114,21 +113,15 @@ public class RotorBlockEntity extends BlockEntity {
 
         if (!level.isClientSide()) {
 
-            float rotationStep = 0.0F;
+            float rotationStep =
+                    movementData.getRotation()
+                            - movementData.getLastRotation();
 
-            if (assemblyRuntime.isVirtualized()) {
-
-                rotationStep =
-                        movementData.getRotation()
-                                - movementData.getLastRotation();
-
-                if (rotationStep < 0.0F) {
-                    rotationStep += 360.0F;
-                }
+            if (rotationStep < 0.0F) {
+                rotationStep += 360.0F;
             }
 
-            if (level instanceof ServerLevel serverLevel
-                    && !linkedAssembly.isEmpty()) {
+            if (level instanceof ServerLevel serverLevel) {
 
                 RotorMovementPayload payload =
                         new RotorMovementPayload(

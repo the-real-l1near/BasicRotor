@@ -6,6 +6,7 @@ Imports
 ---------------------------
 */
 import com.l1near.basicrotor.block.RotorBlock;
+import com.l1near.basicrotor.client.movement.ClientRotorMovementData;
 import com.mojang.math.Axis;
 import net.minecraft.client.renderer.block.BlockModelResolver;
 import net.minecraft.client.renderer.block.model.BlockDisplayContext;
@@ -83,19 +84,28 @@ public class RotorBlockEntityRenderer implements BlockEntityRenderer<RotorBlockE
                         .getAssemblyManager()
                         .get(blockEntity.getBlockPos());
 
-        if (state.virtualAssembly != null) {
+        ClientRotorMovementData rotorMovement =
+                BasicRotorClient
+                        .getRotorMovementManager()
+                        .get(
+                                blockEntity.getBlockPos()
+                        );
+
+        if (rotorMovement != null) {
 
             state.rotation =
                     interpolateRotation(
-                            state.virtualAssembly.getPreviousRenderRotation(),
-                            state.virtualAssembly.getRenderRotation(),
+                            rotorMovement.getPreviousRenderRotation(),
+                            rotorMovement.getRenderRotation(),
                             partialTicks
                     );
-
-        } else {
+        }
+        else {
 
             state.rotation =
-                    blockEntity.getRotation(partialTicks);
+                    blockEntity.getRotation(
+                            partialTicks
+                    );
         }
 
         state.virtualBlocks.clear();
