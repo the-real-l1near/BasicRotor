@@ -23,6 +23,7 @@ import com.l1near.basicrotor.network.payload.AssemblyRequestPayload;
 import com.l1near.basicrotor.network.payload.AssemblyRemovePayload;
 import com.l1near.basicrotor.client.movement.ClientRotorMovementManager;
 import com.l1near.basicrotor.network.payload.RotorRemovePayload;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
 
 public class BasicRotorClient implements ClientModInitializer {
 
@@ -174,6 +175,15 @@ public class BasicRotorClient implements ClientModInitializer {
                                 payload.rotorPos()
                         );
                     });
+                }
+        );
+
+        ClientPlayConnectionEvents.DISCONNECT.register(
+                (handler, client) -> {
+
+                    ASSEMBLY_MANAGER.clear();
+
+                    ROTOR_MOVEMENT_MANAGER.clear();
                 }
         );
 

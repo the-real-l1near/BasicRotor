@@ -184,9 +184,7 @@ public class AssemblyWrenchItem extends Item {
                         || powered) {
 
                     player.sendSystemMessage(
-                            Component.translatable(
-                                            "message.basicrotor.rotor_must_be_stopped"
-                                    )
+                            Component.translatable("message.basicrotor.rotor_must_be_stopped")
                                     .withStyle(ChatFormatting.RED)
                     );
 
@@ -247,6 +245,34 @@ public class AssemblyWrenchItem extends Item {
 
                 return InteractionResult.SUCCESS;
             }
+
+            if (level instanceof ServerLevel serverLevel) {
+
+                LinkedAssembly existingAssembly =
+                        BasicRotor
+                                .getAssemblyManager(
+                                        serverLevel
+                                )
+                                .findByBlockPos(
+                                        blockPos
+                                );
+
+                if (existingAssembly != null) {
+
+                    player.sendSystemMessage(
+                            Component.translatable(
+                                    "message.basicrotor.block_already_linked",
+                                    blockState.getBlock()
+                                            .getName()
+                                            .copy()
+                                            .withStyle(ChatFormatting.RED)
+                            )
+                    );
+
+                    return InteractionResult.SUCCESS;
+                }
+            }
+
             if (session.contains(blockPos)) {
 
                 player.sendSystemMessage(

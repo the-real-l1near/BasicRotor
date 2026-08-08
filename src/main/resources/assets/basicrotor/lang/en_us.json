@@ -15,6 +15,7 @@
   "message.basicrotor.no_blocks_selected": "No blocks selected!",
   "message.basicrotor.block_selected": "%s selected.",
   "message.basicrotor.assembly_created": "Assembly created.",
-  "message.basicrotor.rotor_must_be_stopped": "Turn off redstone and wait for the rotor to stop before linking!"
+  "message.basicrotor.rotor_must_be_stopped": "Turn off redstone and wait for the rotor to stop before linking!",
+  "message.basicrotor.block_already_linked": "%s is already linked to another rotor."
 }
 
