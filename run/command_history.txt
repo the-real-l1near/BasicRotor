@@ -10,3 +10,5 @@
 /setblock 14 -60 -22 minecraft:bedrock
 /setblock 14 -60 -23 minecraft:bedrock
 /time set minecraft:day
+/gamerule random_tick_speed 500
+/weather rain

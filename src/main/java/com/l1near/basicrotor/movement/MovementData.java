@@ -43,7 +43,6 @@ public class MovementData {
         this.acceleration = 0.2F;
 
         this.maxSpeed = 5.0F;
-        this.friction = 0.995F;
 
     }
 
@@ -78,10 +77,6 @@ public class MovementData {
         return maxSpeed;
     }
 
-    public float getFriction() {
-        return friction;
-    }
-
     public float getHomeRotation() {
         return homeRotation;
     }
@@ -112,10 +107,6 @@ public class MovementData {
 
     public void setMaxSpeed(float maxSpeed) {
         this.maxSpeed = maxSpeed;
-    }
-
-    public void setFriction(float friction) {
-        this.friction = friction;
     }
 
     public void setHomeRotation(float homeRotation) {

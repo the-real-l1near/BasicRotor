@@ -1,6 +1,7 @@
 
 {
   "block.basicrotor.rotor": "Rotor",
+  "item.basicrotor.rotor": "Rotor",
   "item.basicrotor.assembly_wrench": "Assembly Wrench",
 
   "message.basicrotor.rotor_selected": "Rotor selected.",
@@ -18,6 +19,7 @@
   "message.basicrotor.rotor_must_be_stopped": "Turn off redstone and wait for the rotor to stop before linking!",
   "message.basicrotor.block_already_linked": "%s is already linked to another rotor.",
   "message.basicrotor.finish_selected_rotor": "Finish the assembly on the selected rotor!",
-  "message.basicrotor.block_not_linkable": "This block cannot be linked!"
+  "message.basicrotor.block_not_linkable": "This block cannot be linked!",
+  "message.basicrotor.returning": "Rotor is returning to its home position."
 }
 

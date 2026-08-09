@@ -1,0 +1,17 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "basicrotor:rotor": 1
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 278,
+      "minecraft:walk_one_cm": 1924,
+      "minecraft:total_world_time": 334,
+      "minecraft:leave_game": 1,
+      "minecraft:play_time": 278,
+      "minecraft:jump": 4,
+      "minecraft:time_since_death": 278
+    }
+  },
+  "DataVersion": 4903
+}

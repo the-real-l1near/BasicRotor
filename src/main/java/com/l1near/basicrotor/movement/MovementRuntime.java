@@ -15,10 +15,8 @@ public class MovementRuntime {
     Fields
     ---------------------------
     */
-    private static final float ACCELERATION = 0.05F;
-    private static final float MAX_SPEED = 1.0F;
+
     private final MovementData movementData;
-    private static final float BRAKING_FORCE = 0.5F;
     private static final float RETURN_SPEED = 1.0F;
     //Starting
     private void updateStarting(MovementInput input) {

@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
-      "model": "basicrotor:block/rotor"
-    }
+    "facing=north": { "model": "basicrotor:block/rotor" },
+    "facing=south": { "model": "basicrotor:block/rotor" },
+    "facing=east":  { "model": "basicrotor:block/rotor" },
+    "facing=west":  { "model": "basicrotor:block/rotor" },
+    "facing=up":    { "model": "basicrotor:block/rotor" },
+    "facing=down":  { "model": "basicrotor:block/rotor" }
   }
 }
