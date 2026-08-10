@@ -4,6 +4,8 @@ BasicRotor is a small Fabric mod that adds a redstone-controlled rotor capable o
 
 The goal of the mod is simple: provide a lightweight rotating block system without turning into a full mechanical automation mod.
 
+![BasicRotor demo](docs/media/demo.gif)
+
 ## Features
 
 - Redstone-controlled rotor
