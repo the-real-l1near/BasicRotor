@@ -1,395 +1,157 @@
-# Basic Rotor
+# BasicRotor
 
-A Minecraft Fabric mod focused on creating advanced mechanical structures and a flexible block movement system.
+BasicRotor is a small Fabric mod that adds a redstone-controlled rotor capable of rotating linked blocks.
 
-The project starts with a simple rotating rotor, but the long-term goal is to build a reusable **Linked Assembly System** that allows players to create complex moving machines, mechanical structures, and multiblock animations.
+The goal of the mod is simple: provide a lightweight rotating block system without turning into a full mechanical automation mod.
 
----
+## Features
 
-# Overview
+- Redstone-controlled rotor
+- Smooth acceleration and braking
+- Rotor can stop at its current angle
+- Right-click an idle rotor with an empty hand to return it to its home position
+- Link blocks to a rotor using the Assembly Wrench
+- Linked blocks rotate together with the rotor
+- Assemblies persist across world restarts
+- Multiple rotors can operate independently
+- Works across different dimensions
+- Custom rendering for moving blocks
+- Per-block lighting for rotating assemblies
+- Block breaking overlay for the rotor
 
-Minecraft blocks are normally static. Moving large structures by physically changing blocks causes many problems:
+## Requirements
 
-* excessive world updates
-* lighting recalculation
-* neighbor updates
-* block entity synchronization
-* collision issues
-* performance problems
+- Minecraft 26.2
+- Fabric Loader 0.19.3 or newer
+- Fabric API
 
-Basic Rotor takes a different approach.
+## Usage
 
-Instead of moving real blocks, the mod creates a **virtual moving assembly**.
+### Rotor
 
-Real blocks remain in the world as the source of truth, while the client renders a temporary animated version of linked blocks.
+Place a Rotor and power it with redstone.
 
----
+When powered, the rotor accelerates and begins rotating.
 
-# Core Concept
+When redstone power is removed, the rotor slows down and stops at its current angle.
 
-## Real Blocks + Virtual Assembly
+While the rotor is idle, right-click it with an empty hand to return it to its original position.
 
-A linked structure consists of two parts:
+### Assembly Wrench
 
-### Real Structure
+The Assembly Wrench is used to create or edit a rotor assembly.
 
-The actual Minecraft blocks:
+1. Right-click a Rotor to select it.
+2. Right-click blocks to add them to the assembly.
+3. Shift + Right-click the selected Rotor to finish.
 
-```
-[Blade]
-   |
-[Rotor]---[Gear]
-```
+The Rotor must be stopped and unpowered while editing its assembly.
 
-These blocks:
+Blocks already linked to another Rotor cannot be linked again.
 
-* stay in their original positions
-* keep their block data
-* can be saved normally
-* can be restored at any time
+Some blocks are intentionally not linkable.
 
----
+## Crafting
 
-### Virtual Assembly
+Both the Rotor and Assembly Wrench have crafting recipes and are available through the recipe book.
 
-When activated, the client creates a rendered copy:
+## Notes
 
-```
-       Blade
+While an assembly is moving, its linked blocks are temporarily represented as virtual blocks by the client renderer.
 
-Gear -- Rotor -- Blade
+When the rotor returns to its home position, the blocks are restored to the world.
 
-          ↻
-```
+BasicRotor currently focuses on simple rotating assemblies. It is not intended to provide gears, shafts, power networks, or a full mechanical simulation.
 
-The virtual assembly handles:
+## Development
 
-* rotation
-* translation
-* animation
-* mechanical movement
+BasicRotor currently uses a server-authoritative design:
 
-The original blocks are temporarily hidden and locked while the assembly is active.
+- The server owns movement and assembly state.
+- The client handles interpolation and rendering.
+- Assembly data is persisted per world.
+- Moving linked blocks are rendered virtually while their original world blocks are temporarily removed.
 
----
+More technical details are available in the [`docs`](docs/) directory.
 
-# Features
+## License
 
-## Rotor System
+# BasicRotor
 
-Current development focus:
+BasicRotor is a small Fabric mod that adds a redstone-controlled rotor capable of rotating linked blocks.
 
-* Custom block entity rendering
-* Direction-based rotation
-* Smooth client-side animation
-* Facing-aware rotation axis
+The goal of the mod is simple: provide a lightweight rotating block system without turning into a full mechanical automation mod.
 
-The rotor system is the first test case for the future assembly framework.
+## Features
 
----
+- Redstone-controlled rotor
+- Smooth acceleration and braking
+- Rotor can stop at its current angle
+- Right-click an idle rotor with an empty hand to return it to its home position
+- Link blocks to a rotor using the Assembly Wrench
+- Linked blocks rotate together with the rotor
+- Assemblies persist across world restarts
+- Multiple rotors can operate independently
+- Works across different dimensions
+- Custom rendering for moving blocks
+- Per-block lighting for rotating assemblies
+- Block breaking overlay for the rotor
 
-## Linked Assembly System (Planned)
+## Requirements
 
-Players will be able to combine multiple blocks into one moving structure.
+- Minecraft 26.2
+- Fabric Loader 0.19.3 or newer
+- Fabric API
 
-Example:
+## Usage
 
-```
-        Blade
+### Rotor
 
-Gear --- Rotor --- Blade
+Place a Rotor and power it with redstone.
 
-        Shaft
-```
+When powered, the rotor accelerates and begins rotating.
 
-A linked assembly stores:
+When redstone power is removed, the rotor slows down and stops at its current angle.
 
-* block type
-* block state
-* facing direction
-* relative position
-* block entity data
+While the rotor is idle, right-click it with an empty hand to return it to its original position.
 
-The structure is controlled from an origin point.
+### Assembly Wrench
 
-Example:
+The Assembly Wrench is used to create or edit a rotor assembly.
 
-```
-Origin:
-(100,64,100)
+1. Right-click a Rotor to select it.
+2. Right-click blocks to add them to the assembly.
+3. Shift + Right-click the selected Rotor to finish.
 
-Rotor:
-(0,0,0)
+The Rotor must be stopped and unpowered while editing its assembly.
 
-Blade:
-(1,0,0)
+Blocks already linked to another Rotor cannot be linked again.
 
-Gear:
-(-1,0,0)
-```
+Some blocks are intentionally not linkable.
 
----
+## Crafting
 
-# Movement System
+Both the Rotor and Assembly Wrench have crafting recipes and are available through the recipe book.
 
-The goal is not to create only windmills.
+## Notes
 
-The movement engine is designed for multiple mechanical systems.
+While an assembly is moving, its linked blocks are temporarily represented as virtual blocks by the client renderer.
 
-## Rotation
+When the rotor returns to its home position, the blocks are restored to the world.
 
-Examples:
+BasicRotor currently focuses on simple rotating assemblies. It is not intended to provide gears, shafts, power networks, or a full mechanical simulation.
 
-* Windmills
-* Turbines
-* Wheels
-* Gears
-* Rotating machines
+## Development
 
-```
-Movement Type:
-ROTATION
+BasicRotor currently uses a server-authoritative design:
 
-Axis:
-Z
-```
+- The server owns movement and assembly state.
+- The client handles interpolation and rendering.
+- Assembly data is persisted per world.
+- Moving linked blocks are rendered virtually while their original world blocks are temporarily removed.
 
----
+More technical details are available in the [`docs`](docs/) directory.
 
-## Translation
+## License
 
-Examples:
-
-* Pistons
-* Sliding doors
-* Moving platforms
-
-```
-Movement Type:
-TRANSLATION
-
-Axis:
-X
-```
-
----
-
-## Future Possibilities
-
-* Mechanical arms
-* Multi-axis machines
-* Complex animations
-* Large moving structures
-
----
-
-# Assembly States
-
-Moving structures use a state system:
-
-```
-STOPPED
-RUNNING
-BRAKING
-RETURNING
-```
-
-## STOPPED
-
-Normal world state:
-
-* Real blocks are visible
-* Player interaction is enabled
-* Structure can be edited
-
----
-
-## RUNNING
-
-When powered:
-
-* Virtual assembly appears
-* Original blocks are hidden
-* Movement begins
-
----
-
-## BRAKING
-
-When power is removed:
-
-* The structure does not instantly stop
-* Speed gradually decreases
-* Mechanical inertia is preserved
-
----
-
-## RETURNING
-
-After stopping:
-
-* The assembly smoothly returns to its original position
-* No sudden snapping
-* Real blocks are restored after movement ends
-
----
-
-# Interaction System
-
-While an assembly is moving:
-
-* Linked blocks cannot be modified
-* Link tools cannot edit the structure
-* Blocks cannot be broken or interacted with
-
-The player must wait until the machine fully stops.
-
-Example:
-
-```
-Turn off the redstone and wait until the assembly stops.
-```
-
-This prevents conflicts between real blocks and virtual rendering.
-
----
-
-# Technical Direction
-
-Basic Rotor follows a strict separation between:
-
-## Server
-
-Responsible for:
-
-* assembly data
-* linked blocks
-* machine state
-* movement rules
-* player interaction
-
----
-
-## Client
-
-Responsible for:
-
-* rendering
-* interpolation
-* animation
-* visual transformations
-
-Animation is not synchronized every frame.
-
-Instead:
-
-Server synchronizes the important state:
-
-```
-running
-speed
-movement type
-assembly data
-```
-
-The client calculates smooth visual movement locally.
-
----
-
-# Architecture
-
-Planned structure:
-
-```
-com.l1near.basicrotor
-
-assembly/
- ├── Assembly.java
- ├── LinkedBlockData.java
- ├── AssemblyManager.java
- ├── AssemblyTransform.java
- ├── MovementType.java
- └── AssemblyState.java
-
-
-block/
- ├── AssemblyControllerBlock.java
- └── LinkableBlock.java
-
-
-item/
- └── LinkTool.java
-
-
-client/
- └── AssemblyRenderer.java
-```
-
----
-
-# Development Roadmap
-
-## Phase 1 - Rotor Prototype
-
-* [x] Custom block entity renderer
-* [x] Rotation animation
-* [x] Facing-based rotation
-* [x] Client-side rendering system
-
----
-
-## Phase 2 - Assembly Foundation
-
-* [ ] Create assembly data system
-* [ ] Link blocks together
-* [ ] Save and load assemblies
-* [ ] Manage linked structures
-
----
-
-## Phase 3 - Virtual Rendering
-
-* [ ] Render multiple blocks as one object
-* [ ] Hide original linked blocks
-* [ ] Apply shared transformations
-
----
-
-## Phase 4 - Mechanical Movement
-
-* [ ] Rotation system
-* [ ] Translation system
-* [ ] Acceleration
-* [ ] Braking
-* [ ] Returning animation
-
----
-
-## Phase 5 - Expansion
-
-* [ ] Energy systems
-* [ ] Advanced machines
-* [ ] Sounds
-* [ ] Particles
-* [ ] Complex mechanical structures
-
----
-
-# Long-Term Goal
-
-Basic Rotor aims to become a foundation for creating mechanical systems in Minecraft Fabric.
-
-The first implementation is a rotating rotor, but the final goal is a general-purpose movement framework capable of powering:
-
-* windmills
-* turbines
-* factories
-* mechanical machines
-* animated structures
-* custom multiblock systems
-
----
-
-# License
-
-License information will be added later.
+BasicRotor is licensed under the MIT License.

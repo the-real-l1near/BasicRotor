@@ -1,167 +1,137 @@
-# Rendering System
+# Rendering
 
-This document describes how BasicRotor renders animated structures.
+This document describes how BasicRotor renders Rotors and moving linked blocks.
 
-The rendering system is designed to be completely independent from gameplay logic and can be reused by future assembly types.
+## Overview
 
----
+BasicRotor uses a custom `BlockEntityRenderer` for the Rotor.
 
-# Overview
+The Rotor block itself uses an invisible world render shape, while its model is submitted manually by the renderer.
 
-BasicRotor renders animations using Minecraft's Block Entity rendering pipeline.
+The same renderer is also responsible for drawing linked blocks while an assembly is virtualized.
 
-Instead of moving real blocks inside the world, the renderer draws virtual representations of blocks while the original blocks remain unchanged.
+## Rotor Rendering
 
-This approach keeps rendering lightweight, multiplayer-friendly, and independent from world updates.
+The Rotor renderer handles:
 
----
+- Block facing
+- Rotor spin
+- Client-side interpolation
+- Lighting
+- Breaking overlay
 
-# Rendering Pipeline
+The Rotor model is rendered around the block center.
 
-The current rendering pipeline is:
+Its final transform depends on both:
 
-```text
-RotorBlockEntity
-        │
-        ▼
-extractRenderState()
-        │
-        ▼
-RotorBlockEntityRenderState
-        │
-        ▼
-submit()
-        │
-        ▼
-PoseStack Transform
-        │
-        ▼
-BlockModelRenderState.submit()
-        │
-        ▼
-Minecraft Renderer
-```
+- The block's facing direction
+- The current rotation angle
 
-Every rendered frame follows this pipeline.
+## Client Interpolation
 
----
+The server owns the actual movement state.
 
-# Current Renderer
+The client receives movement updates and interpolates between them to keep rotation smooth.
 
-The current renderer is responsible for:
+Client-side movement data stores:
 
-* Reading block facing
-* Reading animation rotation
-* Updating model state
-* Applying transforms
-* Submitting the block model
+- Current rotation
+- Previous render rotation
+- Rotation step
+- Moving state
 
-It is **not** responsible for:
+Interpolation only affects visuals.
 
-* Gameplay logic
-* Animation calculation
-* Redstone logic
-* Assembly management
+It does not change server movement or assembly state.
 
----
+## Facing
 
-# Render State
+The Rotor can face all six block directions.
 
-The renderer transfers data through `RotorBlockEntityRenderState`.
+The renderer applies a facing transform so the same model can be reused for:
 
-Current data includes:
+- North
+- South
+- East
+- West
+- Up
+- Down
 
-| Field       | Description                    |
-| ----------- | ------------------------------ |
-| modelState  | Block model used for rendering |
-| facing      | Current block orientation      |
-| rotation    | Current animation angle        |
-| lightCoords | Combined block and sky light   |
+Spin rotation is then applied around the Rotor's local axis.
 
-The render state acts as a bridge between the BlockEntity and the renderer.
+## Virtual Assemblies
 
----
+When an assembly is moving, its physical linked blocks are temporarily removed from the world.
 
-# Transform Order
+The client receives the assembly data and renders those blocks virtually.
 
-Transforms are applied in the following order:
+Each virtual block keeps:
 
-```text
-Translate to block center
-        │
-        ▼
-Apply spin rotation
-        │
-        ▼
-Apply facing rotation
-        │
-        ▼
-Translate back
-```
+- Its relative position from the Rotor
+- Its stored `BlockState`
+- Its render model state
+- Its sampled light value
 
-The order is important.
+The entire assembly is rotated around the Rotor origin.
 
-Changing the order changes the rotation axis.
+## Virtual Block Position
 
----
+Linked block positions are stored relative to the Rotor.
 
-# Lighting
+During rendering, their world-space visual position is calculated from:
 
-Lighting information is collected during `extractRenderState()`.
+- Rotor position
+- Relative block position
+- Rotor facing
+- Current rotation
 
-Current implementation uses:
+The real world block is not moved every frame.
 
-* LightCoordsUtil
-* BlockModelResolver
+Only its rendered representation moves.
 
-This ensures that rendered models receive the same lighting as normal Minecraft blocks.
+## Lighting
 
----
+Virtual blocks sample lighting independently.
 
-# Multiplayer
+The renderer first calculates the rotated world position of each linked block, then samples the light level at that position.
 
-Rendering is entirely client-side.
+This allows a moving assembly to react more naturally when rotating between brighter and darker areas.
 
-The server does not synchronize animation frames.
+Lighting remains approximate because the virtual block is not actually present in the world at its rendered position.
 
-Instead, each client renders animations locally using gameplay state received from the server.
+## Block Models
 
-This keeps bandwidth usage low while maintaining consistent gameplay.
+Virtual linked blocks use their stored `BlockState` to resolve a normal Minecraft block model.
 
----
+This allows many ordinary blocks to render without requiring custom models inside BasicRotor.
 
-# Future Rendering Pipeline
+Block Entity rendering is not fully supported yet.
 
-The current renderer only renders a single rotor block.
+## Breaking Overlay
 
-Future versions will render complete assemblies.
+Because the Rotor uses a custom renderer, Minecraft's normal block breaking overlay is not automatically rendered on it.
 
-```text
-LinkedAssembly
-        │
-        ▼
-AssemblyRenderer
-        │
-        ▼
-for each LinkedBlock
-        │
-        ▼
-Apply Transform
-        │
-        ▼
-Submit Model
-```
+BasicRotor handles the breaking overlay manually.
 
-The renderer should not distinguish between windmills, turbines, gears, or any other machine.
+The renderer:
 
-It only renders assemblies.
+1. Reads the current breaking progress from the block entity render state.
+2. Emits the Rotor block model into a Fabric render mesh.
+3. Submits that mesh through the breaking block render path.
 
----
+This keeps the normal Minecraft crack animation visible while mining the Rotor.
 
-# Design Rules
+## Dimension-Aware Client State
 
-* Rendering must remain independent from gameplay.
-* Rendering must never modify world state.
-* Renderers consume transform data only.
-* Transform calculation belongs to the movement system.
-* Lighting should always match vanilla block rendering whenever possible.
+Client assembly and movement data are keyed by:
+
+- Dimension
+- Rotor position
+
+This prevents Rotors at the same coordinates in different dimensions from sharing client render state.
+
+## Scope
+
+The renderer is designed around simple rotating block assemblies.
+
+It does not attempt to simulate real moving world geometry, collision, or complex physics.

@@ -1,206 +1,136 @@
 # Link System
 
-This document specifies how linked assemblies are created, managed, and executed within BasicRotor.
+This document describes how Rotor assemblies are created, edited, validated, and restored.
 
-The link system is responsible for defining relationships between blocks. It does **not** handle rendering or movement directly.
+## Overview
 
----
+A Rotor can own a group of linked blocks.
 
-# Overview
+Linked blocks are selected with the Assembly Wrench and stored as a `LinkedAssembly`.
 
-A linked assembly is a collection of blocks that behave as a single animated structure.
+Each linked block is stored relative to the Rotor origin.
 
-Every assembly has exactly one origin block, called the **Rotor**.
+## Linking Workflow
 
-All linked blocks store their position relative to the rotor.
+The normal workflow is:
 
----
+1. Right-click a Rotor with the Assembly Wrench.
+2. Right-click blocks to add them.
+3. Shift + Right-click the selected Rotor to finish.
 
-# Terminology
+The Rotor must be:
 
-| Term             | Description                                        |
-| ---------------- | -------------------------------------------------- |
-| Rotor            | The origin block of an assembly.                   |
-| Linked Block     | A block attached to the rotor.                     |
-| LinkedAssembly   | The complete collection of linked blocks.          |
-| Runtime Assembly | A temporary animated version of a linked assembly. |
-| Link Tool        | The item used to create or remove links.           |
+- Stopped
+- Unpowered
 
----
+while its assembly is being edited.
 
-# Assembly Lifecycle
+## Link Sessions
 
-```text
-Stopped
-    │
-    ▼
-Powered
-    │
-    ▼
-Starting
-    │
-    ▼
-Running
-    │
-    ▼
-Braking
-    │
-    ▼
-Returning
-    │
-    ▼
-Stopped
-```
+Temporary selections are stored in a per-player `LinkSession`.
 
----
+A session contains:
 
-# Linking Workflow
+- The selected Rotor position
+- The selected block positions
 
-```text
-Place Rotor
-      │
-      ▼
-Place Blocks
-      │
-      ▼
-Use Link Tool
-      │
-      ▼
-Validate Structure
-      │
-      ▼
-Store LinkedAssembly
-      │
-      ▼
-Ready
-```
+Nothing is written to the final assembly until the player finishes the linking process.
 
-No animation occurs during the linking process.
+This prevents incomplete selections from modifying the saved assembly.
 
----
+## Editing Existing Assemblies
 
-# Runtime Workflow
+Selecting a Rotor that already has an assembly preloads its linked blocks into the current `LinkSession`.
 
-```text
-Receive Redstone
-        │
-        ▼
-Hide Original Blocks
-        │
-        ▼
-Create Runtime Assembly
-        │
-        ▼
-Movement Updates Transform
-        │
-        ▼
-Renderer Draws Virtual Blocks
-        │
-        ▼
-Power Removed
-        │
-        ▼
-Brake
-        │
-        ▼
-Return To Origin
-        │
-        ▼
-Restore Original Blocks
-```
+This allows additional blocks to be added without rebuilding the entire assembly from scratch.
 
----
+Linked blocks are not removed by clicking them again.
 
-# Linked Block Data
+To remove a linked block, break the block normally.
 
-Each linked block stores only the information required to reconstruct the structure.
+## Ownership
 
-Typical data includes:
+A block can belong to only one committed assembly.
 
-* Relative position
-* Block state
-* Facing
-* Additional block properties (if required)
+Before a block is added, the server checks whether it is already owned by another Rotor.
 
-Absolute world positions are never stored inside the assembly.
+If it is already linked, the selection is rejected.
 
----
+## Validation
 
-# Runtime Assembly
+Blocks are validated before they are added to an assembly.
 
-The runtime assembly exists only while the structure is animated.
+The final selection is also validated again when the player finishes the assembly.
 
-Responsibilities:
+This second validation prevents invalid blocks from being inserted through world changes that happen after the initial selection.
 
-* Read linked block data
-* Generate render transforms
-* Provide render data to the renderer
+Some blocks are intentionally not linkable.
 
-The runtime assembly does not permanently modify the world.
+Examples include:
 
----
+- Other Rotors
+- Gravity-affected blocks such as sand and gravel
+- System or technical blocks that should not be moved
 
-# Editing Rules
+The blacklist is intentionally conservative and can be adjusted as compatibility issues are discovered.
 
-Assemblies may only be modified while stopped.
+## Assembly Creation
 
-When an assembly is running:
+When the player finishes linking:
 
-* Linking is disabled.
-* Unlinking is disabled.
-* The Link Tool should display a message informing the player to stop the assembly before editing.
+1. The selected block positions are converted to positions relative to the Rotor.
+2. Their current block states are stored.
+3. A `LinkedAssembly` is created.
+4. The Rotor receives the assembly.
+5. The server's `AssemblyManager` registers it.
+6. Persistent assembly data is updated.
+7. Clients receive the updated assembly snapshot.
 
----
+## Virtualization
 
-# Hidden Blocks
+Linked blocks remain normal world blocks while the Rotor is stopped.
 
-When an assembly starts:
+When movement begins:
 
-* Original linked blocks become inactive.
-* They behave as if they are not present for interaction.
-* Virtual blocks become the visible representation.
+1. Their current block states are refreshed.
+2. The physical blocks are removed from the world.
+3. The assembly becomes virtualized.
+4. The client renders the linked blocks as part of the rotating assembly.
 
-When the assembly stops:
+The stored assembly data remains on the server.
 
-* Virtual blocks are removed.
-* Original blocks become active again.
-* Existing links remain unchanged.
+## Restoration
 
----
+When the Rotor returns to its home position:
 
-# Validation Rules
+1. Virtual rendering stops.
+2. Stored blocks are placed back into the world.
+3. The assembly remains registered to the Rotor.
 
-Before an assembly can be created:
+The blocks can then move again the next time the Rotor starts.
 
-* A rotor must exist.
-* Every linked block must belong to the same assembly.
-* Duplicate links are not allowed.
-* Invalid references are rejected.
+## Breaking Linked Blocks
 
----
+Breaking a linked block removes it from the assembly.
 
-# Design Invariants
+The updated assembly is saved and synchronized to clients.
 
-The following rules must always remain true:
+Breaking the Rotor removes the assembly itself.
 
-* One rotor owns exactly one linked assembly.
-* One block may belong to only one assembly at a time.
-* Rendering never changes linked data.
-* Movement never modifies link relationships.
-* Link relationships survive power cycles.
-* Links are removed only when explicitly unlinked or when a linked block is destroyed.
+If the assembly is virtualized when the Rotor is removed, its stored blocks are restored first.
 
----
+## Persistence
 
-# Future Extensions
+Committed assemblies are saved per world.
 
-The link system is designed to support future features without changing its core architecture.
+After a server restart, saved assemblies are reattached to their Rotors.
 
-Possible extensions include:
+Assemblies load in a stopped physical state rather than resuming movement from a partially virtualized state.
 
-* Multiple movement controllers
-* Hierarchical assemblies
-* Dynamic attachment points
-* Serialization improvements
-* Blueprint export/import
-* Network synchronization
+## Current Limitations
+
+The link system currently stores block states, but full Block Entity data support is limited.
+
+Blocks with important internal data, inventories, or other complex state may require additional handling in future versions.
+
+There is currently no hard assembly size or radius limit.

@@ -4,6 +4,7 @@
   "version": "${version}",
   "name": "BasicRotor",
   "description": "A simple rotor system for creating and rotating linked block assemblies.",
+  "license": "MIT",
   "environment": "*",
   "entrypoints": {
     "main": [

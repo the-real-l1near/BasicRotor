@@ -1,129 +1,77 @@
-# BasicRotor Roadmap
+# Roadmap
 
-This document describes the long-term development plan for BasicRotor.
+This roadmap tracks a small set of practical improvements for BasicRotor.
 
-The roadmap focuses on building a reusable framework rather than implementing individual machines.
+It is intentionally limited in scope.
 
----
+## Current Priorities
 
-# Phase 1 — Rotor Prototype ✅
+### Block Entity Data Support
 
-**Status:** Completed
+Improve support for linked blocks that store additional data.
 
-Goal:
+Examples include:
 
-Build the first working animated block renderer.
+- Chests
+- Furnaces
+- Hoppers
+- Signs
+- Banners
+- Skulls
 
-Completed:
+The main requirement is to preserve their data correctly when an assembly is virtualized, restored, saved, and loaded.
 
-* Custom BlockEntity renderer
-* Client-side animation
-* Facing-aware rotation
-* Lighting support
-* Multiplayer-compatible rendering
-* Rotor prototype
+### Compatibility
 
----
+Test more vanilla and modded blocks and adjust validation where needed.
 
-# Phase 2 — Framework Foundation
+Compatibility changes should be based on actual behavior rather than broad assumptions.
 
-**Status:** In Progress
+### Multiplayer Reliability
 
-Goal:
+Continue testing:
 
-Build the core framework that every future machine will use.
+- Multiple Rotors running at the same time
+- Players joining while assemblies are active
+- Dimension changes
+- Reconnects
+- Assembly editing with multiple players nearby
 
-Planned:
+### Rendering Cleanup
 
-* Assembly data layer
-* Movement framework
-* Assembly manager
-* Common transform system
-* Assembly renderer
+Keep improving rendering only where visible issues exist.
 
----
+Possible areas include:
 
-# Phase 3 — Linking System
+- Special block models
+- Block Entity rendering
+- Lighting edge cases
+- Breaking overlay compatibility
 
-Goal:
+## Release Maintenance
 
-Allow players to build custom assemblies.
+Before each release:
 
-Planned:
+- Run a clean build
+- Test the release JAR in a clean Fabric instance
+- Verify recipes and recipe book unlocks
+- Verify advancements
+- Verify localization
+- Verify Rotor placement and mining
+- Verify linking and restoration
+- Verify world restart behavior
+- Verify multiplayer behavior
 
-* Link Tool
-* Unlink Tool
-* Assembly validation
-* Persistent linked data
+## Out of Scope
 
----
+BasicRotor does not currently plan to add:
 
-# Phase 4 — Runtime Assembly
+- Mechanical power networks
+- Gears
+- Shafts
+- Torque simulation
+- Stress systems
+- Complex physics
+- Large automation systems
 
-Goal:
-
-Turn linked blocks into animated virtual structures.
-
-Planned:
-
-* Hide original blocks
-* Render virtual blocks
-* Runtime assembly lifecycle
-* Smooth braking
-* Return to origin
-* Restore hidden blocks
-
----
-
-# Phase 5 — Redstone Integration
-
-Goal:
-
-Allow assemblies to react to gameplay.
-
-Planned:
-
-* Redstone activation
-* Start / Stop control
-* Runtime state management
-
----
-
-# Phase 6 — Framework Expansion
-
-Goal:
-
-Support multiple movement types.
-
-Planned:
-
-* Rotation movement
-* Translation movement
-* Oscillation movement
-* Combined movements
-
----
-
-# Phase 7 — Example Machines
-
-The framework should be capable of powering many different structures.
-
-Examples:
-
-* Windmill
-* Water Wheel
-* Gear Train
-* Steam Turbine
-* Conveyor
-* Crane
-* Elevator
-* Rotating Bridge
-* Decorative Mechanical Structures
-
----
-
-# Long-Term Vision
-
-BasicRotor should become a reusable animation framework for Minecraft mechanical structures.
-
-New machines should primarily be created by combining existing framework components instead of introducing machine-specific implementations.
+These may only be reconsidered if the scope of the mod changes significantly.
