@@ -68,155 +68,9 @@ public class AssemblyWrenchItem extends Item {
             return InteractionResult.SUCCESS;
         }
 
-        boolean finishMode =
-                player.isShiftKeyDown();
-
         BlockState blockState =
                 level.getBlockState(blockPos);
 
-        if (finishMode) {
-
-            if (blockState.getBlock() != ModBlocks.ROTOR) {
-
-                player.sendSystemMessage(
-                        Component.translatable("message.basicrotor.finish_only_rotor")
-                                .withStyle(ChatFormatting.RED)
-                );
-
-                return InteractionResult.SUCCESS;
-            }
-
-            LinkSession session =
-                    LINK_SESSION_MANAGER.getSession(player);
-
-            if (session.getSelectedRotorPos() == null) {
-
-                player.sendSystemMessage(
-                        Component.translatable("message.basicrotor.no_rotor_selected")
-                                .withStyle(ChatFormatting.RED)
-                );
-
-                return InteractionResult.SUCCESS;
-            }
-
-            if (!session
-                    .getSelectedRotorPos()
-                    .equals(blockPos)) {
-
-                player.sendSystemMessage(
-                        Component.translatable(
-                                        "message.basicrotor.finish_selected_rotor"
-                                )
-                                .withStyle(ChatFormatting.RED)
-                );
-
-                return InteractionResult.SUCCESS;
-            }
-
-            if (session.getSelectedBlocks().isEmpty()) {
-
-                player.sendSystemMessage(
-                        Component.translatable("message.basicrotor.no_blocks_selected")
-                                .withStyle(ChatFormatting.RED)
-                );
-
-                return InteractionResult.SUCCESS;
-            }
-
-            for (BlockPos selectedBlockPos
-                    : session.getSelectedBlocks()) {
-
-                if (!AssemblyValidator.canLinkBlock(
-                        level,
-                        selectedBlockPos
-                )) {
-
-                    player.sendSystemMessage(
-                            Component.translatable(
-                                            "message.basicrotor.block_not_linkable"
-                                    )
-                                    .withStyle(ChatFormatting.RED)
-                    );
-
-                    return InteractionResult.SUCCESS;
-                }
-            }
-
-            AssemblyFactory factory =
-                    new AssemblyFactory();
-
-            LinkedAssembly assembly =
-                    factory.create(
-                            level,
-                            session
-                    );
-
-            BlockEntity blockEntity =
-                    level.getBlockEntity(
-                            session.getSelectedRotorPos()
-                    );
-
-            if (!(blockEntity instanceof RotorBlockEntity rotorBlockEntity)) {
-                return InteractionResult.SUCCESS;
-            }
-
-            boolean powered =
-                    level.getBestNeighborSignal(
-                            session.getSelectedRotorPos()
-                    ) > 0;
-
-            if (rotorBlockEntity
-                    .getMovementData()
-                    .getState()
-                    != MovementState.STOPPED
-                    || powered) {
-
-                player.sendSystemMessage(
-                        Component.translatable(
-                                        "message.basicrotor.rotor_must_be_stopped"
-                                )
-                                .withStyle(ChatFormatting.RED)
-                );
-
-                return InteractionResult.SUCCESS;
-            }
-
-            rotorBlockEntity.setLinkedAssembly(assembly);
-
-            if (level instanceof ServerLevel serverLevel) {
-
-                BasicRotor
-                        .getAssemblyManager(
-                                serverLevel
-                        )
-                        .register(
-                                session.getSelectedRotorPos(),
-                                assembly
-                        );
-                BasicRotor.saveAssemblyManager(
-                        serverLevel
-                );
-            }
-
-            if (player instanceof ServerPlayer serverPlayer) {
-
-                AssemblySync.sendSnapshot(
-                        serverPlayer,
-                        assembly
-                );
-            }
-
-            LINK_SESSION_MANAGER.clearSession(player);
-
-            player.sendSystemMessage(
-                    Component.translatable(
-                                    "message.basicrotor.assembly_created"
-                            )
-                            .withStyle(ChatFormatting.GREEN)
-            );
-
-            return InteractionResult.SUCCESS;
-        }
 
         if (blockState.getBlock() == ModBlocks.ROTOR) {
 
@@ -280,12 +134,11 @@ public class AssemblyWrenchItem extends Item {
 
             if (currentRotorPos.equals(blockPos)) {
 
-                player.sendSystemMessage(
-                        Component.translatable("message.basicrotor.rotor_already_selected")
-                                .withStyle(ChatFormatting.RED)
+                return finishAssembly(
+                        level,
+                        player,
+                        session
                 );
-
-                return InteractionResult.SUCCESS;
             }
 
             session.clear();
@@ -391,6 +244,111 @@ public class AssemblyWrenchItem extends Item {
             );
         }
 
+
+        return InteractionResult.SUCCESS;
+    }
+
+    //Finish Assembly
+    private InteractionResult finishAssembly(
+            Level level,
+            Player player,
+            LinkSession session
+    ) {
+
+        if (session.getSelectedBlocks().isEmpty()) {
+
+            player.sendSystemMessage(
+                    Component.translatable(
+                                    "message.basicrotor.no_blocks_selected"
+                            )
+                            .withStyle(ChatFormatting.RED)
+            );
+
+            return InteractionResult.SUCCESS;
+        }
+
+        BlockPos rotorPos =
+                session.getSelectedRotorPos();
+
+        BlockEntity blockEntity =
+                level.getBlockEntity(
+                        rotorPos
+                );
+
+        if (!(blockEntity instanceof RotorBlockEntity rotorBlockEntity)) {
+            return InteractionResult.SUCCESS;
+        }
+
+        boolean powered =
+                level.getBestNeighborSignal(
+                        rotorPos
+                ) > 0;
+
+        if (rotorBlockEntity
+                .getMovementData()
+                .getState()
+                != MovementState.STOPPED
+                || powered) {
+
+            player.sendSystemMessage(
+                    Component.translatable(
+                                    "message.basicrotor.rotor_must_be_stopped"
+                            )
+                            .withStyle(ChatFormatting.RED)
+            );
+
+            return InteractionResult.SUCCESS;
+        }
+
+        // Giữ nguyên finish-time validation hiện tại của m ở đây
+
+        AssemblyFactory factory =
+                new AssemblyFactory();
+
+        LinkedAssembly assembly =
+                factory.create(
+                        level,
+                        session
+                );
+
+        rotorBlockEntity.setLinkedAssembly(
+                assembly
+        );
+
+        if (level instanceof ServerLevel serverLevel) {
+
+            BasicRotor
+                    .getAssemblyManager(
+                            serverLevel
+                    )
+                    .register(
+                            rotorPos,
+                            assembly
+                    );
+
+            BasicRotor.saveAssemblyManager(
+                    serverLevel
+            );
+        }
+
+        if (player instanceof ServerPlayer serverPlayer) {
+
+            AssemblySync.sendSnapshot(
+                    serverPlayer,
+                    assembly
+            );
+        }
+
+        LINK_SESSION_MANAGER.clearSession(
+                player
+        );
+
+        player.sendSystemMessage(
+                Component.translatable(
+                                "message.basicrotor.assembly_created"
+                        )
+                        .withStyle(ChatFormatting.GREEN)
+        );
 
         return InteractionResult.SUCCESS;
     }

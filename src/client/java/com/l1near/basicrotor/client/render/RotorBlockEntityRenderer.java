@@ -67,6 +67,11 @@ public class RotorBlockEntityRenderer implements BlockEntityRenderer<RotorBlockE
     }
 
     @Override
+    public boolean shouldRenderOffScreen() {
+        return true;
+    }
+
+    @Override
     public void extractRenderState(
             RotorBlockEntity blockEntity,
             RotorBlockEntityRenderState state,
@@ -240,7 +245,7 @@ public class RotorBlockEntityRenderer implements BlockEntityRenderer<RotorBlockE
                 submitNodeCollector,
                 state.lightCoords,
                 OverlayTexture.NO_OVERLAY,
-                -1
+                0
         );
 
         if (state.breakProgress != null
@@ -310,7 +315,7 @@ public class RotorBlockEntityRenderer implements BlockEntityRenderer<RotorBlockE
                         submitNodeCollector,
                         virtualBlock.lightCoords,
                         OverlayTexture.NO_OVERLAY,
-                        -1
+                        0
                 );
 
                 poseStack.popPose();
