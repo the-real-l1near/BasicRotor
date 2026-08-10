@@ -1,9 +1,10 @@
 {
   "schemaVersion": 1,
+  "icon": "assets/basicrotor/icon.png",
   "id": "basicrotor",
   "version": "${version}",
   "name": "BasicRotor",
-  "description": "A simple rotor system for creating and rotating linked block assemblies.",
+  "description": "§6Simple rotating structures powered by redstone.\n§7Link blocks, power the Rotor, and watch them move.",
   "license": "MIT",
   "environment": "*",
   "entrypoints": {
