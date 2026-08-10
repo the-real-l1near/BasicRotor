@@ -34,6 +34,7 @@ import com.l1near.basicrotor.mixin.client.BlockModelRenderStateAccessor;
 import java.util.List;
 import net.minecraft.client.renderer.block.dispatch.BlockStateModelPart;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.Minecraft;
 
 public class RotorBlockEntityRenderer implements BlockEntityRenderer<RotorBlockEntity, RotorBlockEntityRenderState> {
 
@@ -64,6 +65,17 @@ public class RotorBlockEntityRenderer implements BlockEntityRenderer<RotorBlockE
     @Override
     public RotorBlockEntityRenderState createRenderState() {
         return new RotorBlockEntityRenderState();
+    }
+
+    @Override
+    public int getViewDistance() {
+
+        int renderDistanceChunks =
+                Minecraft.getInstance()
+                        .options
+                        .getEffectiveRenderDistance();
+
+        return renderDistanceChunks * 16;
     }
 
     @Override
