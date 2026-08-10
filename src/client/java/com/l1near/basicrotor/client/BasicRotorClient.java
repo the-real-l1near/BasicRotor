@@ -214,6 +214,13 @@ public class BasicRotorClient implements ClientModInitializer {
 
                         lines.add(
                                 Component.translatable(
+                                                "tooltip.basicrotor.assembly_wrench.force_link"
+                                        )
+                                        .withStyle(ChatFormatting.GRAY)
+                        );
+
+                        lines.add(
+                                Component.translatable(
                                                 "tooltip.basicrotor.assembly_wrench.finish"
                                         )
                                         .withStyle(ChatFormatting.GRAY)

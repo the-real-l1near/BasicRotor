@@ -16,7 +16,11 @@ The normal workflow is:
 
 1. Right-click a Rotor with the Assembly Wrench.
 2. Right-click blocks to add them.
-3. Shift + Right-click the selected Rotor to finish.
+3. Right-click the selected Rotor again to finish.
+
+For blocks with their own interaction, Duck + Right-click can be used to link the block instead of activating it.
+
+Right-clicking a different Rotor changes the current selection to that Rotor.
 
 The Rotor must be:
 

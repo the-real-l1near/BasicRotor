@@ -43,7 +43,11 @@ The Assembly Wrench is used to create or edit a rotor assembly.
 
 1. Right-click a Rotor to select it.
 2. Right-click blocks to add them to the assembly.
-3. Shift + Right-click the selected Rotor to finish.
+3. Right-click the selected Rotor again to finish.
+
+For blocks with their own interaction, use Duck + Right-click to link them instead of activating them.
+
+Right-clicking a different Rotor changes the current selection to that Rotor.
 
 The Rotor must be stopped and unpowered while editing its assembly.
 

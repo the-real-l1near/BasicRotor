@@ -44,4 +44,26 @@ IDLE
    ↓
 RETURNING
    ↓
-STOPPED
+STOPPED## Linking
+```
+## Linking
+
+Assemblies are edited with the Assembly Wrench.
+
+The linking workflow is:
+
+1. Select a Rotor.
+2. Select blocks.
+3. Right-click the selected Rotor again to finish.
+
+Duck + Right-click can be used on interactive blocks to link them without activating their normal interaction.
+
+Right-clicking another Rotor changes the current selection.
+
+Temporary selection data is stored in a per-player `LinkSession`.
+
+The final assembly is only created or updated after the player finishes the linking process.
+
+Blocks already owned by another assembly cannot be linked again.
+
+Some blocks are rejected by assembly validation.
