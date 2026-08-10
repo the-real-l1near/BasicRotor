@@ -1,0 +1,25 @@
+{
+  "display": {
+    "icon": {
+      "id": "basicrotor:rotor"
+    },
+    "title": {
+      "translate": "advancement.basicrotor.is_it_spinning.title"
+    },
+    "description": {
+      "translate": "advancement.basicrotor.is_it_spinning.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "crafted_rotor": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "basicrotor:rotor"
+      }
+    }
+  }
+}

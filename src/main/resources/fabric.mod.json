@@ -1,8 +1,9 @@
 {
   "schemaVersion": 1,
-  "id": "basicrotor-private",
+  "id": "basicrotor",
   "version": "${version}",
   "name": "BasicRotor",
+  "description": "A simple rotor system for creating and rotating linked block assemblies.",
   "environment": "*",
   "entrypoints": {
     "main": [
@@ -12,6 +13,12 @@
       "com.l1near.basicrotor.client.BasicRotorClient"
     ]
   },
+  "mixins": [
+    {
+      "config": "basicrotor.client.mixins.json",
+      "environment": "client"
+    }
+  ],
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric-api": "*",

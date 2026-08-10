@@ -9,6 +9,7 @@ Imports
 import com.l1near.basicrotor.client.movement.ClientRotorMovementData;
 import com.l1near.basicrotor.client.render.RotorBlockEntityRenderer;
 import com.l1near.basicrotor.registry.ModBlockEntities;
+import com.l1near.basicrotor.registry.ModItems;
 import net.fabricmc.api.ClientModInitializer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import com.l1near.basicrotor.client.assembly.ClientAssemblyManager;
@@ -24,6 +25,9 @@ import com.l1near.basicrotor.network.payload.AssemblyRemovePayload;
 import com.l1near.basicrotor.client.movement.ClientRotorMovementManager;
 import com.l1near.basicrotor.network.payload.RotorRemovePayload;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
+import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
+import net.minecraft.network.chat.Component;
+import net.minecraft.ChatFormatting;
 
 public class BasicRotorClient implements ClientModInitializer {
 
@@ -186,6 +190,52 @@ public class BasicRotorClient implements ClientModInitializer {
                                 payload.rotorPos()
                         );
                     });
+                }
+        );
+
+        ItemTooltipCallback.EVENT.register(
+                (stack, context, tooltipType, lines) -> {
+
+                    if (stack.is(ModItems.ASSEMBLY_WRENCH)) {
+
+                        lines.add(
+                                Component.translatable(
+                                                "tooltip.basicrotor.assembly_wrench.select"
+                                        )
+                                        .withStyle(ChatFormatting.GRAY)
+                        );
+
+                        lines.add(
+                                Component.translatable(
+                                                "tooltip.basicrotor.assembly_wrench.link"
+                                        )
+                                        .withStyle(ChatFormatting.GRAY)
+                        );
+
+                        lines.add(
+                                Component.translatable(
+                                                "tooltip.basicrotor.assembly_wrench.finish"
+                                        )
+                                        .withStyle(ChatFormatting.GRAY)
+                        );
+                    }
+
+                    if (stack.is(ModItems.ROTOR)) {
+
+                        lines.add(
+                                Component.translatable(
+                                                "tooltip.basicrotor.rotor.powered"
+                                        )
+                                        .withStyle(ChatFormatting.GRAY)
+                        );
+
+                        lines.add(
+                                Component.translatable(
+                                                "tooltip.basicrotor.rotor.unpowered.and.return"
+                                        )
+                                        .withStyle(ChatFormatting.GRAY)
+                        );
+                    }
                 }
         );
 

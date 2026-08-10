@@ -19,5 +19,12 @@
   "message.basicrotor.block_already_linked": "%s đã được liên kết với một rotor khác.",
   "message.basicrotor.finish_selected_rotor": "Hãy hoàn tất cụm trên rotor đã chọn!",
   "message.basicrotor.block_not_linkable": "Khối này không thể được liên kết!",
-  "message.basicrotor.returning": "Rotor đang quay về vị trí ban đầu."
+  "message.basicrotor.returning": "Rotor đang quay về vị trí ban đầu.",
+  "tooltip.basicrotor.assembly_wrench.select": "Chuột phải rotor để chọn",
+  "tooltip.basicrotor.assembly_wrench.link": "Chuột phải block để liên kết",
+  "tooltip.basicrotor.assembly_wrench.finish": "Ngồi + Chuột phải rotor đã chọn để hoàn tất",
+  "tooltip.basicrotor.rotor.powered": "Có redstone: Bắt đầu quay",
+  "tooltip.basicrotor.rotor.unpowered.and.return": "Mất redstone: Giảm tốc và về vị trí ban đầu.",
+  "advancement.basicrotor.is_it_spinning.title": "Nó... đang quay à?",
+  "advancement.basicrotor.is_it_spinning.description": "Chế tạo Rotor đầu tiên của bạn"
 }

@@ -15,6 +15,8 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.core.registries.Registries;
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
+import net.minecraft.world.item.CreativeModeTabs;
 
 
 public final class ModItems {
@@ -64,6 +66,23 @@ public final class ModItems {
     */
 
     public static void init() {
+
+        CreativeModeTabEvents
+                .modifyOutputEvent(
+                        CreativeModeTabs.REDSTONE_BLOCKS
+                )
+                .register(
+                        output -> {
+
+                            output.accept(
+                                    ROTOR
+                            );
+
+                            output.accept(
+                                    ASSEMBLY_WRENCH
+                            );
+                        }
+                );
     }
 
     /*

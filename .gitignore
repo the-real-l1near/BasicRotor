@@ -1,0 +1,44 @@
+# Gradle
+.gradle/
+build/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Minecraft / Loom run directories
+run/
+runs/
+
+# Logs and crash reports
+logs/
+crash-reports/
+*.log
+
+# Loom / generated files
+remappedSrc/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Java crash dumps
+hs_err_pid*
+replay_pid*
+
+# Local environment files
+.env
+.env.local
+
+# Optional local test/config files
+local.properties

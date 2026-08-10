@@ -8,8 +8,12 @@ Imports
 import com.l1near.basicrotor.block.RotorBlock;
 import com.l1near.basicrotor.client.movement.ClientRotorMovementData;
 import com.mojang.math.Axis;
+import net.fabricmc.fabric.api.client.renderer.v1.Renderer;
+import net.fabricmc.fabric.api.client.renderer.v1.mesh.MutableMesh;
+import net.minecraft.client.renderer.block.BlockAndTintGetter;
 import net.minecraft.client.renderer.block.BlockModelResolver;
 import net.minecraft.client.renderer.block.model.BlockDisplayContext;
+import net.minecraft.client.renderer.special.SpecialModelRenderer;
 import net.minecraft.client.renderer.state.level.CameraRenderState;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import com.l1near.basicrotor.blockentity.RotorBlockEntity;
@@ -21,9 +25,15 @@ import net.minecraft.client.renderer.feature.ModelFeatureRenderer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.LightCoordsUtil;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.util.Mth;
 import com.l1near.basicrotor.client.BasicRotorClient;
+import com.l1near.basicrotor.mixin.client.BlockModelRenderStateAccessor;
+import java.util.List;
+import net.minecraft.client.renderer.block.dispatch.BlockStateModelPart;
+import net.minecraft.client.Minecraft;
 
 public class RotorBlockEntityRenderer implements BlockEntityRenderer<RotorBlockEntity, RotorBlockEntityRenderState> {
 
@@ -64,6 +74,7 @@ public class RotorBlockEntityRenderer implements BlockEntityRenderer<RotorBlockE
             Vec3 cameraPosition,
             ModelFeatureRenderer.CrumblingOverlay breakProgress
     ) {
+
         BlockEntityRenderer.super.extractRenderState(
                 blockEntity,
                 state,
@@ -71,14 +82,20 @@ public class RotorBlockEntityRenderer implements BlockEntityRenderer<RotorBlockE
                 cameraPosition,
                 breakProgress
         );
-        state.lightCoords = LightCoordsUtil.getLightCoords(
-                blockEntity.getLevel(),
-                blockEntity.getBlockPos()
-        );
 
-        state.facing = blockEntity
-                .getBlockState()
-                .getValue(RotorBlock.FACING);
+        state.lightCoords =
+                LightCoordsUtil.getLightCoords(
+                        blockEntity.getLevel(),
+                        blockEntity.getBlockPos()
+                );
+
+        state.facing =
+                blockEntity
+                        .getBlockState()
+                        .getValue(RotorBlock.FACING);
+
+        state.rotorBlockState =
+                blockEntity.getBlockState();
 
         state.virtualAssembly = null;
 
@@ -125,8 +142,6 @@ public class RotorBlockEntityRenderer implements BlockEntityRenderer<RotorBlockE
 
         state.virtualBlocks.clear();
 
-
-
         if (state.virtualAssembly != null) {
 
             for (var entry
@@ -159,6 +174,7 @@ public class RotorBlockEntityRenderer implements BlockEntityRenderer<RotorBlockE
 
                 virtualBlock.modelState.blockLightCoords =
                         virtualBlock.lightCoords;
+
                 state.virtualBlocks.add(
                         virtualBlock
                 );
@@ -170,7 +186,29 @@ public class RotorBlockEntityRenderer implements BlockEntityRenderer<RotorBlockE
                 blockEntity.getBlockState(),
                 BlockDisplayContext.create()
         );
-        state.modelState.blockLightCoords = state.lightCoords;
+
+        state.modelState.blockLightCoords =
+                state.lightCoords;
+
+        state.breakingModel =
+                Minecraft.getInstance()
+                        .getModelManager()
+                        .getBlockStateModelSet()
+                        .get(
+                                blockEntity.getBlockState()
+                        );
+
+        state.breakingModelParts.clear();
+
+        List<BlockStateModelPart> modelParts =
+                ((BlockModelRenderStateAccessor) (Object) state.modelState)
+                        .getModelParts();
+
+        if (modelParts != null) {
+            state.breakingModelParts.addAll(
+                    modelParts
+            );
+        }
     }
     //Submit
     @Override
@@ -204,6 +242,33 @@ public class RotorBlockEntityRenderer implements BlockEntityRenderer<RotorBlockE
                 OverlayTexture.NO_OVERLAY,
                 -1
         );
+
+        if (state.breakProgress != null
+                && state.breakingModel != null
+                && state.rotorBlockState != null) {
+
+            MutableMesh breakingMesh =
+                    Renderer.get().mutableMesh();
+
+            RandomSource random =
+                    RandomSource.create(42L);
+
+            state.breakingModel.emitQuads(
+                    breakingMesh.emitter(),
+                    BlockAndTintGetter.EMPTY,
+                    state.blockPos,
+                    state.rotorBlockState,
+                    random,
+                    layer -> false
+            );
+
+            submitNodeCollector.submitBreakingBlockModel(
+                    poseStack,
+                    state.breakingModelParts,
+                    breakingMesh.immutableCopy(),
+                    state.breakProgress.progress()
+            );
+        }
         poseStack.popPose();
 
         if (state.virtualAssembly != null

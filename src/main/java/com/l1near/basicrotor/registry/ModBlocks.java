@@ -14,6 +14,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.world.level.material.PushReaction;
 
 public final class ModBlocks {
 
@@ -22,11 +23,17 @@ public final class ModBlocks {
             Identifier.fromNamespaceAndPath(BasicRotor.MOD_ID, "rotor"),
             new RotorBlock(
                     Block.Properties.of()
-                            .setId(ResourceKey.create(
-                                    Registries.BLOCK,
-                                    Identifier.fromNamespaceAndPath(BasicRotor.MOD_ID, "rotor")
-                            ))
-                            .strength(3.0F)
+                            .setId(
+                                    ResourceKey.create(
+                                            Registries.BLOCK,
+                                            Identifier.fromNamespaceAndPath(
+                                                    BasicRotor.MOD_ID,
+                                                    "rotor"
+                                            )
+                                    )
+                            )
+                            .strength(1.5F)
+                            .pushReaction(PushReaction.BLOCK)
                             .noOcclusion()
             )
     );

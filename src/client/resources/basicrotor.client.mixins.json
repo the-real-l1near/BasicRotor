@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "com.l1near.basicrotor.mixin.client",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "BlockModelRenderStateAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
