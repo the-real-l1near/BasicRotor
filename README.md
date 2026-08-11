@@ -61,7 +61,7 @@ Some blocks are intentionally not linkable.
 
 Both the Rotor and Assembly Wrench have crafting recipes and are available through the recipe book.
 
-![Crafting Recipes](docs/media/Photo1) ![Crafting Recipes](docs/media/Photo2)
+![Rotor Recipe](docs/media/Photo2)      ![Assembly Wrench Recipe](docs/media/Photo1)
 
 ## Notes
 
